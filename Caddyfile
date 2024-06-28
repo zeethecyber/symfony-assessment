@@ -1,0 +1,20 @@
+# /etc/caddy/Caddyfile
+:80 {
+    root * /var/www/html/public
+
+    # Provide Zstd and Gzip compression
+    encode zstd gzip
+
+    # Enable the static file server.
+    file_server
+
+    # Or serve a PHP site through php-fpm:
+    php_fastcgi app:9000
+
+    # return 404 for all other php files not matching the front controller
+    # this prevents access to other php files you don't want to be accessible.
+    @phpFile {
+        path *.php*
+    }
+    error @phpFile "Not found" 404
+}

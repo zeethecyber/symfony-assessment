@@ -1,0 +1,51 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    restart: always
+    volumes:
+      - '.:/var/www/html'
+    depends_on:
+      - database
+    env_file:
+      - .env.docker
+    networks:
+      - dev
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "${POSTGRES_DB:-app}", "-U", "${POSTGRES_USER:-app}"]
+      timeout: 5s
+      retries: 5
+    volumes:
+      - dev-postgres:/var/lib/postgresql/data
+    networks:
+      - dev
+  webserver:
+    image: caddy:2.8.4
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./public:/var/www/html/public
+    networks:
+      - dev
+
+
+volumes:
+  dev-postgres:
+    driver: local
+
+networks:
+  dev:
+    driver: bridge

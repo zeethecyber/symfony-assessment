@@ -1,0 +1,21 @@
+parameters:
+
+    level: 6  # Adjust the level based on your project's maturity (0-8)
+
+    paths:
+        - src
+        - tests
+
+    excludePaths:
+        - vendor/*  # Exclude third-party libraries
+        - var/cache/* # Exclude cache directories
+        - config/bundles.php # Exclude bundle configuration
+        - public/*   # Exclude public assets
+        - node_modules
+
+    symfony:
+        container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
+        console_application_loader: bin/console
+
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
