@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Dbal\ConnectionConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SlaveConfig
+class SlaveConfig 
 {
     private $url;
     private $dbname;
@@ -43,12 +43,9 @@ class SlaveConfig
     private $_usedProperties = [];
 
     /**
-     * A URL with connection information; any parameter value parsed from this string will override explicitly set parameters.
-     *
+     * A URL with connection information; any parameter value parsed from this string will override explicitly set parameters
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function url($value): static
@@ -61,9 +58,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dbname($value): static
@@ -76,11 +71,8 @@ class SlaveConfig
 
     /**
      * Defaults to "localhost" at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function host($value): static
@@ -93,11 +85,8 @@ class SlaveConfig
 
     /**
      * Defaults to null at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -110,11 +99,8 @@ class SlaveConfig
 
     /**
      * Defaults to "root" at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function user($value): static
@@ -127,11 +113,8 @@ class SlaveConfig
 
     /**
      * Defaults to null at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function password($value): static
@@ -144,11 +127,8 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @deprecated The "doctrine.dbal.override_url" configuration key is deprecated.
-     *
      * @return $this
      */
     public function overrideUrl($value): static
@@ -161,9 +141,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dbnameSuffix($value): static
@@ -176,9 +154,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function applicationName($value): static
@@ -191,9 +167,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function charset($value): static
@@ -206,9 +180,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -221,9 +193,7 @@ class SlaveConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function memory($value): static
@@ -235,12 +205,9 @@ class SlaveConfig
     }
 
     /**
-     * The unix socket to use for MySQL.
-     *
+     * The unix socket to use for MySQL
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function unixSocket($value): static
@@ -252,12 +219,9 @@ class SlaveConfig
     }
 
     /**
-     * True to use as persistent connection for the ibm_db2 driver.
-     *
+     * True to use as persistent connection for the ibm_db2 driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function persistent($value): static
@@ -269,12 +233,9 @@ class SlaveConfig
     }
 
     /**
-     * The protocol to use for the ibm_db2 driver (default to TCPIP if omitted).
-     *
+     * The protocol to use for the ibm_db2 driver (default to TCPIP if omitted)
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function protocol($value): static
@@ -286,12 +247,9 @@ class SlaveConfig
     }
 
     /**
-     * True to use SERVICE_NAME as connection parameter instead of SID for Oracle.
-     *
+     * True to use SERVICE_NAME as connection parameter instead of SID for Oracle
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -304,11 +262,8 @@ class SlaveConfig
 
     /**
      * Overrules dbname parameter if given and used as SERVICE_NAME or SID connection parameter for Oracle depending on the service parameter.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function servicename($value): static
@@ -320,12 +275,9 @@ class SlaveConfig
     }
 
     /**
-     * The session mode to use for the oci8 driver.
-     *
+     * The session mode to use for the oci8 driver
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sessionMode($value): static
@@ -338,11 +290,8 @@ class SlaveConfig
 
     /**
      * The name of a running database server to connect to for SQL Anywhere.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function server($value): static
@@ -355,11 +304,8 @@ class SlaveConfig
 
     /**
      * Override the default database (postgres) to connect to for PostgreSQL connexion.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultDbname($value): static
@@ -372,11 +318,8 @@ class SlaveConfig
 
     /**
      * Determines whether or with what priority a SSL TCP/IP connection will be negotiated with the server for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslmode($value): static
@@ -389,11 +332,8 @@ class SlaveConfig
 
     /**
      * The name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslrootcert($value): static
@@ -406,11 +346,8 @@ class SlaveConfig
 
     /**
      * The path to the SSL client certificate file for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslcert($value): static
@@ -423,11 +360,8 @@ class SlaveConfig
 
     /**
      * The path to the SSL client key file for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslkey($value): static
@@ -440,11 +374,8 @@ class SlaveConfig
 
     /**
      * The file name of the SSL certificate revocation list for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslcrl($value): static
@@ -456,12 +387,9 @@ class SlaveConfig
     }
 
     /**
-     * True to use a pooled server with the oci8/pdo_oracle driver.
-     *
+     * True to use a pooled server with the oci8/pdo_oracle driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function pooled($value): static
@@ -473,12 +401,9 @@ class SlaveConfig
     }
 
     /**
-     * Configuring MultipleActiveResultSets for the pdo_sqlsrv driver.
-     *
+     * Configuring MultipleActiveResultSets for the pdo_sqlsrv driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function multipleActiveResultSets($value): static
@@ -490,12 +415,9 @@ class SlaveConfig
     }
 
     /**
-     * Use savepoints for nested transactions.
-     *
+     * Use savepoints for nested transactions
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useSavepoints($value): static
@@ -508,11 +430,8 @@ class SlaveConfig
 
     /**
      * Optional parameter, complete whether to add the INSTANCE_NAME parameter in the connection. It is generally used to connect to an Oracle RAC server to select the name of a particular instance.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function instancename($value): static
@@ -525,11 +444,8 @@ class SlaveConfig
 
     /**
      * Complete Easy Connect connection descriptor, see https://docs.oracle.com/database/121/NETAG/naming.htm.When using this option, you will still need to provide the user and password parameters, but the other parameters will no longer be used. Note that when using this parameter, the getHost and getPort methods from Doctrine\DBAL\Connection will no longer function as expected.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function connectstring($value): static
@@ -823,4 +739,5 @@ class SlaveConfig
 
         return $output;
     }
+
 }

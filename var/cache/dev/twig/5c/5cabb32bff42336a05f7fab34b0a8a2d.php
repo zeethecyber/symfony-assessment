@@ -132,6 +132,6 @@ class __TwigTemplate_f345c209dad29ccda7ba664d12846031 extends Template
 .exception-message-wrapper .container {
     min-height: unset;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

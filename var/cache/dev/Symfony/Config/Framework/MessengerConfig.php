@@ -7,13 +7,13 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'Messenger'.\DIRECTORY_SEPARATOR.'Seri
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Messenger'.\DIRECTORY_SEPARATOR.'TransportConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Messenger'.\DIRECTORY_SEPARATOR.'BusConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MessengerConfig
+class MessengerConfig 
 {
     private $enabled;
     private $routing;
@@ -26,10 +26,8 @@ class MessengerConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -42,14 +40,11 @@ class MessengerConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Messenger\RoutingConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Messenger\RoutingConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Messenger\RoutingConfig : static)
      */
-    public function routing(string $message_class, array $value = []): Messenger\RoutingConfig|static
+    public function routing(string $message_class, array $value = []): \Symfony\Config\Framework\Messenger\RoutingConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['routing'] = true;
@@ -58,9 +53,9 @@ class MessengerConfig
             return $this;
         }
 
-        if (!isset($this->routing[$message_class]) || !$this->routing[$message_class] instanceof Messenger\RoutingConfig) {
+        if (!isset($this->routing[$message_class]) || !$this->routing[$message_class] instanceof \Symfony\Config\Framework\Messenger\RoutingConfig) {
             $this->_usedProperties['routing'] = true;
-            $this->routing[$message_class] = new Messenger\RoutingConfig($value);
+            $this->routing[$message_class] = new \Symfony\Config\Framework\Messenger\RoutingConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "routing()" has already been initialized. You cannot pass values the second time you call routing().');
         }
@@ -70,12 +65,12 @@ class MessengerConfig
 
     /**
      * @default {"default_serializer":"messenger.transport.native_php_serializer","symfony_serializer":{"format":"json","context":[]}}
-     */
-    public function serializer(array $value = []): Messenger\SerializerConfig
+    */
+    public function serializer(array $value = []): \Symfony\Config\Framework\Messenger\SerializerConfig
     {
         if (null === $this->serializer) {
             $this->_usedProperties['serializer'] = true;
-            $this->serializer = new Messenger\SerializerConfig($value);
+            $this->serializer = new \Symfony\Config\Framework\Messenger\SerializerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "serializer()" has already been initialized. You cannot pass values the second time you call serializer().');
         }
@@ -85,14 +80,11 @@ class MessengerConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Messenger\TransportConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Messenger\TransportConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Messenger\TransportConfig : static)
      */
-    public function transport(string $name, string|array $value = []): Messenger\TransportConfig|static
+    public function transport(string $name, string|array $value = []): \Symfony\Config\Framework\Messenger\TransportConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['transports'] = true;
@@ -101,9 +93,9 @@ class MessengerConfig
             return $this;
         }
 
-        if (!isset($this->transports[$name]) || !$this->transports[$name] instanceof Messenger\TransportConfig) {
+        if (!isset($this->transports[$name]) || !$this->transports[$name] instanceof \Symfony\Config\Framework\Messenger\TransportConfig) {
             $this->_usedProperties['transports'] = true;
-            $this->transports[$name] = new Messenger\TransportConfig($value);
+            $this->transports[$name] = new \Symfony\Config\Framework\Messenger\TransportConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "transport()" has already been initialized. You cannot pass values the second time you call transport().');
         }
@@ -113,11 +105,8 @@ class MessengerConfig
 
     /**
      * Transport name to send failed messages to (after all retries have failed).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureTransport($value): static
@@ -143,9 +132,7 @@ class MessengerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultBus($value): static
@@ -158,12 +145,12 @@ class MessengerConfig
 
     /**
      * @default {"messenger.bus.default":{"default_middleware":{"enabled":true,"allow_no_handlers":false,"allow_no_senders":true},"middleware":[]}}
-     */
-    public function bus(string $name, array $value = []): Messenger\BusConfig
+    */
+    public function bus(string $name, array $value = []): \Symfony\Config\Framework\Messenger\BusConfig
     {
         if (!isset($this->buses[$name])) {
             $this->_usedProperties['buses'] = true;
-            $this->buses[$name] = new Messenger\BusConfig($value);
+            $this->buses[$name] = new \Symfony\Config\Framework\Messenger\BusConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "bus()" has already been initialized. You cannot pass values the second time you call bus().');
         }
@@ -181,19 +168,19 @@ class MessengerConfig
 
         if (array_key_exists('routing', $value)) {
             $this->_usedProperties['routing'] = true;
-            $this->routing = array_map(fn ($v) => \is_array($v) ? new Messenger\RoutingConfig($v) : $v, $value['routing']);
+            $this->routing = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Messenger\RoutingConfig($v) : $v, $value['routing']);
             unset($value['routing']);
         }
 
         if (array_key_exists('serializer', $value)) {
             $this->_usedProperties['serializer'] = true;
-            $this->serializer = new Messenger\SerializerConfig($value['serializer']);
+            $this->serializer = new \Symfony\Config\Framework\Messenger\SerializerConfig($value['serializer']);
             unset($value['serializer']);
         }
 
         if (array_key_exists('transports', $value)) {
             $this->_usedProperties['transports'] = true;
-            $this->transports = array_map(fn ($v) => \is_array($v) ? new Messenger\TransportConfig($v) : $v, $value['transports']);
+            $this->transports = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Messenger\TransportConfig($v) : $v, $value['transports']);
             unset($value['transports']);
         }
 
@@ -217,7 +204,7 @@ class MessengerConfig
 
         if (array_key_exists('buses', $value)) {
             $this->_usedProperties['buses'] = true;
-            $this->buses = array_map(fn ($v) => new Messenger\BusConfig($v), $value['buses']);
+            $this->buses = array_map(fn ($v) => new \Symfony\Config\Framework\Messenger\BusConfig($v), $value['buses']);
             unset($value['buses']);
         }
 
@@ -233,13 +220,13 @@ class MessengerConfig
             $output['enabled'] = $this->enabled;
         }
         if (isset($this->_usedProperties['routing'])) {
-            $output['routing'] = array_map(fn ($v) => $v instanceof Messenger\RoutingConfig ? $v->toArray() : $v, $this->routing);
+            $output['routing'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Messenger\RoutingConfig ? $v->toArray() : $v, $this->routing);
         }
         if (isset($this->_usedProperties['serializer'])) {
             $output['serializer'] = $this->serializer->toArray();
         }
         if (isset($this->_usedProperties['transports'])) {
-            $output['transports'] = array_map(fn ($v) => $v instanceof Messenger\TransportConfig ? $v->toArray() : $v, $this->transports);
+            $output['transports'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Messenger\TransportConfig ? $v->toArray() : $v, $this->transports);
         }
         if (isset($this->_usedProperties['failureTransport'])) {
             $output['failure_transport'] = $this->failureTransport;
@@ -256,4 +243,5 @@ class MessengerConfig
 
         return $output;
     }
+
 }

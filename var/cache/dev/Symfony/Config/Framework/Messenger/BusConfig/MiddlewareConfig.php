@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Messenger\BusConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MiddlewareConfig
+class MiddlewareConfig 
 {
     private $id;
     private $arguments;
@@ -16,9 +16,7 @@ class MiddlewareConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -73,4 +71,5 @@ class MiddlewareConfig
 
         return $output;
     }
+
 }

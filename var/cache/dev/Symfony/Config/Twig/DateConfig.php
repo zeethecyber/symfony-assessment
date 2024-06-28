@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Twig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class DateConfig
+class DateConfig 
 {
     private $format;
     private $intervalFormat;
@@ -17,9 +17,7 @@ class DateConfig
 
     /**
      * @default 'F j, Y H:i'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function format($value): static
@@ -32,9 +30,7 @@ class DateConfig
 
     /**
      * @default '%d days'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function intervalFormat($value): static
@@ -46,12 +42,9 @@ class DateConfig
     }
 
     /**
-     * The timezone used when formatting dates, when set to null, the timezone returned by date_default_timezone_get() is used.
-     *
+     * The timezone used when formatting dates, when set to null, the timezone returned by date_default_timezone_get() is used
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function timezone($value): static
@@ -102,4 +95,5 @@ class DateConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ProcessPsr3MessagesConfig
+class ProcessPsr3MessagesConfig 
 {
     private $enabled;
     private $dateFormat;
@@ -17,9 +17,7 @@ class ProcessPsr3MessagesConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -32,9 +30,7 @@ class ProcessPsr3MessagesConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dateFormat($value): static
@@ -47,9 +43,7 @@ class ProcessPsr3MessagesConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function removeUsedContextFields($value): static
@@ -100,4 +94,5 @@ class ProcessPsr3MessagesConfig
 
         return $output;
     }
+
 }

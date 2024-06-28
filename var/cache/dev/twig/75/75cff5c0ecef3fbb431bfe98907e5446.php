@@ -221,6 +221,6 @@ class __TwigTemplate_46bed69a2c7480f83d67aacb70859e81 extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Users/ahmed/Herd/products_api/templates/base.html.twig");
+", "base.html.twig", "/var/www/html/templates/base.html.twig");
     }
 }

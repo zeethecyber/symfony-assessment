@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Orm\EntityManagerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MappingConfig
+class MappingConfig 
 {
     private $mapping;
     private $type;
@@ -20,9 +20,7 @@ class MappingConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function mapping($value): static
@@ -35,9 +33,7 @@ class MappingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -50,9 +46,7 @@ class MappingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dir($value): static
@@ -65,9 +59,7 @@ class MappingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function alias($value): static
@@ -80,9 +72,7 @@ class MappingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function prefix($value): static
@@ -95,9 +85,7 @@ class MappingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function isBundle($value): static
@@ -175,4 +163,5 @@ class MappingConfig
 
         return $output;
     }
+
 }

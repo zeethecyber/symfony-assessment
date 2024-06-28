@@ -18,14 +18,11 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Doctrine\DbalConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\DbalConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\DbalConfig : static)
      */
-    public function dbal(mixed $value = []): Doctrine\DbalConfig|static
+    public function dbal(mixed $value = []): \Symfony\Config\Doctrine\DbalConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['dbal'] = true;
@@ -34,9 +31,9 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
             return $this;
         }
 
-        if (!$this->dbal instanceof Doctrine\DbalConfig) {
+        if (!$this->dbal instanceof \Symfony\Config\Doctrine\DbalConfig) {
             $this->_usedProperties['dbal'] = true;
-            $this->dbal = new Doctrine\DbalConfig($value);
+            $this->dbal = new \Symfony\Config\Doctrine\DbalConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "dbal()" has already been initialized. You cannot pass values the second time you call dbal().');
         }
@@ -46,14 +43,11 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Doctrine\OrmConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\OrmConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\OrmConfig : static)
      */
-    public function orm(mixed $value = []): Doctrine\OrmConfig|static
+    public function orm(mixed $value = []): \Symfony\Config\Doctrine\OrmConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['orm'] = true;
@@ -62,9 +56,9 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
             return $this;
         }
 
-        if (!$this->orm instanceof Doctrine\OrmConfig) {
+        if (!$this->orm instanceof \Symfony\Config\Doctrine\OrmConfig) {
             $this->_usedProperties['orm'] = true;
-            $this->orm = new Doctrine\OrmConfig($value);
+            $this->orm = new \Symfony\Config\Doctrine\OrmConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "orm()" has already been initialized. You cannot pass values the second time you call orm().');
         }
@@ -81,13 +75,13 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     {
         if (array_key_exists('dbal', $value)) {
             $this->_usedProperties['dbal'] = true;
-            $this->dbal = \is_array($value['dbal']) ? new Doctrine\DbalConfig($value['dbal']) : $value['dbal'];
+            $this->dbal = \is_array($value['dbal']) ? new \Symfony\Config\Doctrine\DbalConfig($value['dbal']) : $value['dbal'];
             unset($value['dbal']);
         }
 
         if (array_key_exists('orm', $value)) {
             $this->_usedProperties['orm'] = true;
-            $this->orm = \is_array($value['orm']) ? new Doctrine\OrmConfig($value['orm']) : $value['orm'];
+            $this->orm = \is_array($value['orm']) ? new \Symfony\Config\Doctrine\OrmConfig($value['orm']) : $value['orm'];
             unset($value['orm']);
         }
 
@@ -100,12 +94,13 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     {
         $output = [];
         if (isset($this->_usedProperties['dbal'])) {
-            $output['dbal'] = $this->dbal instanceof Doctrine\DbalConfig ? $this->dbal->toArray() : $this->dbal;
+            $output['dbal'] = $this->dbal instanceof \Symfony\Config\Doctrine\DbalConfig ? $this->dbal->toArray() : $this->dbal;
         }
         if (isset($this->_usedProperties['orm'])) {
-            $output['orm'] = $this->orm instanceof Doctrine\OrmConfig ? $this->orm->toArray() : $this->orm;
+            $output['orm'] = $this->orm instanceof \Symfony\Config\Doctrine\OrmConfig ? $this->orm->toArray() : $this->orm;
         }
 
         return $output;
     }
+
 }

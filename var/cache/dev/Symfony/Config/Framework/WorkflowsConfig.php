@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Workflows'.\DIRECTORY_SEPARATOR.'WorkflowsConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class WorkflowsConfig
+class WorkflowsConfig 
 {
     private $enabled;
     private $workflows;
@@ -18,9 +18,7 @@ class WorkflowsConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -33,14 +31,11 @@ class WorkflowsConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Workflows\WorkflowsConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Workflows\WorkflowsConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Workflows\WorkflowsConfig : static)
      */
-    public function workflows(string $name, mixed $value = []): Workflows\WorkflowsConfig|static
+    public function workflows(string $name, mixed $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['workflows'] = true;
@@ -49,9 +44,9 @@ class WorkflowsConfig
             return $this;
         }
 
-        if (!isset($this->workflows[$name]) || !$this->workflows[$name] instanceof Workflows\WorkflowsConfig) {
+        if (!isset($this->workflows[$name]) || !$this->workflows[$name] instanceof \Symfony\Config\Framework\Workflows\WorkflowsConfig) {
             $this->_usedProperties['workflows'] = true;
-            $this->workflows[$name] = new Workflows\WorkflowsConfig($value);
+            $this->workflows[$name] = new \Symfony\Config\Framework\Workflows\WorkflowsConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "workflows()" has already been initialized. You cannot pass values the second time you call workflows().');
         }
@@ -69,7 +64,7 @@ class WorkflowsConfig
 
         if (array_key_exists('workflows', $value)) {
             $this->_usedProperties['workflows'] = true;
-            $this->workflows = array_map(fn ($v) => \is_array($v) ? new Workflows\WorkflowsConfig($v) : $v, $value['workflows']);
+            $this->workflows = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Workflows\WorkflowsConfig($v) : $v, $value['workflows']);
             unset($value['workflows']);
         }
 
@@ -85,9 +80,10 @@ class WorkflowsConfig
             $output['enabled'] = $this->enabled;
         }
         if (isset($this->_usedProperties['workflows'])) {
-            $output['workflows'] = array_map(fn ($v) => $v instanceof Workflows\WorkflowsConfig ? $v->toArray() : $v, $this->workflows);
+            $output['workflows'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Workflows\WorkflowsConfig ? $v->toArray() : $v, $this->workflows);
         }
 
         return $output;
     }
+
 }

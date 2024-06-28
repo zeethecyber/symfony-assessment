@@ -1,8 +1,15 @@
 <?php
 
 use Twig\Environment;
+use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
@@ -27,147 +34,149 @@ class __TwigTemplate_c1c74ad5415408a29af8cc45b64a5178 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return '@WebProfiler/Profiler/base.html.twig';
+        return "@WebProfiler/Profiler/base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/open.html.twig'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/open.html.twig"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/open.html.twig'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/open.html.twig"));
 
-        $this->parent = $this->loadTemplate('@WebProfiler/Profiler/base.html.twig', '@WebProfiler/Profiler/open.html.twig', 1);
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/base.html.twig", "@WebProfiler/Profiler/open.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
-
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
     }
 
     // line 3
     public function block_head($context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'head'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'head'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
         // line 4
-        yield '    <style>
-        ';
+        yield "    <style>
+        ";
         // line 5
-        yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/profiler.css.twig');
-        yield '
-        ';
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/profiler.css.twig");
+        yield "
+        ";
         // line 6
-        yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/open.css.twig');
-        yield '
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/open.css.twig");
+        yield "
     </style>
-';
-
+";
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     // line 10
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'body'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'body'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 11
-        yield '    <div class="container">
-        ';
+        yield "    <div class=\"container\">
+        ";
         // line 12
-        yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/header.html.twig', [], false);
-        yield '
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/header.html.twig", array(), false);
+        yield "
 
-        ';
+        ";
         // line 14
-        $context['source'] = $this->extensions['Symfony\Bundle\WebProfilerBundle\Profiler\CodeExtension']->fileExcerpt(CoreExtension::getAttribute($this->env, $this->source, isset($context['file_info']) || array_key_exists('file_info', $context) ? $context['file_info'] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 14, $this->source); })(), 'pathname', [], 'any', false, false, false, 14), isset($context['line']) || array_key_exists('line', $context) ? $context['line'] : (function () { throw new RuntimeError('Variable "line" does not exist.', 14, $this->source); })(), -1);
+        $context["source"] = $this->extensions['Symfony\Bundle\WebProfilerBundle\Profiler\CodeExtension']->fileExcerpt(CoreExtension::getAttribute($this->env, $this->source, (isset($context["file_info"]) || array_key_exists("file_info", $context) ? $context["file_info"] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 14, $this->source); })()), "pathname", [], "any", false, false, false, 14), (isset($context["line"]) || array_key_exists("line", $context) ? $context["line"] : (function () { throw new RuntimeError('Variable "line" does not exist.', 14, $this->source); })()),  -1);
         // line 15
-        yield '        <div id="content">
-            <div id="main">
-                <div id="source">
-                    <h1 class="source-file-name">';
+        yield "        <div id=\"content\">
+            <div id=\"main\">
+                <div id=\"source\">
+                    <h1 class=\"source-file-name\">";
         // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['file']) || array_key_exists('file', $context) ? $context['file'] : (function () { throw new RuntimeError('Variable "file" does not exist.', 18, $this->source); })(), 'html', null, true);
-        if (0 < (isset($context['line']) || array_key_exists('line', $context) ? $context['line'] : (function () { throw new RuntimeError('Variable "line" does not exist.', 18, $this->source); })())) {
-            yield ' <small>line ';
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['line']) || array_key_exists('line', $context) ? $context['line'] : (function () { throw new RuntimeError('Variable "line" does not exist.', 18, $this->source); })(), 'html', null, true);
-            yield '</small>';
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["file"]) || array_key_exists("file", $context) ? $context["file"] : (function () { throw new RuntimeError('Variable "file" does not exist.', 18, $this->source); })()), "html", null, true);
+        if ((0 < (isset($context["line"]) || array_key_exists("line", $context) ? $context["line"] : (function () { throw new RuntimeError('Variable "line" does not exist.', 18, $this->source); })()))) {
+            yield " <small>line ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["line"]) || array_key_exists("line", $context) ? $context["line"] : (function () { throw new RuntimeError('Variable "line" does not exist.', 18, $this->source); })()), "html", null, true);
+            yield "</small>";
         }
-        yield '</h1>
+        yield "</h1>
 
-                    <div class="source-content">
-                        ';
+                    <div class=\"source-content\">
+                        ";
         // line 21
-        if (null === (isset($context['source']) || array_key_exists('source', $context) ? $context['source'] : (function () { throw new RuntimeError('Variable "source" does not exist.', 21, $this->source); })())) {
+        if ((null === (isset($context["source"]) || array_key_exists("source", $context) ? $context["source"] : (function () { throw new RuntimeError('Variable "source" does not exist.', 21, $this->source); })()))) {
             // line 22
-            yield '                            <p class="empty empty-panel">The file is not readable.</p>
-                        ';
+            yield "                            <p class=\"empty empty-panel\">The file is not readable.</p>
+                        ";
         } else {
             // line 24
-            yield '                            ';
-            yield isset($context['source']) || array_key_exists('source', $context) ? $context['source'] : (function () { throw new RuntimeError('Variable "source" does not exist.', 24, $this->source); })();
-            yield '
-                        ';
+            yield "                            ";
+            yield (isset($context["source"]) || array_key_exists("source", $context) ? $context["source"] : (function () { throw new RuntimeError('Variable "source" does not exist.', 24, $this->source); })());
+            yield "
+                        ";
         }
         // line 26
-        yield '                    </div>
+        yield "                    </div>
                 </div>
 
-                <div id="sidebar">
-                    <dl class="file-metadata">
+                <div id=\"sidebar\">
+                    <dl class=\"file-metadata\">
                         <dt>Filepath:</dt>
-                        <dd>';
+                        <dd>";
         // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['file_info']) || array_key_exists('file_info', $context) ? $context['file_info'] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 32, $this->source); })(), 'pathname', [], 'any', false, false, false, 32), 'html', null, true);
-        yield '</dd>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["file_info"]) || array_key_exists("file_info", $context) ? $context["file_info"] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 32, $this->source); })()), "pathname", [], "any", false, false, false, 32), "html", null, true);
+        yield "</dd>
 
                         <dt>Last modified:</dt>
-                        <dd>';
+                        <dd>";
         // line 35
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, isset($context['file_info']) || array_key_exists('file_info', $context) ? $context['file_info'] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 35, $this->source); })(), 'mTime', [], 'any', false, false, false, 35)), 'html', null, true);
-        yield '</dd>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["file_info"]) || array_key_exists("file_info", $context) ? $context["file_info"] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 35, $this->source); })()), "mTime", [], "any", false, false, false, 35)), "html", null, true);
+        yield "</dd>
 
                         <dt>Size:</dt>
-                        ';
+                        ";
         // line 38
-        $context['file_size_in_kb'] = (CoreExtension::getAttribute($this->env, $this->source, isset($context['file_info']) || array_key_exists('file_info', $context) ? $context['file_info'] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 38, $this->source); })(), 'size', [], 'any', false, false, false, 38) / 1024);
+        $context["file_size_in_kb"] = (CoreExtension::getAttribute($this->env, $this->source, (isset($context["file_info"]) || array_key_exists("file_info", $context) ? $context["file_info"] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 38, $this->source); })()), "size", [], "any", false, false, false, 38) / 1024);
         // line 39
-        yield '                        ';
-        $context['file_num_lines'] = (CoreExtension::length($this->env->getCharset(), CoreExtension::split($this->env->getCharset(), isset($context['source']) || array_key_exists('source', $context) ? $context['source'] : (function () { throw new RuntimeError('Variable "source" does not exist.', 39, $this->source); })(), '
-')) - 1);
+        yield "                        ";
+        $context["file_num_lines"] = (Twig\Extension\CoreExtension::length($this->env->getCharset(), Twig\Extension\CoreExtension::split($this->env->getCharset(), (isset($context["source"]) || array_key_exists("source", $context) ? $context["source"] : (function () { throw new RuntimeError('Variable "source" does not exist.', 39, $this->source); })()), "
+")) - 1);
         // line 40
-        yield '                        <dd>
-                            ';
+        yield "                        <dd>
+                            ";
         // line 41
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context['file_size_in_kb']) || array_key_exists('file_size_in_kb', $context) ? $context['file_size_in_kb'] : (function () { throw new RuntimeError('Variable "file_size_in_kb" does not exist.', 41, $this->source); })()) < 1) ? (CoreExtension::getAttribute($this->env, $this->source, isset($context['file_info']) || array_key_exists('file_info', $context) ? $context['file_info'] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 41, $this->source); })(), 'size', [], 'any', false, false, false, 41).' bytes') : ($this->extensions['Twig\Extension\CoreExtension']->formatNumber(isset($context['file_size_in_kb']) || array_key_exists('file_size_in_kb', $context) ? $context['file_size_in_kb'] : (function () { throw new RuntimeError('Variable "file_size_in_kb" does not exist.', 41, $this->source); })(), 0).' KB'), 'html', null, true);
-        yield '
-                            / ';
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((((isset($context["file_size_in_kb"]) || array_key_exists("file_size_in_kb", $context) ? $context["file_size_in_kb"] : (function () { throw new RuntimeError('Variable "file_size_in_kb" does not exist.', 41, $this->source); })()) < 1)) ? ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["file_info"]) || array_key_exists("file_info", $context) ? $context["file_info"] : (function () { throw new RuntimeError('Variable "file_info" does not exist.', 41, $this->source); })()), "size", [], "any", false, false, false, 41) . " bytes")) : (($this->extensions['Twig\Extension\CoreExtension']->formatNumber((isset($context["file_size_in_kb"]) || array_key_exists("file_size_in_kb", $context) ? $context["file_size_in_kb"] : (function () { throw new RuntimeError('Variable "file_size_in_kb" does not exist.', 41, $this->source); })()), 0) . " KB"))), "html", null, true);
+        yield "
+                            / ";
         // line 42
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['file_num_lines']) || array_key_exists('file_num_lines', $context) ? $context['file_num_lines'] : (function () { throw new RuntimeError('Variable "file_num_lines" does not exist.', 42, $this->source); })(), 'html', null, true);
-        yield ' lines
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["file_num_lines"]) || array_key_exists("file_num_lines", $context) ? $context["file_num_lines"] : (function () { throw new RuntimeError('Variable "file_num_lines" does not exist.', 42, $this->source); })()), "html", null, true);
+        yield " lines
                         </dd>
                     </dl>
 
-                    <a class="doc-link" href="https://symfony.com/doc/';
+                    <a class=\"doc-link\" href=\"https://symfony.com/doc/";
         // line 46
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION'), 'html', null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::constant("Symfony\\Component\\HttpKernel\\Kernel::VERSION"), "html", null, true);
         yield "/reference/configuration/framework.html#ide\" rel=\"help\">Open this file in your IDE?</a>
                 </div>
             </div>
@@ -187,13 +196,13 @@ class __TwigTemplate_c1c74ad5415408a29af8cc45b64a5178 extends Template
         });
     </script>
 ";
-
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     /**
@@ -201,7 +210,7 @@ class __TwigTemplate_c1c74ad5415408a29af8cc45b64a5178 extends Template
      */
     public function getTemplateName()
     {
-        return '@WebProfiler/Profiler/open.html.twig';
+        return "@WebProfiler/Profiler/open.html.twig";
     }
 
     /**
@@ -217,7 +226,7 @@ class __TwigTemplate_c1c74ad5415408a29af8cc45b64a5178 extends Template
      */
     public function getDebugInfo()
     {
-        return [179 => 46,  172 => 42,  168 => 41,  165 => 40,  161 => 39,  159 => 38,  153 => 35,  147 => 32,  139 => 26,  133 => 24,  129 => 22,  127 => 21,  116 => 18,  111 => 15,  109 => 14,  104 => 12,  101 => 11,  91 => 10,  77 => 6,  73 => 5,  70 => 4,  60 => 3,  37 => 1];
+        return array (  179 => 46,  172 => 42,  168 => 41,  165 => 40,  161 => 39,  159 => 38,  153 => 35,  147 => 32,  139 => 26,  133 => 24,  129 => 22,  127 => 21,  116 => 18,  111 => 15,  109 => 14,  104 => 12,  101 => 11,  91 => 10,  77 => 6,  73 => 5,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -286,6 +295,6 @@ class __TwigTemplate_c1c74ad5415408a29af8cc45b64a5178 extends Template
         });
     </script>
 {% endblock %}
-", '@WebProfiler/Profiler/open.html.twig', '/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig');
+", "@WebProfiler/Profiler/open.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

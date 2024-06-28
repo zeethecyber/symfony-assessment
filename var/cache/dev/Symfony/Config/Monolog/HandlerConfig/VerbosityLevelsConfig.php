@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class VerbosityLevelsConfig
+class VerbosityLevelsConfig 
 {
     private $vERBOSITYQUIET;
     private $vERBOSITYNORMAL;
@@ -19,9 +19,7 @@ class VerbosityLevelsConfig
 
     /**
      * @default 'ERROR'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vERBOSITYQUIET($value): static
@@ -34,9 +32,7 @@ class VerbosityLevelsConfig
 
     /**
      * @default 'WARNING'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vERBOSITYNORMAL($value): static
@@ -49,9 +45,7 @@ class VerbosityLevelsConfig
 
     /**
      * @default 'NOTICE'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vERBOSITYVERBOSE($value): static
@@ -64,9 +58,7 @@ class VerbosityLevelsConfig
 
     /**
      * @default 'INFO'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vERBOSITYVERYVERBOSE($value): static
@@ -79,9 +71,7 @@ class VerbosityLevelsConfig
 
     /**
      * @default 'DEBUG'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vERBOSITYDEBUG($value): static
@@ -150,4 +140,5 @@ class VerbosityLevelsConfig
 
         return $output;
     }
+
 }

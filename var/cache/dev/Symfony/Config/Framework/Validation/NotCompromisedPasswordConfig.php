@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Validation;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class NotCompromisedPasswordConfig
+class NotCompromisedPasswordConfig 
 {
     private $enabled;
     private $endpoint;
@@ -16,11 +16,8 @@ class NotCompromisedPasswordConfig
 
     /**
      * When disabled, compromised passwords will be accepted as valid.
-     *
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -33,11 +30,8 @@ class NotCompromisedPasswordConfig
 
     /**
      * API endpoint for the NotCompromisedPassword Validator.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function endpoint($value): static
@@ -79,4 +73,5 @@ class NotCompromisedPasswordConfig
 
         return $output;
     }
+
 }

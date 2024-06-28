@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Notifier'.\DIRECTORY_SEPARATOR.'AdminRecipientConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class NotifierConfig
+class NotifierConfig 
 {
     private $enabled;
     private $messageBus;
@@ -22,10 +22,8 @@ class NotifierConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -38,11 +36,8 @@ class NotifierConfig
 
     /**
      * The message bus to use. Defaults to the default bus if the Messenger component is installed.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function messageBus($value): static
@@ -77,9 +72,7 @@ class NotifierConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function notificationOnFailedMessages($value): static
@@ -101,11 +94,11 @@ class NotifierConfig
         return $this;
     }
 
-    public function adminRecipient(array $value = []): Notifier\AdminRecipientConfig
+    public function adminRecipient(array $value = []): \Symfony\Config\Framework\Notifier\AdminRecipientConfig
     {
         $this->_usedProperties['adminRecipients'] = true;
 
-        return $this->adminRecipients[] = new Notifier\AdminRecipientConfig($value);
+        return $this->adminRecipients[] = new \Symfony\Config\Framework\Notifier\AdminRecipientConfig($value);
     }
 
     public function __construct(array $value = [])
@@ -148,7 +141,7 @@ class NotifierConfig
 
         if (array_key_exists('admin_recipients', $value)) {
             $this->_usedProperties['adminRecipients'] = true;
-            $this->adminRecipients = array_map(fn ($v) => new Notifier\AdminRecipientConfig($v), $value['admin_recipients']);
+            $this->adminRecipients = array_map(fn ($v) => new \Symfony\Config\Framework\Notifier\AdminRecipientConfig($v), $value['admin_recipients']);
             unset($value['admin_recipients']);
         }
 
@@ -184,4 +177,5 @@ class NotifierConfig
 
         return $output;
     }
+
 }

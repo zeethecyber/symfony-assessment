@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class LoginThrottlingConfig
+class LoginThrottlingConfig 
 {
     private $limiter;
     private $maxAttempts;
@@ -18,11 +18,8 @@ class LoginThrottlingConfig
 
     /**
      * A service id implementing "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface".
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function limiter($value): static
@@ -35,9 +32,7 @@ class LoginThrottlingConfig
 
     /**
      * @default 5
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxAttempts($value): static
@@ -50,9 +45,7 @@ class LoginThrottlingConfig
 
     /**
      * @default '1 minute'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function interval($value): static
@@ -64,12 +57,9 @@ class LoginThrottlingConfig
     }
 
     /**
-     * The service ID of the lock factory used by the login rate limiter (or null to disable locking).
-     *
+     * The service ID of the lock factory used by the login rate limiter (or null to disable locking)
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function lockFactory($value): static
@@ -129,4 +119,5 @@ class LoginThrottlingConfig
 
         return $output;
     }
+
 }

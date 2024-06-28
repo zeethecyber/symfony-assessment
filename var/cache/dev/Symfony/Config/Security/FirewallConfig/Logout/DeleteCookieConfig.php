@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig\Logout;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class DeleteCookieConfig
+class DeleteCookieConfig 
 {
     private $path;
     private $domain;
@@ -19,9 +19,7 @@ class DeleteCookieConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -34,9 +32,7 @@ class DeleteCookieConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function domain($value): static
@@ -49,9 +45,7 @@ class DeleteCookieConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function secure($value): static
@@ -64,9 +58,7 @@ class DeleteCookieConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function samesite($value): static
@@ -79,9 +71,7 @@ class DeleteCookieConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function partitioned($value): static
@@ -150,4 +140,5 @@ class DeleteCookieConfig
 
         return $output;
     }
+
 }

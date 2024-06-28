@@ -4,13 +4,13 @@ namespace Symfony\Config\Security\FirewallConfig;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Logout'.\DIRECTORY_SEPARATOR.'DeleteCookieConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class LogoutConfig
+class LogoutConfig 
 {
     private $enableCsrf;
     private $csrfTokenId;
@@ -25,9 +25,7 @@ class LogoutConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableCsrf($value): static
@@ -40,9 +38,7 @@ class LogoutConfig
 
     /**
      * @default 'logout'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfTokenId($value): static
@@ -55,9 +51,7 @@ class LogoutConfig
 
     /**
      * @default '_csrf_token'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfParameter($value): static
@@ -70,9 +64,7 @@ class LogoutConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfTokenManager($value): static
@@ -85,9 +77,7 @@ class LogoutConfig
 
     /**
      * @default '/logout'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -100,9 +90,7 @@ class LogoutConfig
 
     /**
      * @default '/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function target($value): static
@@ -115,9 +103,7 @@ class LogoutConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function invalidateSession($value): static
@@ -143,14 +129,11 @@ class LogoutConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Logout\DeleteCookieConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig : static)
      */
-    public function deleteCookie(string $name, array $value = []): Logout\DeleteCookieConfig|static
+    public function deleteCookie(string $name, array $value = []): \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['deleteCookies'] = true;
@@ -159,9 +142,9 @@ class LogoutConfig
             return $this;
         }
 
-        if (!isset($this->deleteCookies[$name]) || !$this->deleteCookies[$name] instanceof Logout\DeleteCookieConfig) {
+        if (!isset($this->deleteCookies[$name]) || !$this->deleteCookies[$name] instanceof \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig) {
             $this->_usedProperties['deleteCookies'] = true;
-            $this->deleteCookies[$name] = new Logout\DeleteCookieConfig($value);
+            $this->deleteCookies[$name] = new \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "deleteCookie()" has already been initialized. You cannot pass values the second time you call deleteCookie().');
         }
@@ -221,7 +204,7 @@ class LogoutConfig
 
         if (array_key_exists('delete_cookies', $value)) {
             $this->_usedProperties['deleteCookies'] = true;
-            $this->deleteCookies = array_map(fn ($v) => \is_array($v) ? new Logout\DeleteCookieConfig($v) : $v, $value['delete_cookies']);
+            $this->deleteCookies = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig($v) : $v, $value['delete_cookies']);
             unset($value['delete_cookies']);
         }
 
@@ -258,9 +241,10 @@ class LogoutConfig
             $output['clear_site_data'] = $this->clearSiteData;
         }
         if (isset($this->_usedProperties['deleteCookies'])) {
-            $output['delete_cookies'] = array_map(fn ($v) => $v instanceof Logout\DeleteCookieConfig ? $v->toArray() : $v, $this->deleteCookies);
+            $output['delete_cookies'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Security\FirewallConfig\Logout\DeleteCookieConfig ? $v->toArray() : $v, $this->deleteCookies);
         }
 
         return $output;
     }
+
 }

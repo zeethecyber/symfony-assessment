@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class JsonLoginConfig
+class JsonLoginConfig 
 {
     private $provider;
     private $rememberMe;
@@ -23,9 +23,7 @@ class JsonLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -38,9 +36,7 @@ class JsonLoginConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function rememberMe($value): static
@@ -53,9 +49,7 @@ class JsonLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -68,9 +62,7 @@ class JsonLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -83,9 +75,7 @@ class JsonLoginConfig
 
     /**
      * @default '/login_check'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkPath($value): static
@@ -98,9 +88,7 @@ class JsonLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useForward($value): static
@@ -113,9 +101,7 @@ class JsonLoginConfig
 
     /**
      * @default '/login'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function loginPath($value): static
@@ -128,9 +114,7 @@ class JsonLoginConfig
 
     /**
      * @default 'username'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function usernamePath($value): static
@@ -143,9 +127,7 @@ class JsonLoginConfig
 
     /**
      * @default 'password'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passwordPath($value): static
@@ -250,4 +232,5 @@ class JsonLoginConfig
 
         return $output;
     }
+
 }

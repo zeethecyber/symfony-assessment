@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Orm;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ControllerResolverConfig
+class ControllerResolverConfig 
 {
     private $enabled;
     private $autoMapping;
@@ -17,9 +17,7 @@ class ControllerResolverConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -31,12 +29,9 @@ class ControllerResolverConfig
     }
 
     /**
-     * Set to false to disable using route placeholders as lookup criteria when the primary key doesn't match the argument name.
-     *
+     * Set to false to disable using route placeholders as lookup criteria when the primary key doesn't match the argument name
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function autoMapping($value): static
@@ -48,12 +43,9 @@ class ControllerResolverConfig
     }
 
     /**
-     * Set to true to fetch the entity from the database instead of using the cache, if any.
-     *
+     * Set to true to fetch the entity from the database instead of using the cache, if any
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function evictCache($value): static
@@ -104,4 +96,5 @@ class ControllerResolverConfig
 
         return $output;
     }
+
 }

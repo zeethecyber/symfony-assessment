@@ -2,8 +2,8 @@
 
 namespace Symfony\Config;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -29,9 +29,7 @@ class StimulusConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @default '%kernel.project_dir%/assets/controllers.json'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function controllersJson($value): static
@@ -78,4 +76,5 @@ class StimulusConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
         return $output;
     }
+
 }

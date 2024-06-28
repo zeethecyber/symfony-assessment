@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Cache;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PoolConfig
+class PoolConfig 
 {
     private $adapters;
     private $tags;
@@ -34,9 +34,7 @@ class PoolConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function tags($value): static
@@ -49,9 +47,7 @@ class PoolConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function public($value): static
@@ -63,14 +59,10 @@ class PoolConfig
     }
 
     /**
-     * Default lifetime of the pool.
-     *
+     * Default lifetime of the pool
      * @example "300" for 5 minutes expressed in seconds, "PT5M" for five minutes expressed as ISO 8601 time interval, or "5 minutes" as a date expression
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultLifetime($value): static
@@ -83,11 +75,8 @@ class PoolConfig
 
     /**
      * Overwrite the setting from the default provider for this adapter.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -100,11 +89,8 @@ class PoolConfig
 
     /**
      * @example "messenger.default_bus" to send early expiration events to the default Messenger bus.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function earlyExpirationMessageBus($value): static
@@ -117,9 +103,7 @@ class PoolConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function clearer($value): static
@@ -206,4 +190,5 @@ class PoolConfig
 
         return $output;
     }
+
 }

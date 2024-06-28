@@ -2,24 +2,21 @@
 
 namespace Symfony\Config\Twig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MailerConfig
+class MailerConfig 
 {
     private $htmlToTextConverter;
     private $_usedProperties = [];
 
     /**
-     * A service implementing the "Symfony\Component\Mime\HtmlToTextConverter\HtmlToTextConverterInterface".
-     *
+     * A service implementing the "Symfony\Component\Mime\HtmlToTextConverter\HtmlToTextConverterInterface"
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function htmlToTextConverter($value): static
@@ -52,4 +49,5 @@ class MailerConfig
 
         return $output;
     }
+
 }

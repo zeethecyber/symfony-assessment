@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Twig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class NumberFormatConfig
+class NumberFormatConfig 
 {
     private $decimals;
     private $decimalPoint;
@@ -17,9 +17,7 @@ class NumberFormatConfig
 
     /**
      * @default 0
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function decimals($value): static
@@ -32,9 +30,7 @@ class NumberFormatConfig
 
     /**
      * @default '.'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function decimalPoint($value): static
@@ -47,9 +43,7 @@ class NumberFormatConfig
 
     /**
      * @default ','
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function thousandsSeparator($value): static
@@ -100,4 +94,5 @@ class NumberFormatConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SecretsConfig
+class SecretsConfig 
 {
     private $enabled;
     private $vaultDirectory;
@@ -18,9 +18,7 @@ class SecretsConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -33,9 +31,7 @@ class SecretsConfig
 
     /**
      * @default '%kernel.project_dir%/config/secrets/%kernel.runtime_environment%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vaultDirectory($value): static
@@ -48,9 +44,7 @@ class SecretsConfig
 
     /**
      * @default '%kernel.project_dir%/.env.%kernel.environment%.local'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function localDotenvFile($value): static
@@ -63,9 +57,7 @@ class SecretsConfig
 
     /**
      * @default 'base64:default::SYMFONY_DECRYPTION_SECRET'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function decryptionEnvVar($value): static
@@ -125,4 +117,5 @@ class SecretsConfig
 
         return $output;
     }
+
 }

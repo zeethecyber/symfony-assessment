@@ -2,22 +2,20 @@
 
 namespace Symfony\Config\TwigExtra;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class StringConfig
+class StringConfig 
 {
     private $enabled;
     private $_usedProperties = [];
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -50,4 +48,5 @@ class StringConfig
 
         return $output;
     }
+
 }

@@ -5,13 +5,13 @@ namespace Symfony\Config\Framework;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Mailer'.\DIRECTORY_SEPARATOR.'EnvelopeConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Mailer'.\DIRECTORY_SEPARATOR.'HeaderConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MailerConfig
+class MailerConfig 
 {
     private $enabled;
     private $messageBus;
@@ -22,10 +22,8 @@ class MailerConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -38,11 +36,8 @@ class MailerConfig
 
     /**
      * The message bus to use. Defaults to the default bus if the Messenger component is installed.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function messageBus($value): static
@@ -55,9 +50,7 @@ class MailerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dsn($value): static
@@ -80,13 +73,13 @@ class MailerConfig
     }
 
     /**
-     * Mailer Envelope configuration.
-     */
-    public function envelope(array $value = []): Mailer\EnvelopeConfig
+     * Mailer Envelope configuration
+    */
+    public function envelope(array $value = []): \Symfony\Config\Framework\Mailer\EnvelopeConfig
     {
         if (null === $this->envelope) {
             $this->_usedProperties['envelope'] = true;
-            $this->envelope = new Mailer\EnvelopeConfig($value);
+            $this->envelope = new \Symfony\Config\Framework\Mailer\EnvelopeConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "envelope()" has already been initialized. You cannot pass values the second time you call envelope().');
         }
@@ -96,14 +89,11 @@ class MailerConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Mailer\HeaderConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Mailer\HeaderConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Mailer\HeaderConfig : static)
      */
-    public function header(string $name, mixed $value = []): Mailer\HeaderConfig|static
+    public function header(string $name, mixed $value = []): \Symfony\Config\Framework\Mailer\HeaderConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['headers'] = true;
@@ -112,9 +102,9 @@ class MailerConfig
             return $this;
         }
 
-        if (!isset($this->headers[$name]) || !$this->headers[$name] instanceof Mailer\HeaderConfig) {
+        if (!isset($this->headers[$name]) || !$this->headers[$name] instanceof \Symfony\Config\Framework\Mailer\HeaderConfig) {
             $this->_usedProperties['headers'] = true;
-            $this->headers[$name] = new Mailer\HeaderConfig($value);
+            $this->headers[$name] = new \Symfony\Config\Framework\Mailer\HeaderConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "header()" has already been initialized. You cannot pass values the second time you call header().');
         }
@@ -150,13 +140,13 @@ class MailerConfig
 
         if (array_key_exists('envelope', $value)) {
             $this->_usedProperties['envelope'] = true;
-            $this->envelope = new Mailer\EnvelopeConfig($value['envelope']);
+            $this->envelope = new \Symfony\Config\Framework\Mailer\EnvelopeConfig($value['envelope']);
             unset($value['envelope']);
         }
 
         if (array_key_exists('headers', $value)) {
             $this->_usedProperties['headers'] = true;
-            $this->headers = array_map(fn ($v) => \is_array($v) ? new Mailer\HeaderConfig($v) : $v, $value['headers']);
+            $this->headers = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Mailer\HeaderConfig($v) : $v, $value['headers']);
             unset($value['headers']);
         }
 
@@ -184,9 +174,10 @@ class MailerConfig
             $output['envelope'] = $this->envelope->toArray();
         }
         if (isset($this->_usedProperties['headers'])) {
-            $output['headers'] = array_map(fn ($v) => $v instanceof Mailer\HeaderConfig ? $v->toArray() : $v, $this->headers);
+            $output['headers'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Mailer\HeaderConfig ? $v->toArray() : $v, $this->headers);
         }
 
         return $output;
     }
+
 }

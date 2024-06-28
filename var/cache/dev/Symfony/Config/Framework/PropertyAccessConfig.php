@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PropertyAccessConfig
+class PropertyAccessConfig 
 {
     private $enabled;
     private $magicCall;
@@ -19,10 +19,8 @@ class PropertyAccessConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -35,9 +33,7 @@ class PropertyAccessConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function magicCall($value): static
@@ -50,9 +46,7 @@ class PropertyAccessConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function magicGet($value): static
@@ -65,9 +59,7 @@ class PropertyAccessConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function magicSet($value): static
@@ -80,9 +72,7 @@ class PropertyAccessConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function throwExceptionOnInvalidIndex($value): static
@@ -95,9 +85,7 @@ class PropertyAccessConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function throwExceptionOnInvalidPropertyPath($value): static
@@ -175,4 +163,5 @@ class PropertyAccessConfig
 
         return $output;
     }
+
 }

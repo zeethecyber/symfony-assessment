@@ -18,12 +18,12 @@ class TurboConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
 
     /**
      * @default {"enabled":true,"entity_template_prefixes":{"App\\Entity\\":"broadcast\/"},"doctrine_orm":{"enabled":true}}
-     */
-    public function broadcast(array $value = []): Turbo\BroadcastConfig
+    */
+    public function broadcast(array $value = []): \Symfony\Config\Turbo\BroadcastConfig
     {
         if (null === $this->broadcast) {
             $this->_usedProperties['broadcast'] = true;
-            $this->broadcast = new Turbo\BroadcastConfig($value);
+            $this->broadcast = new \Symfony\Config\Turbo\BroadcastConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "broadcast()" has already been initialized. You cannot pass values the second time you call broadcast().');
         }
@@ -33,9 +33,7 @@ class TurboConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
 
     /**
      * @default 'default'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultTransport($value): static
@@ -55,7 +53,7 @@ class TurboConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
     {
         if (array_key_exists('broadcast', $value)) {
             $this->_usedProperties['broadcast'] = true;
-            $this->broadcast = new Turbo\BroadcastConfig($value['broadcast']);
+            $this->broadcast = new \Symfony\Config\Turbo\BroadcastConfig($value['broadcast']);
             unset($value['broadcast']);
         }
 
@@ -82,4 +80,5 @@ class TurboConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
 
         return $output;
     }
+
 }

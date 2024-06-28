@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Webhook;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RoutingConfig
+class RoutingConfig 
 {
     private $service;
     private $secret;
@@ -16,9 +16,7 @@ class RoutingConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -31,7 +29,6 @@ class RoutingConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function secret($value): static
@@ -73,4 +70,5 @@ class RoutingConfig
 
         return $output;
     }
+
 }

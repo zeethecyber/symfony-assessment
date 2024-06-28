@@ -9,16 +9,16 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MemoryConfig
+class MemoryConfig 
 {
     private $users;
     private $_usedProperties = [];
 
-    public function user(string $identifier, array $value = []): Memory\UserConfig
+    public function user(string $identifier, array $value = []): \Symfony\Config\Security\ProviderConfig\Memory\UserConfig
     {
         if (!isset($this->users[$identifier])) {
             $this->_usedProperties['users'] = true;
-            $this->users[$identifier] = new Memory\UserConfig($value);
+            $this->users[$identifier] = new \Symfony\Config\Security\ProviderConfig\Memory\UserConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "user()" has already been initialized. You cannot pass values the second time you call user().');
         }
@@ -30,7 +30,7 @@ class MemoryConfig
     {
         if (array_key_exists('users', $value)) {
             $this->_usedProperties['users'] = true;
-            $this->users = array_map(fn ($v) => new Memory\UserConfig($v), $value['users']);
+            $this->users = array_map(fn ($v) => new \Symfony\Config\Security\ProviderConfig\Memory\UserConfig($v), $value['users']);
             unset($value['users']);
         }
 
@@ -48,4 +48,5 @@ class MemoryConfig
 
         return $output;
     }
+
 }

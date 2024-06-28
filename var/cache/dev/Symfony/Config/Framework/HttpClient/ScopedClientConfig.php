@@ -5,13 +5,13 @@ namespace Symfony\Config\Framework\HttpClient;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ScopedClientConfig'.\DIRECTORY_SEPARATOR.'PeerFingerprintConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ScopedClientConfig'.\DIRECTORY_SEPARATOR.'RetryFailedConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ScopedClientConfig
+class ScopedClientConfig 
 {
     private $scope;
     private $baseUri;
@@ -44,11 +44,8 @@ class ScopedClientConfig
 
     /**
      * The regular expression that the request URL must match before adding the other options. When none is provided, the base URI is used instead.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function scope($value): static
@@ -61,11 +58,8 @@ class ScopedClientConfig
 
     /**
      * The URI to resolve relative URLs, following rules in RFC 3985, section 2.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function baseUri($value): static
@@ -78,11 +72,8 @@ class ScopedClientConfig
 
     /**
      * An HTTP Basic authentication "username:password".
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function authBasic($value): static
@@ -95,11 +86,8 @@ class ScopedClientConfig
 
     /**
      * A token enabling HTTP Bearer authorization.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function authBearer($value): static
@@ -112,11 +100,8 @@ class ScopedClientConfig
 
     /**
      * A "username:password" pair to use Microsoft NTLM authentication (requires the cURL extension).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function authNtlm($value): static
@@ -151,11 +136,8 @@ class ScopedClientConfig
 
     /**
      * The maximum number of redirects to follow.
-     *
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxRedirects($value): static
@@ -168,11 +150,8 @@ class ScopedClientConfig
 
     /**
      * The default HTTP version, typically 1.1 or 2.0, leave to null for the best version.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function httpVersion($value): static
@@ -196,11 +175,8 @@ class ScopedClientConfig
 
     /**
      * The URL of the proxy to pass requests through or null for automatic detection.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function proxy($value): static
@@ -213,11 +189,8 @@ class ScopedClientConfig
 
     /**
      * A comma separated list of hosts that do not require a proxy to be reached.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function noProxy($value): static
@@ -230,11 +203,8 @@ class ScopedClientConfig
 
     /**
      * The idle timeout, defaults to the "default_socket_timeout" ini parameter.
-     *
      * @default null
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function timeout($value): static
@@ -247,11 +217,8 @@ class ScopedClientConfig
 
     /**
      * The maximum execution time for the request+response as a whole.
-     *
      * @default null
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function maxDuration($value): static
@@ -264,11 +231,8 @@ class ScopedClientConfig
 
     /**
      * A network interface name, IP address, a host name or a UNIX socket to bind to.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function bindto($value): static
@@ -281,11 +245,8 @@ class ScopedClientConfig
 
     /**
      * Indicates if the peer should be verified in a TLS context.
-     *
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function verifyPeer($value): static
@@ -298,11 +259,8 @@ class ScopedClientConfig
 
     /**
      * Indicates if the host should exist as a certificate common name.
-     *
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function verifyHost($value): static
@@ -315,11 +273,8 @@ class ScopedClientConfig
 
     /**
      * A certificate authority file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cafile($value): static
@@ -332,11 +287,8 @@ class ScopedClientConfig
 
     /**
      * A directory that contains multiple certificate authority files.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function capath($value): static
@@ -349,11 +301,8 @@ class ScopedClientConfig
 
     /**
      * A PEM formatted certificate file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function localCert($value): static
@@ -366,11 +315,8 @@ class ScopedClientConfig
 
     /**
      * A private key file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function localPk($value): static
@@ -383,11 +329,8 @@ class ScopedClientConfig
 
     /**
      * The passphrase used to encrypt the "local_pk" file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passphrase($value): static
@@ -399,12 +342,9 @@ class ScopedClientConfig
     }
 
     /**
-     * A list of TLS ciphers separated by colons, commas or spaces (e.g. "RC3-SHA:TLS13-AES-128-GCM-SHA256"...).
-     *
+     * A list of TLS ciphers separated by colons, commas or spaces (e.g. "RC3-SHA:TLS13-AES-128-GCM-SHA256"...)
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function ciphers($value): static
@@ -417,12 +357,12 @@ class ScopedClientConfig
 
     /**
      * Associative array: hashing algorithm => hash(es).
-     */
-    public function peerFingerprint(array $value = []): ScopedClientConfig\PeerFingerprintConfig
+    */
+    public function peerFingerprint(array $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig
     {
         if (null === $this->peerFingerprint) {
             $this->_usedProperties['peerFingerprint'] = true;
-            $this->peerFingerprint = new ScopedClientConfig\PeerFingerprintConfig($value);
+            $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "peerFingerprint()" has already been initialized. You cannot pass values the second time you call peerFingerprint().');
         }
@@ -444,12 +384,9 @@ class ScopedClientConfig
     }
 
     /**
-     * Rate limiter name to use for throttling requests.
-     *
+     * Rate limiter name to use for throttling requests
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function rateLimiter($value): static
@@ -462,16 +399,12 @@ class ScopedClientConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false,"retry_strategy":null,"http_codes":[],"max_retries":3,"delay":1000,"multiplier":2,"max_delay":0,"jitter":0.1}
-     *
-     * @return ScopedClientConfig\RetryFailedConfig|$this
-     *
+     * @return \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig : static)
      */
-    public function retryFailed(mixed $value = []): ScopedClientConfig\RetryFailedConfig|static
+    public function retryFailed(mixed $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['retryFailed'] = true;
@@ -480,9 +413,9 @@ class ScopedClientConfig
             return $this;
         }
 
-        if (!$this->retryFailed instanceof ScopedClientConfig\RetryFailedConfig) {
+        if (!$this->retryFailed instanceof \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig) {
             $this->_usedProperties['retryFailed'] = true;
-            $this->retryFailed = new ScopedClientConfig\RetryFailedConfig($value);
+            $this->retryFailed = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "retryFailed()" has already been initialized. You cannot pass values the second time you call retryFailed().');
         }
@@ -632,7 +565,7 @@ class ScopedClientConfig
 
         if (array_key_exists('peer_fingerprint', $value)) {
             $this->_usedProperties['peerFingerprint'] = true;
-            $this->peerFingerprint = new ScopedClientConfig\PeerFingerprintConfig($value['peer_fingerprint']);
+            $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig($value['peer_fingerprint']);
             unset($value['peer_fingerprint']);
         }
 
@@ -650,7 +583,7 @@ class ScopedClientConfig
 
         if (array_key_exists('retry_failed', $value)) {
             $this->_usedProperties['retryFailed'] = true;
-            $this->retryFailed = \is_array($value['retry_failed']) ? new ScopedClientConfig\RetryFailedConfig($value['retry_failed']) : $value['retry_failed'];
+            $this->retryFailed = \is_array($value['retry_failed']) ? new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig($value['retry_failed']) : $value['retry_failed'];
             unset($value['retry_failed']);
         }
 
@@ -741,9 +674,10 @@ class ScopedClientConfig
             $output['rate_limiter'] = $this->rateLimiter;
         }
         if (isset($this->_usedProperties['retryFailed'])) {
-            $output['retry_failed'] = $this->retryFailed instanceof ScopedClientConfig\RetryFailedConfig ? $this->retryFailed->toArray() : $this->retryFailed;
+            $output['retry_failed'] = $this->retryFailed instanceof \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig ? $this->retryFailed->toArray() : $this->retryFailed;
         }
 
         return $output;
     }
+
 }

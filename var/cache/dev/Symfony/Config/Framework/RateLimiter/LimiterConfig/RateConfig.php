@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\RateLimiter\LimiterConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RateConfig
+class RateConfig 
 {
     private $interval;
     private $amount;
@@ -16,11 +16,8 @@ class RateConfig
 
     /**
      * Configures the rate interval. The value must be a number followed by "second", "minute", "hour", "day", "week" or "month" (or their plural equivalent).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function interval($value): static
@@ -32,12 +29,9 @@ class RateConfig
     }
 
     /**
-     * Amount of tokens to add each interval.
-     *
+     * Amount of tokens to add each interval
      * @default 1
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function amount($value): static
@@ -79,4 +73,5 @@ class RateConfig
 
         return $output;
     }
+
 }

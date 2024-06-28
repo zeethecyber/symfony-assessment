@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework\Messenger;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'TransportConfig'.\DIRECTORY_SEPARATOR.'RetryStrategyConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TransportConfig
+class TransportConfig 
 {
     private $dsn;
     private $serializer;
@@ -22,9 +22,7 @@ class TransportConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dsn($value): static
@@ -37,11 +35,8 @@ class TransportConfig
 
     /**
      * Service id of a custom serializer to use.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function serializer($value): static
@@ -67,11 +62,8 @@ class TransportConfig
 
     /**
      * Transport name to send failed messages to (after all retries have failed).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureTransport($value): static
@@ -84,16 +76,12 @@ class TransportConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"service":null,"max_retries":3,"delay":1000,"multiplier":2,"max_delay":0,"jitter":0.1}
-     *
-     * @return TransportConfig\RetryStrategyConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig : static)
      */
-    public function retryStrategy(mixed $value = []): TransportConfig\RetryStrategyConfig|static
+    public function retryStrategy(mixed $value = []): \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['retryStrategy'] = true;
@@ -102,9 +90,9 @@ class TransportConfig
             return $this;
         }
 
-        if (!$this->retryStrategy instanceof TransportConfig\RetryStrategyConfig) {
+        if (!$this->retryStrategy instanceof \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig) {
             $this->_usedProperties['retryStrategy'] = true;
-            $this->retryStrategy = new TransportConfig\RetryStrategyConfig($value);
+            $this->retryStrategy = new \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "retryStrategy()" has already been initialized. You cannot pass values the second time you call retryStrategy().');
         }
@@ -113,12 +101,9 @@ class TransportConfig
     }
 
     /**
-     * Rate limiter name to use when processing messages.
-     *
+     * Rate limiter name to use when processing messages
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function rateLimiter($value): static
@@ -157,7 +142,7 @@ class TransportConfig
 
         if (array_key_exists('retry_strategy', $value)) {
             $this->_usedProperties['retryStrategy'] = true;
-            $this->retryStrategy = \is_array($value['retry_strategy']) ? new TransportConfig\RetryStrategyConfig($value['retry_strategy']) : $value['retry_strategy'];
+            $this->retryStrategy = \is_array($value['retry_strategy']) ? new \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig($value['retry_strategy']) : $value['retry_strategy'];
             unset($value['retry_strategy']);
         }
 
@@ -188,7 +173,7 @@ class TransportConfig
             $output['failure_transport'] = $this->failureTransport;
         }
         if (isset($this->_usedProperties['retryStrategy'])) {
-            $output['retry_strategy'] = $this->retryStrategy instanceof TransportConfig\RetryStrategyConfig ? $this->retryStrategy->toArray() : $this->retryStrategy;
+            $output['retry_strategy'] = $this->retryStrategy instanceof \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig ? $this->retryStrategy->toArray() : $this->retryStrategy;
         }
         if (isset($this->_usedProperties['rateLimiter'])) {
             $output['rate_limiter'] = $this->rateLimiter;
@@ -196,4 +181,5 @@ class TransportConfig
 
         return $output;
     }
+
 }

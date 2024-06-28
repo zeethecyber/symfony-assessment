@@ -9,21 +9,20 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class StorageConfig
+class StorageConfig 
 {
     private $tableStorage;
     private $_usedProperties = [];
 
     /**
      * The default metadata storage, implemented as a table in the database.
-     *
      * @default {"table_name":null,"version_column_name":null,"version_column_length":null,"executed_at_column_name":null,"execution_time_column_name":null}
-     */
-    public function tableStorage(array $value = []): Storage\TableStorageConfig
+    */
+    public function tableStorage(array $value = []): \Symfony\Config\DoctrineMigrations\Storage\TableStorageConfig
     {
         if (null === $this->tableStorage) {
             $this->_usedProperties['tableStorage'] = true;
-            $this->tableStorage = new Storage\TableStorageConfig($value);
+            $this->tableStorage = new \Symfony\Config\DoctrineMigrations\Storage\TableStorageConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "tableStorage()" has already been initialized. You cannot pass values the second time you call tableStorage().');
         }
@@ -35,7 +34,7 @@ class StorageConfig
     {
         if (array_key_exists('table_storage', $value)) {
             $this->_usedProperties['tableStorage'] = true;
-            $this->tableStorage = new Storage\TableStorageConfig($value['table_storage']);
+            $this->tableStorage = new \Symfony\Config\DoctrineMigrations\Storage\TableStorageConfig($value['table_storage']);
             unset($value['table_storage']);
         }
 
@@ -53,4 +52,5 @@ class StorageConfig
 
         return $output;
     }
+
 }

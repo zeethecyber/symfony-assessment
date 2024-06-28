@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SessionConfig
+class SessionConfig 
 {
     private $enabled;
     private $storageFactoryId;
@@ -32,9 +32,7 @@ class SessionConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -47,9 +45,7 @@ class SessionConfig
 
     /**
      * @default 'session.storage.factory.native'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function storageFactoryId($value): static
@@ -62,11 +58,8 @@ class SessionConfig
 
     /**
      * Defaults to using the native session handler, or to the native *file* session handler if "save_path" is not null.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function handlerId($value): static
@@ -79,9 +72,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function name($value): static
@@ -94,9 +85,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cookieLifetime($value): static
@@ -109,9 +98,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cookiePath($value): static
@@ -124,9 +111,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cookieDomain($value): static
@@ -139,9 +124,7 @@ class SessionConfig
 
     /**
      * @default 'auto'
-     *
      * @param ParamConfigurator|true|false|'auto' $value
-     *
      * @return $this
      */
     public function cookieSecure($value): static
@@ -154,9 +137,7 @@ class SessionConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function cookieHttponly($value): static
@@ -169,9 +150,7 @@ class SessionConfig
 
     /**
      * @default 'lax'
-     *
-     * @param ParamConfigurator|'lax'|'strict'|'none'|null $value
-     *
+     * @param ParamConfigurator|NULL|'lax'|'strict'|'none' $value
      * @return $this
      */
     public function cookieSamesite($value): static
@@ -184,9 +163,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useCookies($value): static
@@ -199,9 +176,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function gcDivisor($value): static
@@ -214,9 +189,7 @@ class SessionConfig
 
     /**
      * @default 1
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function gcProbability($value): static
@@ -229,9 +202,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function gcMaxlifetime($value): static
@@ -243,12 +214,9 @@ class SessionConfig
     }
 
     /**
-     * Defaults to "%kernel.cache_dir%/sessions" if the "handler_id" option is not null.
-     *
+     * Defaults to "%kernel.cache_dir%/sessions" if the "handler_id" option is not null
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function savePath($value): static
@@ -260,12 +228,9 @@ class SessionConfig
     }
 
     /**
-     * seconds to wait between 2 session metadata updates.
-     *
+     * seconds to wait between 2 session metadata updates
      * @default 0
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function metadataUpdateThreshold($value): static
@@ -278,9 +243,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function sidLength($value): static
@@ -293,9 +256,7 @@ class SessionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function sidBitsPerCharacter($value): static
@@ -481,4 +442,5 @@ class SessionConfig
 
         return $output;
     }
+
 }

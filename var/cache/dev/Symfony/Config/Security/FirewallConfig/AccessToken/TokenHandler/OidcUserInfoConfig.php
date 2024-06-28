@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class OidcUserInfoConfig
+class OidcUserInfoConfig 
 {
     private $baseUri;
     private $claim;
@@ -17,11 +17,8 @@ class OidcUserInfoConfig
 
     /**
      * Base URI of the userinfo endpoint on the OIDC server.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function baseUri($value): static
@@ -34,11 +31,8 @@ class OidcUserInfoConfig
 
     /**
      * Claim which contains the user identifier (e.g. sub, email, etc.).
-     *
      * @default 'sub'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function claim($value): static
@@ -51,11 +45,8 @@ class OidcUserInfoConfig
 
     /**
      * HttpClient service id to use to call the OIDC server.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function client($value): static
@@ -106,4 +97,5 @@ class OidcUserInfoConfig
 
         return $output;
     }
+
 }

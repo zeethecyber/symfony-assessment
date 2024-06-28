@@ -8,8 +8,8 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'Provi
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'FirewallConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'AccessControlConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -30,11 +30,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @example /foo/error403
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function accessDeniedUrl($value): static
@@ -47,9 +44,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @default 'migrate'
-     *
      * @param ParamConfigurator|'none'|'migrate'|'invalidate' $value
-     *
      * @return $this
      */
     public function sessionFixationStrategy($value): static
@@ -62,9 +57,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function hideUserNotFound($value): static
@@ -77,9 +70,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function eraseCredentials($value): static
@@ -92,12 +83,12 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @default {"allow_if_all_abstain":false,"allow_if_equal_granted_denied":true}
-     */
-    public function accessDecisionManager(array $value = []): Security\AccessDecisionManagerConfig
+    */
+    public function accessDecisionManager(array $value = []): \Symfony\Config\Security\AccessDecisionManagerConfig
     {
         if (null === $this->accessDecisionManager) {
             $this->_usedProperties['accessDecisionManager'] = true;
-            $this->accessDecisionManager = new Security\AccessDecisionManagerConfig($value);
+            $this->accessDecisionManager = new \Symfony\Config\Security\AccessDecisionManagerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "accessDecisionManager()" has already been initialized. You cannot pass values the second time you call accessDecisionManager().');
         }
@@ -107,17 +98,13 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @example "auto"
      * @example {"algorithm":"auto","time_cost":8,"cost":13}
-     *
-     * @return Security\PasswordHasherConfig|$this
-     *
+     * @return \Symfony\Config\Security\PasswordHasherConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\PasswordHasherConfig : static)
      */
-    public function passwordHasher(string $class, string|array $value = []): Security\PasswordHasherConfig|static
+    public function passwordHasher(string $class, string|array $value = []): \Symfony\Config\Security\PasswordHasherConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['passwordHashers'] = true;
@@ -126,9 +113,9 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
             return $this;
         }
 
-        if (!isset($this->passwordHashers[$class]) || !$this->passwordHashers[$class] instanceof Security\PasswordHasherConfig) {
+        if (!isset($this->passwordHashers[$class]) || !$this->passwordHashers[$class] instanceof \Symfony\Config\Security\PasswordHasherConfig) {
             $this->_usedProperties['passwordHashers'] = true;
-            $this->passwordHashers[$class] = new Security\PasswordHasherConfig($value);
+            $this->passwordHashers[$class] = new \Symfony\Config\Security\PasswordHasherConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "passwordHasher()" has already been initialized. You cannot pass values the second time you call passwordHasher().');
         }
@@ -139,12 +126,12 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     /**
      * @example {"memory":{"users":{"foo":{"password":"foo","roles":"ROLE_USER"},"bar":{"password":"bar","roles":"[ROLE_USER, ROLE_ADMIN]"}}}}
      * @example {"entity":{"class":"SecurityBundle:User","property":"username"}}
-     */
-    public function provider(string $name, array $value = []): Security\ProviderConfig
+    */
+    public function provider(string $name, array $value = []): \Symfony\Config\Security\ProviderConfig
     {
         if (!isset($this->providers[$name])) {
             $this->_usedProperties['providers'] = true;
-            $this->providers[$name] = new Security\ProviderConfig($value);
+            $this->providers[$name] = new \Symfony\Config\Security\ProviderConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "provider()" has already been initialized. You cannot pass values the second time you call provider().');
         }
@@ -152,11 +139,11 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
         return $this->providers[$name];
     }
 
-    public function firewall(string $name, array $value = []): Security\FirewallConfig
+    public function firewall(string $name, array $value = []): \Symfony\Config\Security\FirewallConfig
     {
         if (!isset($this->firewalls[$name])) {
             $this->_usedProperties['firewalls'] = true;
-            $this->firewalls[$name] = new Security\FirewallConfig($value);
+            $this->firewalls[$name] = new \Symfony\Config\Security\FirewallConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "firewall()" has already been initialized. You cannot pass values the second time you call firewall().');
         }
@@ -164,11 +151,11 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
         return $this->firewalls[$name];
     }
 
-    public function accessControl(array $value = []): Security\AccessControlConfig
+    public function accessControl(array $value = []): \Symfony\Config\Security\AccessControlConfig
     {
         $this->_usedProperties['accessControl'] = true;
 
-        return $this->accessControl[] = new Security\AccessControlConfig($value);
+        return $this->accessControl[] = new \Symfony\Config\Security\AccessControlConfig($value);
     }
 
     /**
@@ -215,31 +202,31 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
         if (array_key_exists('access_decision_manager', $value)) {
             $this->_usedProperties['accessDecisionManager'] = true;
-            $this->accessDecisionManager = new Security\AccessDecisionManagerConfig($value['access_decision_manager']);
+            $this->accessDecisionManager = new \Symfony\Config\Security\AccessDecisionManagerConfig($value['access_decision_manager']);
             unset($value['access_decision_manager']);
         }
 
         if (array_key_exists('password_hashers', $value)) {
             $this->_usedProperties['passwordHashers'] = true;
-            $this->passwordHashers = array_map(fn ($v) => \is_array($v) ? new Security\PasswordHasherConfig($v) : $v, $value['password_hashers']);
+            $this->passwordHashers = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Security\PasswordHasherConfig($v) : $v, $value['password_hashers']);
             unset($value['password_hashers']);
         }
 
         if (array_key_exists('providers', $value)) {
             $this->_usedProperties['providers'] = true;
-            $this->providers = array_map(fn ($v) => new Security\ProviderConfig($v), $value['providers']);
+            $this->providers = array_map(fn ($v) => new \Symfony\Config\Security\ProviderConfig($v), $value['providers']);
             unset($value['providers']);
         }
 
         if (array_key_exists('firewalls', $value)) {
             $this->_usedProperties['firewalls'] = true;
-            $this->firewalls = array_map(fn ($v) => new Security\FirewallConfig($v), $value['firewalls']);
+            $this->firewalls = array_map(fn ($v) => new \Symfony\Config\Security\FirewallConfig($v), $value['firewalls']);
             unset($value['firewalls']);
         }
 
         if (array_key_exists('access_control', $value)) {
             $this->_usedProperties['accessControl'] = true;
-            $this->accessControl = array_map(fn ($v) => new Security\AccessControlConfig($v), $value['access_control']);
+            $this->accessControl = array_map(fn ($v) => new \Symfony\Config\Security\AccessControlConfig($v), $value['access_control']);
             unset($value['access_control']);
         }
 
@@ -273,7 +260,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
             $output['access_decision_manager'] = $this->accessDecisionManager->toArray();
         }
         if (isset($this->_usedProperties['passwordHashers'])) {
-            $output['password_hashers'] = array_map(fn ($v) => $v instanceof Security\PasswordHasherConfig ? $v->toArray() : $v, $this->passwordHashers);
+            $output['password_hashers'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Security\PasswordHasherConfig ? $v->toArray() : $v, $this->passwordHashers);
         }
         if (isset($this->_usedProperties['providers'])) {
             $output['providers'] = array_map(fn ($v) => $v->toArray(), $this->providers);
@@ -290,4 +277,5 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
 
         return $output;
     }
+
 }

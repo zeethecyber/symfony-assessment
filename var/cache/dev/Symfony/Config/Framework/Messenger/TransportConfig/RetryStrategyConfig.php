@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Messenger\TransportConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RetryStrategyConfig
+class RetryStrategyConfig 
 {
     private $service;
     private $maxRetries;
@@ -19,12 +19,9 @@ class RetryStrategyConfig
     private $_usedProperties = [];
 
     /**
-     * Service id to override the retry strategy entirely.
-     *
+     * Service id to override the retry strategy entirely
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -37,9 +34,7 @@ class RetryStrategyConfig
 
     /**
      * @default 3
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxRetries($value): static
@@ -51,12 +46,9 @@ class RetryStrategyConfig
     }
 
     /**
-     * Time in ms to delay (or the initial value when multiplier is used).
-     *
+     * Time in ms to delay (or the initial value when multiplier is used)
      * @default 1000
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function delay($value): static
@@ -68,12 +60,9 @@ class RetryStrategyConfig
     }
 
     /**
-     * If greater than 1, delay will grow exponentially for each retry: this delay = (delay * (multiple ^ retries)).
-     *
+     * If greater than 1, delay will grow exponentially for each retry: this delay = (delay * (multiple ^ retries))
      * @default 2
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function multiplier($value): static
@@ -85,12 +74,9 @@ class RetryStrategyConfig
     }
 
     /**
-     * Max time in ms that a retry should ever be delayed (0 = infinite).
-     *
+     * Max time in ms that a retry should ever be delayed (0 = infinite)
      * @default 0
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxDelay($value): static
@@ -102,12 +88,9 @@ class RetryStrategyConfig
     }
 
     /**
-     * Randomness to apply to the delay (between 0 and 1).
-     *
+     * Randomness to apply to the delay (between 0 and 1)
      * @default 0.1
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function jitter($value): static
@@ -185,4 +168,5 @@ class RetryStrategyConfig
 
         return $output;
     }
+
 }

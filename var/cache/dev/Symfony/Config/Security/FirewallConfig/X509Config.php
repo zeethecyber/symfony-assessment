@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class X509Config
+class X509Config 
 {
     private $provider;
     private $user;
@@ -18,9 +18,7 @@ class X509Config
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -33,9 +31,7 @@ class X509Config
 
     /**
      * @default 'SSL_CLIENT_S_DN_Email'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function user($value): static
@@ -48,9 +44,7 @@ class X509Config
 
     /**
      * @default 'SSL_CLIENT_S_DN'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function credentials($value): static
@@ -63,9 +57,7 @@ class X509Config
 
     /**
      * @default 'emailAddress'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function userIdentifier($value): static
@@ -125,4 +117,5 @@ class X509Config
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Notifier;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AdminRecipientConfig
+class AdminRecipientConfig 
 {
     private $email;
     private $phone;
@@ -16,9 +16,7 @@ class AdminRecipientConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function email($value): static
@@ -31,7 +29,6 @@ class AdminRecipientConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function phone($value): static
@@ -73,4 +70,5 @@ class AdminRecipientConfig
 
         return $output;
     }
+
 }

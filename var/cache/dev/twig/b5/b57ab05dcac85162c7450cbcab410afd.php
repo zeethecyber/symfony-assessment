@@ -1,8 +1,15 @@
 <?php
 
 use Twig\Environment;
+use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
@@ -27,45 +34,45 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/toolbar_js.html.twig'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar_js.html.twig"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/toolbar_js.html.twig'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar_js.html.twig"));
 
         // line 1
-        yield '<div id="sfwdt';
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['token']) || array_key_exists('token', $context) ? $context['token'] : (function () { throw new RuntimeError('Variable "token" does not exist.', 1, $this->source); })(), 'html', null, true);
-        yield '" class="sf-toolbar sf-display-none" role="region" aria-label="Symfony Web Debug Toolbar">
-    ';
+        yield "<div id=\"sfwdt";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 1, $this->source); })()), "html", null, true);
+        yield "\" class=\"sf-toolbar sf-display-none\" role=\"region\" aria-label=\"Symfony Web Debug Toolbar\">
+    ";
         // line 2
-        yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/toolbar.html.twig', ['templates' => ['request' => '@WebProfiler/Profiler/cancel.html.twig'], 'profile' => null, 'profiler_url' => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl('_profiler', ['token' =>         // line 7
-(isset($context['token']) || array_key_exists('token', $context) ? $context['token'] : (function () { throw new RuntimeError('Variable "token" does not exist.', 7, $this->source); })())]), 'profiler_markup_version' => 3]);
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/toolbar.html.twig", ["templates" => ["request" => "@WebProfiler/Profiler/cancel.html.twig"], "profile" => null, "profiler_url" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("_profiler", ["token" =>         // line 7
+(isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 7, $this->source); })())]), "profiler_markup_version" => 3]);
         // line 9
-        yield '
+        yield "
 </div>
 
-<style';
+<style";
         // line 12
-        if (isset($context['csp_style_nonce']) || array_key_exists('csp_style_nonce', $context) ? $context['csp_style_nonce'] : (function () { throw new RuntimeError('Variable "csp_style_nonce" does not exist.', 12, $this->source); })()) {
-            yield ' nonce="';
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['csp_style_nonce']) || array_key_exists('csp_style_nonce', $context) ? $context['csp_style_nonce'] : (function () { throw new RuntimeError('Variable "csp_style_nonce" does not exist.', 12, $this->source); })(), 'html', null, true);
-            yield '"';
+        if ((isset($context["csp_style_nonce"]) || array_key_exists("csp_style_nonce", $context) ? $context["csp_style_nonce"] : (function () { throw new RuntimeError('Variable "csp_style_nonce" does not exist.', 12, $this->source); })())) {
+            yield " nonce=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["csp_style_nonce"]) || array_key_exists("csp_style_nonce", $context) ? $context["csp_style_nonce"] : (function () { throw new RuntimeError('Variable "csp_style_nonce" does not exist.', 12, $this->source); })()), "html", null, true);
+            yield "\"";
         }
-        yield '>
-    ';
+        yield ">
+    ";
         // line 13
-        yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/toolbar.css.twig');
-        yield '
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/toolbar.css.twig");
+        yield "
 </style>
 
-';
+";
         // line 19
-        yield '<script';
-        if (array_key_exists('csp_script_nonce', $context) && (isset($context['csp_script_nonce']) || array_key_exists('csp_script_nonce', $context) ? $context['csp_script_nonce'] : (function () { throw new RuntimeError('Variable "csp_script_nonce" does not exist.', 19, $this->source); })())) {
-            yield ' nonce="';
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['csp_script_nonce']) || array_key_exists('csp_script_nonce', $context) ? $context['csp_script_nonce'] : (function () { throw new RuntimeError('Variable "csp_script_nonce" does not exist.', 19, $this->source); })(), 'html', null, true);
-            yield '"';
+        yield "<script";
+        if ((array_key_exists("csp_script_nonce", $context) && (isset($context["csp_script_nonce"]) || array_key_exists("csp_script_nonce", $context) ? $context["csp_script_nonce"] : (function () { throw new RuntimeError('Variable "csp_script_nonce" does not exist.', 19, $this->source); })()))) {
+            yield " nonce=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["csp_script_nonce"]) || array_key_exists("csp_script_nonce", $context) ? $context["csp_script_nonce"] : (function () { throw new RuntimeError('Variable "csp_script_nonce" does not exist.', 19, $this->source); })()), "html", null, true);
+            yield "\"";
         }
         yield ">/*<![CDATA[*/
     if (typeof Sfjs === 'undefined' || typeof Sfjs.loadToolbar === 'undefined') {
@@ -348,7 +355,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
 
             ";
         // line 298
-        if (array_key_exists('excluded_ajax_paths', $context)) {
+        if (array_key_exists("excluded_ajax_paths", $context)) {
             // line 299
             yield "            if (window.fetch && window.fetch.polyfill === undefined) {
                 var oldFetch = window.fetch;
@@ -371,7 +378,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
                     }
                     if (!url.match(new RegExp(";
             // line 318
-            yield json_encode(isset($context['excluded_ajax_paths']) || array_key_exists('excluded_ajax_paths', $context) ? $context['excluded_ajax_paths'] : (function () { throw new RuntimeError('Variable "excluded_ajax_paths" does not exist.', 318, $this->source); })());
+            yield json_encode((isset($context["excluded_ajax_paths"]) || array_key_exists("excluded_ajax_paths", $context) ? $context["excluded_ajax_paths"] : (function () { throw new RuntimeError('Variable "excluded_ajax_paths" does not exist.', 318, $this->source); })()));
             yield "))) {
                         var method = 'GET';
                         if (params && params.method !== undefined) {
@@ -417,27 +424,27 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
                     if (url.slice(0, 1) === '/') {
                         if (0 === url.indexOf('";
             // line 361
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 361, $this->source); })(), 'basePath', [], 'any', false, false, false, 361), 'js'), 'html', null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 361, $this->source); })()), "basePath", [], "any", false, false, false, 361), "js"), "html", null, true);
             yield "')) {
                             path = url.slice(";
             // line 362
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 362, $this->source); })(), 'basePath', [], 'any', false, false, false, 362)), 'html', null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 362, $this->source); })()), "basePath", [], "any", false, false, false, 362)), "html", null, true);
             yield ");
                         }
                     }
                     else if (0 === url.indexOf('";
             // line 365
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 365, $this->source); })(), 'schemeAndHttpHost', [], 'any', false, false, false, 365).CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 365, $this->source); })(), 'basePath', [], 'any', false, false, false, 365), 'js'), 'html', null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 365, $this->source); })()), "schemeAndHttpHost", [], "any", false, false, false, 365) . CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 365, $this->source); })()), "basePath", [], "any", false, false, false, 365)), "js"), "html", null, true);
             yield "')) {
                         path = url.slice(";
             // line 366
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 366, $this->source); })(), 'schemeAndHttpHost', [], 'any', false, false, false, 366).CoreExtension::getAttribute($this->env, $this->source, isset($context['request']) || array_key_exists('request', $context) ? $context['request'] : (function () { throw new RuntimeError('Variable "request" does not exist.', 366, $this->source); })(), 'basePath', [], 'any', false, false, false, 366)), 'html', null, true);
-            yield ');
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 366, $this->source); })()), "schemeAndHttpHost", [], "any", false, false, false, 366) . CoreExtension::getAttribute($this->env, $this->source, (isset($context["request"]) || array_key_exists("request", $context) ? $context["request"] : (function () { throw new RuntimeError('Variable "request" does not exist.', 366, $this->source); })()), "basePath", [], "any", false, false, false, 366))), "html", null, true);
+            yield ");
                     }
 
-                    if (!path.match(new RegExp(';
+                    if (!path.match(new RegExp(";
             // line 369
-            yield json_encode(isset($context['excluded_ajax_paths']) || array_key_exists('excluded_ajax_paths', $context) ? $context['excluded_ajax_paths'] : (function () { throw new RuntimeError('Variable "excluded_ajax_paths" does not exist.', 369, $this->source); })());
+            yield json_encode((isset($context["excluded_ajax_paths"]) || array_key_exists("excluded_ajax_paths", $context) ? $context["excluded_ajax_paths"] : (function () { throw new RuntimeError('Variable "excluded_ajax_paths" does not exist.', 369, $this->source); })()));
             yield "))) {
                         var stackElement = {
                             error: false,
@@ -619,7 +626,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
                         'sfwdt' + token,
                         '";
         // line 546
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl('_wdt', ['token' => 'xxxxxx']), 'js'), 'html', null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("_wdt", ["token" => "xxxxxx"]), "js"), "html", null, true);
         yield "'.replace(/xxxxxx/, newToken),
                         function(xhr, el) {
                             /* Do nothing in the edge case where the toolbar has already been replaced with a new one */
@@ -705,7 +712,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
                                     <div class=\"sf-toolbar-icon\"><svg width=\"26\" height=\"28\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 26 28\" enable-background=\"new 0 0 26 28\" xml:space=\"preserve\"><path fill=\"#FFFFFF\" d=\"M13 0C5.8 0 0 5.8 0 13c0 7.2 5.8 13 13 13c7.2 0 13-5.8 13-13C26 5.8 20.2 0 13 0z M20 7.5 c-0.6 0-1-0.3-1-0.9c0-0.2 0-0.4 0.2-0.6c0.1-0.3 0.2-0.3 0.2-0.4c0-0.3-0.5-0.4-0.7-0.4c-2 0.1-2.5 2.7-2.9 4.8l-0.2 1.1 c1.1 0.2 1.9 0 2.4-0.3c0.6-0.4-0.2-0.8-0.1-1.3C18 9.2 18.4 9 18.7 8.9c0.5 0 0.8 0.5 0.8 1c0 0.8-1.1 2-3.3 1.9 c-0.3 0-0.5 0-0.7-0.1L15 14.1c-0.4 1.7-0.9 4.1-2.6 6.2c-1.5 1.8-3.1 2.1-3.8 2.1c-1.3 0-2.1-0.6-2.2-1.6c0-0.9 0.8-1.4 1.3-1.4 c0.7 0 1.2 0.5 1.2 1.1c0 0.5-0.2 0.6-0.4 0.7c-0.1 0.1-0.3 0.2-0.3 0.4c0 0.1 0.1 0.3 0.4 0.3c0.5 0 0.9-0.3 1.2-0.5 c1.3-1 1.7-2.9 2.4-6.2l0.1-0.8c0.2-1.1 0.5-2.3 0.8-3.5c-0.9-0.7-1.4-1.5-2.6-1.8c-0.8-0.2-1.3 0-1.7 0.4C8.4 10 8.6 10.7 9 11.1 l0.7 0.7c0.8 0.9 1.3 1.7 1.1 2.7c-0.3 1.6-2.1 2.8-4.3 2.1c-1.9-0.6-2.2-1.9-2-2.7c0.2-0.6 0.7-0.8 1.2-0.6 c0.5 0.2 0.7 0.8 0.6 1.3c0 0.1 0 0.1-0.1 0.3C6 15 5.9 15.2 5.9 15.3c-0.1 0.4 0.4 0.7 0.8 0.8c0.8 0.3 1.7-0.2 1.9-0.9 c0.2-0.6-0.2-1.1-0.4-1.2l-0.8-0.9c-0.4-0.4-1.2-1.5-0.8-2.8c0.2-0.5 0.5-1 0.9-1.4c1-0.7 2-0.8 3-0.6c1.3 0.4 1.9 1.2 2.8 1.9 c0.5-1.3 1.1-2.6 2-3.8c0.9-1 2-1.7 3.3-1.8C20 4.8 21 5.4 21 6.3C21 6.7 20.8 7.5 20 7.5z\"/></svg></div>\\
                                     An error occurred while loading the web debug toolbar. <a href=\"";
         // line 629
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl('_profiler_home'), 'js'), 'html', null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("_profiler_home"), "js"), "html", null, true);
         yield "' + newToken + '\">Open the web profiler.</a>\\
                                 </div>\\
                             ';
@@ -737,17 +744,17 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
 
     Sfjs.loadToolbar('";
         // line 658
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['token']) || array_key_exists('token', $context) ? $context['token'] : (function () { throw new RuntimeError('Variable "token" does not exist.', 658, $this->source); })(), 'html', null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 658, $this->source); })()), "html", null, true);
         yield "');
 /*]]>*/</script>
 ";
-
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     /**
@@ -755,7 +762,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
      */
     public function getTemplateName()
     {
-        return '@WebProfiler/Profiler/toolbar_js.html.twig';
+        return "@WebProfiler/Profiler/toolbar_js.html.twig";
     }
 
     /**
@@ -771,7 +778,7 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
      */
     public function getDebugInfo()
     {
-        return [747 => 658,  715 => 629,  629 => 546,  479 => 398,  447 => 369,  441 => 366,  437 => 365,  431 => 362,  427 => 361,  381 => 318,  360 => 299,  358 => 298,  71 => 19,  65 => 13,  57 => 12,  52 => 9,  50 => 7,  49 => 2,  44 => 1];
+        return array (  747 => 658,  715 => 629,  629 => 546,  479 => 398,  447 => 369,  441 => 366,  437 => 365,  431 => 362,  427 => 361,  381 => 318,  360 => 299,  358 => 298,  71 => 19,  65 => 13,  57 => 12,  52 => 9,  50 => 7,  49 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -1435,6 +1442,6 @@ class __TwigTemplate_241692c0aa3b1b4093993ac628d96c90 extends Template
 
     Sfjs.loadToolbar('{{ token }}');
 /*]]>*/</script>
-", '@WebProfiler/Profiler/toolbar_js.html.twig', '/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_js.html.twig');
+", "@WebProfiler/Profiler/toolbar_js.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_js.html.twig");
     }
 }

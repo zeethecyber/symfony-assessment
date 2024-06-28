@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AccessControlConfig
+class AccessControlConfig 
 {
     private $requestMatcher;
     private $requiresChannel;
@@ -25,9 +25,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function requestMatcher($value): static
@@ -40,9 +38,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function requiresChannel($value): static
@@ -54,14 +50,10 @@ class AccessControlConfig
     }
 
     /**
-     * use the urldecoded format.
-     *
+     * use the urldecoded format
      * @example ^/path to resource/
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -74,9 +66,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function host($value): static
@@ -89,9 +79,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -128,9 +116,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function route($value): static
@@ -156,9 +142,7 @@ class AccessControlConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function allowIf($value): static
@@ -294,4 +278,5 @@ class AccessControlConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ProfilerConfig
+class ProfilerConfig 
 {
     private $enabled;
     private $collect;
@@ -21,9 +21,7 @@ class ProfilerConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -36,9 +34,7 @@ class ProfilerConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function collect($value): static
@@ -50,12 +46,9 @@ class ProfilerConfig
     }
 
     /**
-     * The name of the parameter to use to enable or disable collection on a per request basis.
-     *
+     * The name of the parameter to use to enable or disable collection on a per request basis
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function collectParameter($value): static
@@ -68,9 +61,7 @@ class ProfilerConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function onlyExceptions($value): static
@@ -83,9 +74,7 @@ class ProfilerConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function onlyMainRequests($value): static
@@ -98,9 +87,7 @@ class ProfilerConfig
 
     /**
      * @default 'file:%kernel.cache_dir%/profiler'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dsn($value): static
@@ -112,12 +99,9 @@ class ProfilerConfig
     }
 
     /**
-     * Enables the serializer data collector and profiler panel.
-     *
+     * Enables the serializer data collector and profiler panel
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function collectSerializerData($value): static
@@ -204,4 +188,5 @@ class ProfilerConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AssetMapperConfig
+class AssetMapperConfig 
 {
     private $enabled;
     private $paths;
@@ -25,10 +25,8 @@ class AssetMapperConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -64,12 +62,9 @@ class AssetMapperConfig
     }
 
     /**
-     * If true, any files starting with "." will be excluded from the asset mapper.
-     *
+     * If true, any files starting with "." will be excluded from the asset mapper
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function excludeDotfiles($value): static
@@ -81,12 +76,9 @@ class AssetMapperConfig
     }
 
     /**
-     * If true, a "dev server" will return the assets from the public directory (true in "debug" mode only by default).
-     *
+     * If true, a "dev server" will return the assets from the public directory (true in "debug" mode only by default)
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function server($value): static
@@ -98,12 +90,9 @@ class AssetMapperConfig
     }
 
     /**
-     * The public path where the assets will be written to (and served from when "server" is true).
-     *
+     * The public path where the assets will be written to (and served from when "server" is true)
      * @default '/assets/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function publicPrefix($value): static
@@ -116,11 +105,8 @@ class AssetMapperConfig
 
     /**
      * Behavior if an asset cannot be found when imported from JavaScript or CSS files - e.g. "import './non-existent.js'". "strict" means an exception is thrown, "warn" means a warning is logged, "ignore" means the import is left as-is.
-     *
      * @default 'warn'
-     *
      * @param ParamConfigurator|'strict'|'warn'|'ignore' $value
-     *
      * @return $this
      */
     public function missingImportMode($value): static
@@ -144,11 +130,8 @@ class AssetMapperConfig
 
     /**
      * The path of the importmap.php file.
-     *
      * @default '%kernel.project_dir%/importmap.php'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function importmapPath($value): static
@@ -161,11 +144,8 @@ class AssetMapperConfig
 
     /**
      * The importmap name that will be used to load the polyfill. Set to false to disable.
-     *
      * @default 'es-module-shims'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function importmapPolyfill($value): static
@@ -189,11 +169,8 @@ class AssetMapperConfig
 
     /**
      * The directory to store JavaScript vendors.
-     *
      * @default '%kernel.project_dir%/assets/vendor'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function vendorDir($value): static
@@ -325,4 +302,5 @@ class AssetMapperConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ExcludedHttpCodeConfig
+class ExcludedHttpCodeConfig 
 {
     private $code;
     private $urls;
@@ -16,9 +16,7 @@ class ExcludedHttpCodeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function code($value): static
@@ -73,4 +71,5 @@ class ExcludedHttpCodeConfig
 
         return $output;
     }
+
 }

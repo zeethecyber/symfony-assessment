@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class LoginLinkConfig
+class LoginLinkConfig 
 {
     private $checkRoute;
     private $checkPostOnly;
@@ -31,11 +31,8 @@ class LoginLinkConfig
 
     /**
      * Route that will validate the login link - e.g. "app_login_link_verify".
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkRoute($value): static
@@ -48,11 +45,8 @@ class LoginLinkConfig
 
     /**
      * If true, only HTTP POST requests to "check_route" will be handled by the authenticator.
-     *
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkPostOnly($value): static
@@ -78,11 +72,8 @@ class LoginLinkConfig
 
     /**
      * The lifetime of the login link in seconds.
-     *
      * @default 600
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function lifetime($value): static
@@ -95,11 +86,8 @@ class LoginLinkConfig
 
     /**
      * Max number of times a login link can be used - null means unlimited within lifetime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxUses($value): static
@@ -112,11 +100,8 @@ class LoginLinkConfig
 
     /**
      * Cache service id used to expired links of max_uses is set.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function usedLinkCache($value): static
@@ -129,11 +114,8 @@ class LoginLinkConfig
 
     /**
      * A service id that implements Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -146,11 +128,8 @@ class LoginLinkConfig
 
     /**
      * A service id that implements Symfony\Component\Security\Http\Authentication\AuthenticationFailureHandlerInterface.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -163,11 +142,8 @@ class LoginLinkConfig
 
     /**
      * The user provider to load users from.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -180,9 +156,7 @@ class LoginLinkConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function alwaysUseDefaultTargetPath($value): static
@@ -195,9 +169,7 @@ class LoginLinkConfig
 
     /**
      * @default '/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultTargetPath($value): static
@@ -210,9 +182,7 @@ class LoginLinkConfig
 
     /**
      * @default '/login'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function loginPath($value): static
@@ -225,9 +195,7 @@ class LoginLinkConfig
 
     /**
      * @default '_target_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function targetPathParameter($value): static
@@ -240,9 +208,7 @@ class LoginLinkConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useReferer($value): static
@@ -255,9 +221,7 @@ class LoginLinkConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePath($value): static
@@ -270,9 +234,7 @@ class LoginLinkConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function failureForward($value): static
@@ -285,9 +247,7 @@ class LoginLinkConfig
 
     /**
      * @default '_failure_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePathParameter($value): static
@@ -464,4 +424,5 @@ class LoginLinkConfig
 
         return $output;
     }
+
 }

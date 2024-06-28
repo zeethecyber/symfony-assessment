@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Webhook'.\DIRECTORY_SEPARATOR.'RoutingConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class WebhookConfig
+class WebhookConfig 
 {
     private $enabled;
     private $messageBus;
@@ -19,9 +19,7 @@ class WebhookConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -34,11 +32,8 @@ class WebhookConfig
 
     /**
      * The message bus to use.
-     *
      * @default 'messenger.default_bus'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function messageBus($value): static
@@ -49,11 +44,11 @@ class WebhookConfig
         return $this;
     }
 
-    public function routing(string $type, array $value = []): Webhook\RoutingConfig
+    public function routing(string $type, array $value = []): \Symfony\Config\Framework\Webhook\RoutingConfig
     {
         if (!isset($this->routing[$type])) {
             $this->_usedProperties['routing'] = true;
-            $this->routing[$type] = new Webhook\RoutingConfig($value);
+            $this->routing[$type] = new \Symfony\Config\Framework\Webhook\RoutingConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "routing()" has already been initialized. You cannot pass values the second time you call routing().');
         }
@@ -77,7 +72,7 @@ class WebhookConfig
 
         if (array_key_exists('routing', $value)) {
             $this->_usedProperties['routing'] = true;
-            $this->routing = array_map(fn ($v) => new Webhook\RoutingConfig($v), $value['routing']);
+            $this->routing = array_map(fn ($v) => new \Symfony\Config\Framework\Webhook\RoutingConfig($v), $value['routing']);
             unset($value['routing']);
         }
 
@@ -101,4 +96,5 @@ class WebhookConfig
 
         return $output;
     }
+
 }

@@ -5,13 +5,13 @@ namespace Symfony\Config\Framework;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Translator'.\DIRECTORY_SEPARATOR.'PseudoLocalizationConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Translator'.\DIRECTORY_SEPARATOR.'ProviderConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TranslatorConfig
+class TranslatorConfig 
 {
     private $enabled;
     private $fallbacks;
@@ -25,10 +25,8 @@ class TranslatorConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -54,9 +52,7 @@ class TranslatorConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function logging($value): static
@@ -69,9 +65,7 @@ class TranslatorConfig
 
     /**
      * @default 'translator.formatter.default'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function formatter($value): static
@@ -84,9 +78,7 @@ class TranslatorConfig
 
     /**
      * @default '%kernel.cache_dir%/translations'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cacheDir($value): static
@@ -98,12 +90,9 @@ class TranslatorConfig
     }
 
     /**
-     * The default path used to load translations.
-     *
+     * The default path used to load translations
      * @default '%kernel.project_dir%/translations'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultPath($value): static
@@ -129,16 +118,12 @@ class TranslatorConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false,"accents":true,"expansion_factor":1,"brackets":true,"parse_html":false,"localizable_html_attributes":[]}
-     *
-     * @return Translator\PseudoLocalizationConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Translator\PseudoLocalizationConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Translator\PseudoLocalizationConfig : static)
      */
-    public function pseudoLocalization(array $value = []): Translator\PseudoLocalizationConfig|static
+    public function pseudoLocalization(array $value = []): \Symfony\Config\Framework\Translator\PseudoLocalizationConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['pseudoLocalization'] = true;
@@ -147,9 +132,9 @@ class TranslatorConfig
             return $this;
         }
 
-        if (!$this->pseudoLocalization instanceof Translator\PseudoLocalizationConfig) {
+        if (!$this->pseudoLocalization instanceof \Symfony\Config\Framework\Translator\PseudoLocalizationConfig) {
             $this->_usedProperties['pseudoLocalization'] = true;
-            $this->pseudoLocalization = new Translator\PseudoLocalizationConfig($value);
+            $this->pseudoLocalization = new \Symfony\Config\Framework\Translator\PseudoLocalizationConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "pseudoLocalization()" has already been initialized. You cannot pass values the second time you call pseudoLocalization().');
         }
@@ -158,13 +143,13 @@ class TranslatorConfig
     }
 
     /**
-     * Translation providers you can read/write your translations from.
-     */
-    public function provider(string $name, array $value = []): Translator\ProviderConfig
+     * Translation providers you can read/write your translations from
+    */
+    public function provider(string $name, array $value = []): \Symfony\Config\Framework\Translator\ProviderConfig
     {
         if (!isset($this->providers[$name])) {
             $this->_usedProperties['providers'] = true;
-            $this->providers[$name] = new Translator\ProviderConfig($value);
+            $this->providers[$name] = new \Symfony\Config\Framework\Translator\ProviderConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "provider()" has already been initialized. You cannot pass values the second time you call provider().');
         }
@@ -218,13 +203,13 @@ class TranslatorConfig
 
         if (array_key_exists('pseudo_localization', $value)) {
             $this->_usedProperties['pseudoLocalization'] = true;
-            $this->pseudoLocalization = \is_array($value['pseudo_localization']) ? new Translator\PseudoLocalizationConfig($value['pseudo_localization']) : $value['pseudo_localization'];
+            $this->pseudoLocalization = \is_array($value['pseudo_localization']) ? new \Symfony\Config\Framework\Translator\PseudoLocalizationConfig($value['pseudo_localization']) : $value['pseudo_localization'];
             unset($value['pseudo_localization']);
         }
 
         if (array_key_exists('providers', $value)) {
             $this->_usedProperties['providers'] = true;
-            $this->providers = array_map(fn ($v) => new Translator\ProviderConfig($v), $value['providers']);
+            $this->providers = array_map(fn ($v) => new \Symfony\Config\Framework\Translator\ProviderConfig($v), $value['providers']);
             unset($value['providers']);
         }
 
@@ -258,7 +243,7 @@ class TranslatorConfig
             $output['paths'] = $this->paths;
         }
         if (isset($this->_usedProperties['pseudoLocalization'])) {
-            $output['pseudo_localization'] = $this->pseudoLocalization instanceof Translator\PseudoLocalizationConfig ? $this->pseudoLocalization->toArray() : $this->pseudoLocalization;
+            $output['pseudo_localization'] = $this->pseudoLocalization instanceof \Symfony\Config\Framework\Translator\PseudoLocalizationConfig ? $this->pseudoLocalization->toArray() : $this->pseudoLocalization;
         }
         if (isset($this->_usedProperties['providers'])) {
             $output['providers'] = array_map(fn ($v) => $v->toArray(), $this->providers);
@@ -266,4 +251,5 @@ class TranslatorConfig
 
         return $output;
     }
+
 }

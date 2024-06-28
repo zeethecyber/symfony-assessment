@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework\RateLimiter;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'LimiterConfig'.\DIRECTORY_SEPARATOR.'RateConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class LimiterConfig
+class LimiterConfig 
 {
     private $lockFactory;
     private $cachePool;
@@ -22,12 +22,9 @@ class LimiterConfig
     private $_usedProperties = [];
 
     /**
-     * The service ID of the lock factory used by this limiter (or null to disable locking).
-     *
+     * The service ID of the lock factory used by this limiter (or null to disable locking)
      * @default 'lock.factory'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function lockFactory($value): static
@@ -39,12 +36,9 @@ class LimiterConfig
     }
 
     /**
-     * The cache pool to use for storing the current limiter state.
-     *
+     * The cache pool to use for storing the current limiter state
      * @default 'cache.rate_limiter'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cachePool($value): static
@@ -56,12 +50,9 @@ class LimiterConfig
     }
 
     /**
-     * The service ID of a custom storage implementation, this precedes any configured "cache_pool".
-     *
+     * The service ID of a custom storage implementation, this precedes any configured "cache_pool"
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function storageService($value): static
@@ -73,12 +64,9 @@ class LimiterConfig
     }
 
     /**
-     * The algorithm to be used by this limiter.
-     *
+     * The algorithm to be used by this limiter
      * @default null
-     *
      * @param ParamConfigurator|'fixed_window'|'token_bucket'|'sliding_window'|'no_limit' $value
-     *
      * @return $this
      */
     public function policy($value): static
@@ -90,12 +78,9 @@ class LimiterConfig
     }
 
     /**
-     * The maximum allowed hits in a fixed interval or burst.
-     *
+     * The maximum allowed hits in a fixed interval or burst
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function limit($value): static
@@ -108,11 +93,8 @@ class LimiterConfig
 
     /**
      * Configures the fixed interval if "policy" is set to "fixed_window" or "sliding_window". The value must be a number followed by "second", "minute", "hour", "day", "week" or "month" (or their plural equivalent).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function interval($value): static
@@ -124,13 +106,13 @@ class LimiterConfig
     }
 
     /**
-     * Configures the fill rate if "policy" is set to "token_bucket".
-     */
-    public function rate(array $value = []): LimiterConfig\RateConfig
+     * Configures the fill rate if "policy" is set to "token_bucket"
+    */
+    public function rate(array $value = []): \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig
     {
         if (null === $this->rate) {
             $this->_usedProperties['rate'] = true;
-            $this->rate = new LimiterConfig\RateConfig($value);
+            $this->rate = new \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "rate()" has already been initialized. You cannot pass values the second time you call rate().');
         }
@@ -178,7 +160,7 @@ class LimiterConfig
 
         if (array_key_exists('rate', $value)) {
             $this->_usedProperties['rate'] = true;
-            $this->rate = new LimiterConfig\RateConfig($value['rate']);
+            $this->rate = new \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig($value['rate']);
             unset($value['rate']);
         }
 
@@ -214,4 +196,5 @@ class LimiterConfig
 
         return $output;
     }
+
 }

@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Serializer'.\DIRECTORY_SEPARATOR.'MappingConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SerializerConfig
+class SerializerConfig 
 {
     private $enabled;
     private $enableAttributes;
@@ -22,10 +22,8 @@ class SerializerConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -38,9 +36,7 @@ class SerializerConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableAttributes($value): static
@@ -53,9 +49,7 @@ class SerializerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function nameConverter($value): static
@@ -68,9 +62,7 @@ class SerializerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function circularReferenceHandler($value): static
@@ -83,9 +75,7 @@ class SerializerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function maxDepthHandler($value): static
@@ -98,12 +88,12 @@ class SerializerConfig
 
     /**
      * @default {"paths":[]}
-     */
-    public function mapping(array $value = []): Serializer\MappingConfig
+    */
+    public function mapping(array $value = []): \Symfony\Config\Framework\Serializer\MappingConfig
     {
         if (null === $this->mapping) {
             $this->_usedProperties['mapping'] = true;
-            $this->mapping = new Serializer\MappingConfig($value);
+            $this->mapping = new \Symfony\Config\Framework\Serializer\MappingConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "mapping()" has already been initialized. You cannot pass values the second time you call mapping().');
         }
@@ -158,7 +148,7 @@ class SerializerConfig
 
         if (array_key_exists('mapping', $value)) {
             $this->_usedProperties['mapping'] = true;
-            $this->mapping = new Serializer\MappingConfig($value['mapping']);
+            $this->mapping = new \Symfony\Config\Framework\Serializer\MappingConfig($value['mapping']);
             unset($value['mapping']);
         }
 
@@ -200,4 +190,5 @@ class SerializerConfig
 
         return $output;
     }
+
 }

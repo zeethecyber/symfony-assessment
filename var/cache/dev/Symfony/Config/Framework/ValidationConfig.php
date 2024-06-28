@@ -6,13 +6,13 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'Validation'.\DIRECTORY_SEPARATOR.'Map
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Validation'.\DIRECTORY_SEPARATOR.'NotCompromisedPasswordConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Validation'.\DIRECTORY_SEPARATOR.'AutoMappingConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ValidationConfig
+class ValidationConfig 
 {
     private $enabled;
     private $cache;
@@ -26,10 +26,8 @@ class ValidationConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -42,9 +40,7 @@ class ValidationConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cache($value): static
@@ -57,9 +53,7 @@ class ValidationConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableAttributes($value): static
@@ -85,9 +79,7 @@ class ValidationConfig
 
     /**
      * @default 'validators'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function translationDomain($value): static
@@ -100,9 +92,7 @@ class ValidationConfig
 
     /**
      * @default 'html5'
-     *
      * @param ParamConfigurator|'html5'|'loose'|'strict' $value
-     *
      * @return $this
      */
     public function emailValidationMode($value): static
@@ -115,12 +105,12 @@ class ValidationConfig
 
     /**
      * @default {"paths":[]}
-     */
-    public function mapping(array $value = []): Validation\MappingConfig
+    */
+    public function mapping(array $value = []): \Symfony\Config\Framework\Validation\MappingConfig
     {
         if (null === $this->mapping) {
             $this->_usedProperties['mapping'] = true;
-            $this->mapping = new Validation\MappingConfig($value);
+            $this->mapping = new \Symfony\Config\Framework\Validation\MappingConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "mapping()" has already been initialized. You cannot pass values the second time you call mapping().');
         }
@@ -130,12 +120,12 @@ class ValidationConfig
 
     /**
      * @default {"enabled":true,"endpoint":null}
-     */
-    public function notCompromisedPassword(array $value = []): Validation\NotCompromisedPasswordConfig
+    */
+    public function notCompromisedPassword(array $value = []): \Symfony\Config\Framework\Validation\NotCompromisedPasswordConfig
     {
         if (null === $this->notCompromisedPassword) {
             $this->_usedProperties['notCompromisedPassword'] = true;
-            $this->notCompromisedPassword = new Validation\NotCompromisedPasswordConfig($value);
+            $this->notCompromisedPassword = new \Symfony\Config\Framework\Validation\NotCompromisedPasswordConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "notCompromisedPassword()" has already been initialized. You cannot pass values the second time you call notCompromisedPassword().');
         }
@@ -145,18 +135,14 @@ class ValidationConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      A collection of namespaces for which auto-mapping will be enabled by default, or null to opt-in with the EnableAutoMapping constraint
-     *
+     * A collection of namespaces for which auto-mapping will be enabled by default, or null to opt-in with the EnableAutoMapping constraint.
      * @example []
      * @example ["validator.property_info_loader"]
-     *
-     * @return Validation\AutoMappingConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Validation\AutoMappingConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Validation\AutoMappingConfig : static)
      */
-    public function autoMapping(string $namespace, array $value = []): Validation\AutoMappingConfig|static
+    public function autoMapping(string $namespace, array $value = []): \Symfony\Config\Framework\Validation\AutoMappingConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['autoMapping'] = true;
@@ -165,9 +151,9 @@ class ValidationConfig
             return $this;
         }
 
-        if (!isset($this->autoMapping[$namespace]) || !$this->autoMapping[$namespace] instanceof Validation\AutoMappingConfig) {
+        if (!isset($this->autoMapping[$namespace]) || !$this->autoMapping[$namespace] instanceof \Symfony\Config\Framework\Validation\AutoMappingConfig) {
             $this->_usedProperties['autoMapping'] = true;
-            $this->autoMapping[$namespace] = new Validation\AutoMappingConfig($value);
+            $this->autoMapping[$namespace] = new \Symfony\Config\Framework\Validation\AutoMappingConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "autoMapping()" has already been initialized. You cannot pass values the second time you call autoMapping().');
         }
@@ -215,19 +201,19 @@ class ValidationConfig
 
         if (array_key_exists('mapping', $value)) {
             $this->_usedProperties['mapping'] = true;
-            $this->mapping = new Validation\MappingConfig($value['mapping']);
+            $this->mapping = new \Symfony\Config\Framework\Validation\MappingConfig($value['mapping']);
             unset($value['mapping']);
         }
 
         if (array_key_exists('not_compromised_password', $value)) {
             $this->_usedProperties['notCompromisedPassword'] = true;
-            $this->notCompromisedPassword = new Validation\NotCompromisedPasswordConfig($value['not_compromised_password']);
+            $this->notCompromisedPassword = new \Symfony\Config\Framework\Validation\NotCompromisedPasswordConfig($value['not_compromised_password']);
             unset($value['not_compromised_password']);
         }
 
         if (array_key_exists('auto_mapping', $value)) {
             $this->_usedProperties['autoMapping'] = true;
-            $this->autoMapping = array_map(fn ($v) => \is_array($v) ? new Validation\AutoMappingConfig($v) : $v, $value['auto_mapping']);
+            $this->autoMapping = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Validation\AutoMappingConfig($v) : $v, $value['auto_mapping']);
             unset($value['auto_mapping']);
         }
 
@@ -264,9 +250,10 @@ class ValidationConfig
             $output['not_compromised_password'] = $this->notCompromisedPassword->toArray();
         }
         if (isset($this->_usedProperties['autoMapping'])) {
-            $output['auto_mapping'] = array_map(fn ($v) => $v instanceof Validation\AutoMappingConfig ? $v->toArray() : $v, $this->autoMapping);
+            $output['auto_mapping'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Validation\AutoMappingConfig ? $v->toArray() : $v, $this->autoMapping);
         }
 
         return $output;
     }
+
 }

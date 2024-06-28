@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class JsonLoginLdapConfig
+class JsonLoginLdapConfig 
 {
     private $provider;
     private $rememberMe;
@@ -28,9 +28,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -43,9 +41,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function rememberMe($value): static
@@ -58,9 +54,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -73,9 +67,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -88,9 +80,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default '/login_check'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkPath($value): static
@@ -103,9 +93,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useForward($value): static
@@ -118,9 +106,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default '/login'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function loginPath($value): static
@@ -133,9 +119,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default 'username'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function usernamePath($value): static
@@ -148,9 +132,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default 'password'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passwordPath($value): static
@@ -163,9 +145,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default 'ldap'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -178,9 +158,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default '{user_identifier}'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dnString($value): static
@@ -193,9 +171,7 @@ class JsonLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function queryString($value): static
@@ -208,7 +184,6 @@ class JsonLoginLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchDn($value): static
@@ -221,7 +196,6 @@ class JsonLoginLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchPassword($value): static
@@ -371,4 +345,5 @@ class JsonLoginLdapConfig
 
         return $output;
     }
+
 }

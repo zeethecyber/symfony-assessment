@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HttpBasicLdapConfig
+class HttpBasicLdapConfig 
 {
     private $provider;
     private $realm;
@@ -21,9 +21,7 @@ class HttpBasicLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -36,9 +34,7 @@ class HttpBasicLdapConfig
 
     /**
      * @default 'Secured Area'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function realm($value): static
@@ -51,9 +47,7 @@ class HttpBasicLdapConfig
 
     /**
      * @default 'ldap'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -66,9 +60,7 @@ class HttpBasicLdapConfig
 
     /**
      * @default '{user_identifier}'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dnString($value): static
@@ -81,9 +73,7 @@ class HttpBasicLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function queryString($value): static
@@ -96,7 +86,6 @@ class HttpBasicLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchDn($value): static
@@ -109,7 +98,6 @@ class HttpBasicLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchPassword($value): static
@@ -196,4 +184,5 @@ class HttpBasicLdapConfig
 
         return $output;
     }
+
 }

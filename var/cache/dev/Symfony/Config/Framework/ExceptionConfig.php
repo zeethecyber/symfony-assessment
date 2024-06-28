@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ExceptionConfig
+class ExceptionConfig 
 {
     private $logLevel;
     private $statusCode;
@@ -16,11 +16,8 @@ class ExceptionConfig
 
     /**
      * The level of log message. Null to let Symfony decide.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function logLevel($value): static
@@ -33,11 +30,8 @@ class ExceptionConfig
 
     /**
      * The status code of the response. Null or 0 to let Symfony decide.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function statusCode($value): static
@@ -79,4 +73,5 @@ class ExceptionConfig
 
         return $output;
     }
+
 }

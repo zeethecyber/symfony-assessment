@@ -1,9 +1,15 @@
 <?php
 
 use Twig\Environment;
+use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
 use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
@@ -24,367 +30,365 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
             'menu' => [$this, 'block_menu'],
             'panel' => [$this, 'block_panel'],
         ];
-        $macros['_self'] = $this->macros['_self'] = $this;
+        $macros["_self"] = $this->macros["_self"] = $this;
     }
 
     protected function doGetParent(array $context)
     {
         // line 1
-        return '@WebProfiler/Profiler/layout.html.twig';
+        return "@WebProfiler/Profiler/layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@DoctrineMigrations/Collector/migrations.html.twig'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@DoctrineMigrations/Collector/migrations.html.twig"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@DoctrineMigrations/Collector/migrations.html.twig'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@DoctrineMigrations/Collector/migrations.html.twig"));
 
-        $this->parent = $this->loadTemplate('@WebProfiler/Profiler/layout.html.twig', '@DoctrineMigrations/Collector/migrations.html.twig', 1);
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@DoctrineMigrations/Collector/migrations.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
-
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'toolbar'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "toolbar"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'toolbar'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "toolbar"));
 
         // line 4
-        yield '    ';
-        if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context['collector'] ?? null, 'data', [], 'any', false, true, false, 4), 'unavailable_migrations_count', [], 'any', true, true, false, 4)) {
+        yield "    ";
+        if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["collector"] ?? null), "data", [], "any", false, true, false, 4), "unavailable_migrations_count", [], "any", true, true, false, 4)) {
             // line 5
-            yield '        ';
-            $context['unavailable_migrations'] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 5, $this->source); })(), 'data', [], 'any', false, false, false, 5), 'unavailable_migrations_count', [], 'any', false, false, false, 5);
+            yield "        ";
+            $context["unavailable_migrations"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 5, $this->source); })()), "data", [], "any", false, false, false, 5), "unavailable_migrations_count", [], "any", false, false, false, 5);
             // line 6
-            yield '        ';
-            $context['new_migrations'] = CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 6, $this->source); })(), 'data', [], 'any', false, false, false, 6), 'new_migrations', [], 'any', false, false, false, 6));
+            yield "        ";
+            $context["new_migrations"] = Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 6, $this->source); })()), "data", [], "any", false, false, false, 6), "new_migrations", [], "any", false, false, false, 6));
             // line 7
-            yield '        ';
-            if (((isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 7, $this->source); })()) > 0) || ((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 7, $this->source); })()) > 0)) {
+            yield "        ";
+            if ((((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 7, $this->source); })()) > 0) || ((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 7, $this->source); })()) > 0))) {
                 // line 8
-                yield '            ';
-                $context['executed_migrations'] = CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 8, $this->source); })(), 'data', [], 'any', false, false, false, 8), 'executed_migrations', [], 'any', false, false, false, 8));
+                yield "            ";
+                $context["executed_migrations"] = Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 8, $this->source); })()), "data", [], "any", false, false, false, 8), "executed_migrations", [], "any", false, false, false, 8));
                 // line 9
-                yield '            ';
-                $context['available_migrations'] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 9, $this->source); })(), 'data', [], 'any', false, false, false, 9), 'available_migrations_count', [], 'any', false, false, false, 9);
+                yield "            ";
+                $context["available_migrations"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 9, $this->source); })()), "data", [], "any", false, false, false, 9), "available_migrations_count", [], "any", false, false, false, 9);
                 // line 10
-                yield '            ';
-                $context['status_color'] = (((isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 10, $this->source); })()) > 0) ? ('yellow') : (''));
+                yield "            ";
+                $context["status_color"] = ((((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 10, $this->source); })()) > 0)) ? ("yellow") : (""));
                 // line 11
-                yield '            ';
-                $context['status_color'] = (((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 11, $this->source); })()) > 0) ? ('red') : (isset($context['status_color']) || array_key_exists('status_color', $context) ? $context['status_color'] : (function () { throw new RuntimeError('Variable "status_color" does not exist.', 11, $this->source); })()));
+                yield "            ";
+                $context["status_color"] = ((((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 11, $this->source); })()) > 0)) ? ("red") : ((isset($context["status_color"]) || array_key_exists("status_color", $context) ? $context["status_color"] : (function () { throw new RuntimeError('Variable "status_color" does not exist.', 11, $this->source); })())));
                 // line 12
-                yield '
-            ';
+                yield "
+            ";
                 // line 13
-                $context['icon'] = ('' === $tmp = CoreExtension::captureOutput((function () use (&$context) {
+                $context["icon"] = ('' === $tmp = \Twig\Extension\CoreExtension::captureOutput((function () use (&$context, $macros, $blocks) {
                     // line 14
-                    yield '                ';
-                    if ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 14, $this->source); })()) < 3) {
+                    yield "                ";
+                    if (((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 14, $this->source); })()) < 3)) {
                         // line 15
-                        yield '                    ';
-                        yield CoreExtension::include($this->env, $context, '@DoctrineMigrations/Collector/icon.svg');
-                        yield '
-                ';
+                        yield "                    ";
+                        yield Twig\Extension\CoreExtension::include($this->env, $context, "@DoctrineMigrations/Collector/icon.svg");
+                        yield "
+                ";
                     } else {
                         // line 17
-                        yield '                    ';
-                        yield CoreExtension::include($this->env, $context, '@DoctrineMigrations/Collector/icon-v3.svg');
-                        yield '
-                ';
+                        yield "                    ";
+                        yield Twig\Extension\CoreExtension::include($this->env, $context, "@DoctrineMigrations/Collector/icon-v3.svg");
+                        yield "
+                ";
                     }
                     // line 19
-                    yield '
-                <span class="sf-toolbar-value">';
+                    yield "
+                <span class=\"sf-toolbar-value\">";
                     // line 20
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 20, $this->source); })()) + (isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 20, $this->source); })()), 'html', null, true);
-                    yield '</span>
-            ';
-
-                    return;
-                    yield '';
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 20, $this->source); })()) + (isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 20, $this->source); })())), "html", null, true);
+                    yield "</span>
+            ";
+                    return; yield '';
                 })())) ? '' : new Markup($tmp, $this->env->getCharset());
                 // line 22
-                yield '
-            ';
+                yield "
+            ";
                 // line 23
-                $context['text'] = ('' === $tmp = CoreExtension::captureOutput((function () use (&$context) {
+                $context["text"] = ('' === $tmp = \Twig\Extension\CoreExtension::captureOutput((function () use (&$context, $macros, $blocks) {
                     // line 24
-                    yield '                <div class="sf-toolbar-info-group">
-                    <div class="sf-toolbar-info-piece">
+                    yield "                <div class=\"sf-toolbar-info-group\">
+                    <div class=\"sf-toolbar-info-piece\">
                         <b>Current Migration</b>
-                        <span>';
+                        <span>";
                     // line 27
-                    ((isset($context['executed_migrations']) || array_key_exists('executed_migrations', $context) ? $context['executed_migrations'] : (function () { throw new RuntimeError('Variable "executed_migrations" does not exist.', 27, $this->source); })()) > 0) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::last($this->env->getCharset(), CoreExtension::split($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::last($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 27, $this->source); })(), 'data', [], 'any', false, false, false, 27), 'executed_migrations', [], 'any', false, false, false, 27)), 'version', [], 'any', false, false, false, 27), '\\')), 'html', null, true)) : (yield 'n/a');
-                    yield '</span>
+                    ((((isset($context["executed_migrations"]) || array_key_exists("executed_migrations", $context) ? $context["executed_migrations"] : (function () { throw new RuntimeError('Variable "executed_migrations" does not exist.', 27, $this->source); })()) > 0)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::last($this->env->getCharset(), Twig\Extension\CoreExtension::split($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, Twig\Extension\CoreExtension::last($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 27, $this->source); })()), "data", [], "any", false, false, false, 27), "executed_migrations", [], "any", false, false, false, 27)), "version", [], "any", false, false, false, 27), "\\")), "html", null, true)) : (yield "n/a"));
+                    yield "</span>
                     </div>
                 </div>
 
-                <div class="sf-toolbar-info-group">
-                    <div class="sf-toolbar-info-piece">
-                        <span class="sf-toolbar-header">
+                <div class=\"sf-toolbar-info-group\">
+                    <div class=\"sf-toolbar-info-piece\">
+                        <span class=\"sf-toolbar-header\">
                             <b>Database Migrations</b>
                         </span>
                     </div>
-                    <div class="sf-toolbar-info-piece">
+                    <div class=\"sf-toolbar-info-piece\">
                         <b>Executed</b>
-                        <span class="sf-toolbar-status">';
+                        <span class=\"sf-toolbar-status\">";
                     // line 39
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['executed_migrations']) || array_key_exists('executed_migrations', $context) ? $context['executed_migrations'] : (function () { throw new RuntimeError('Variable "executed_migrations" does not exist.', 39, $this->source); })(), 'html', null, true);
-                    yield '</span>
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["executed_migrations"]) || array_key_exists("executed_migrations", $context) ? $context["executed_migrations"] : (function () { throw new RuntimeError('Variable "executed_migrations" does not exist.', 39, $this->source); })()), "html", null, true);
+                    yield "</span>
                     </div>
-                    <div class="sf-toolbar-info-piece">
+                    <div class=\"sf-toolbar-info-piece\">
                         <b>Unavailable</b>
-                        <span class="sf-toolbar-status ';
+                        <span class=\"sf-toolbar-status ";
                     // line 43
-                    yield ((isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 43, $this->source); })()) > 0) ? ('sf-toolbar-status-yellow') : ('');
-                    yield '">';
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 43, $this->source); })(), 'html', null, true);
-                    yield '</span>
+                    yield ((((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 43, $this->source); })()) > 0)) ? ("sf-toolbar-status-yellow") : (""));
+                    yield "\">";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 43, $this->source); })()), "html", null, true);
+                    yield "</span>
                     </div>
-                    <div class="sf-toolbar-info-piece">
+                    <div class=\"sf-toolbar-info-piece\">
                         <b>Available</b>
-                        <span class="sf-toolbar-status">';
+                        <span class=\"sf-toolbar-status\">";
                     // line 47
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['available_migrations']) || array_key_exists('available_migrations', $context) ? $context['available_migrations'] : (function () { throw new RuntimeError('Variable "available_migrations" does not exist.', 47, $this->source); })(), 'html', null, true);
-                    yield '</span>
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["available_migrations"]) || array_key_exists("available_migrations", $context) ? $context["available_migrations"] : (function () { throw new RuntimeError('Variable "available_migrations" does not exist.', 47, $this->source); })()), "html", null, true);
+                    yield "</span>
                     </div>
-                    <div class="sf-toolbar-info-piece">
+                    <div class=\"sf-toolbar-info-piece\">
                         <b>New</b>
-                        <span class="sf-toolbar-status ';
+                        <span class=\"sf-toolbar-status ";
                     // line 51
-                    yield ((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 51, $this->source); })()) > 0) ? ('sf-toolbar-status-red') : ('');
-                    yield '">';
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 51, $this->source); })(), 'html', null, true);
-                    yield '</span>
+                    yield ((((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 51, $this->source); })()) > 0)) ? ("sf-toolbar-status-red") : (""));
+                    yield "\">";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 51, $this->source); })()), "html", null, true);
+                    yield "</span>
                     </div>
                 </div>
-            ';
-
-                    return;
-                    yield '';
+            ";
+                    return; yield '';
                 })())) ? '' : new Markup($tmp, $this->env->getCharset());
                 // line 55
-                yield '
-            ';
+                yield "
+            ";
                 // line 56
-                yield CoreExtension::include($this->env, $context, '@WebProfiler/Profiler/toolbar_item.html.twig', ['link' => (isset($context['profiler_url']) || array_key_exists('profiler_url', $context) ? $context['profiler_url'] : (function () { throw new RuntimeError('Variable "profiler_url" does not exist.', 56, $this->source); })()), 'status' => (isset($context['status_color']) || array_key_exists('status_color', $context) ? $context['status_color'] : (function () { throw new RuntimeError('Variable "status_color" does not exist.', 56, $this->source); })())]);
-                yield '
-        ';
+                yield Twig\Extension\CoreExtension::include($this->env, $context, "@WebProfiler/Profiler/toolbar_item.html.twig", ["link" => (isset($context["profiler_url"]) || array_key_exists("profiler_url", $context) ? $context["profiler_url"] : (function () { throw new RuntimeError('Variable "profiler_url" does not exist.', 56, $this->source); })()), "status" => (isset($context["status_color"]) || array_key_exists("status_color", $context) ? $context["status_color"] : (function () { throw new RuntimeError('Variable "status_color" does not exist.', 56, $this->source); })())]);
+                yield "
+        ";
             }
             // line 58
-            yield '    ';
+            yield "    ";
         }
-
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     // line 61
     public function block_menu($context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'menu'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'menu'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
 
         // line 62
-        yield '    ';
-        if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context['collector'] ?? null, 'data', [], 'any', false, true, false, 62), 'unavailable_migrations_count', [], 'any', true, true, false, 62)) {
+        yield "    ";
+        if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["collector"] ?? null), "data", [], "any", false, true, false, 62), "unavailable_migrations_count", [], "any", true, true, false, 62)) {
             // line 63
-            yield '        ';
-            $context['unavailable_migrations'] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 63, $this->source); })(), 'data', [], 'any', false, false, false, 63), 'unavailable_migrations_count', [], 'any', false, false, false, 63);
+            yield "        ";
+            $context["unavailable_migrations"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 63, $this->source); })()), "data", [], "any", false, false, false, 63), "unavailable_migrations_count", [], "any", false, false, false, 63);
             // line 64
-            yield '        ';
-            $context['new_migrations'] = CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 64, $this->source); })(), 'data', [], 'any', false, false, false, 64), 'new_migrations', [], 'any', false, false, false, 64));
+            yield "        ";
+            $context["new_migrations"] = Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 64, $this->source); })()), "data", [], "any", false, false, false, 64), "new_migrations", [], "any", false, false, false, 64));
             // line 65
-            yield '        ';
-            $context['label'] = (((isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 65, $this->source); })()) > 0) ? ('label-status-warning') : (''));
+            yield "        ";
+            $context["label"] = ((((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 65, $this->source); })()) > 0)) ? ("label-status-warning") : (""));
             // line 66
-            yield '        ';
-            $context['label'] = (((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 66, $this->source); })()) > 0) ? ('label-status-error') : (isset($context['label']) || array_key_exists('label', $context) ? $context['label'] : (function () { throw new RuntimeError('Variable "label" does not exist.', 66, $this->source); })()));
+            yield "        ";
+            $context["label"] = ((((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 66, $this->source); })()) > 0)) ? ("label-status-error") : ((isset($context["label"]) || array_key_exists("label", $context) ? $context["label"] : (function () { throw new RuntimeError('Variable "label" does not exist.', 66, $this->source); })())));
             // line 67
-            yield '        <span class="label ';
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['label']) || array_key_exists('label', $context) ? $context['label'] : (function () { throw new RuntimeError('Variable "label" does not exist.', 67, $this->source); })(), 'html', null, true);
-            yield '">
-            <span class="icon">
-                ';
+            yield "        <span class=\"label ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["label"]) || array_key_exists("label", $context) ? $context["label"] : (function () { throw new RuntimeError('Variable "label" does not exist.', 67, $this->source); })()), "html", null, true);
+            yield "\">
+            <span class=\"icon\">
+                ";
             // line 69
-            if ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 69, $this->source); })()) < 3) {
+            if (((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 69, $this->source); })()) < 3)) {
                 // line 70
-                yield '                    ';
-                yield CoreExtension::include($this->env, $context, '@DoctrineMigrations/Collector/icon.svg');
-                yield '
-                ';
+                yield "                    ";
+                yield Twig\Extension\CoreExtension::include($this->env, $context, "@DoctrineMigrations/Collector/icon.svg");
+                yield "
+                ";
             } else {
                 // line 72
-                yield '                    ';
-                yield CoreExtension::include($this->env, $context, '@DoctrineMigrations/Collector/icon-v3.svg');
-                yield '
-                ';
+                yield "                    ";
+                yield Twig\Extension\CoreExtension::include($this->env, $context, "@DoctrineMigrations/Collector/icon-v3.svg");
+                yield "
+                ";
             }
             // line 74
-            yield '            </span>
+            yield "            </span>
 
             <strong>Migrations</strong>
-            ';
+            ";
             // line 77
-            if (((isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 77, $this->source); })()) > 0) || ((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 77, $this->source); })()) > 0)) {
+            if ((((isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 77, $this->source); })()) > 0) || ((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 77, $this->source); })()) > 0))) {
                 // line 78
-                yield '                <span class="count">
-                    <span>';
+                yield "                <span class=\"count\">
+                    <span>";
                 // line 79
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context['new_migrations']) || array_key_exists('new_migrations', $context) ? $context['new_migrations'] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 79, $this->source); })()) + (isset($context['unavailable_migrations']) || array_key_exists('unavailable_migrations', $context) ? $context['unavailable_migrations'] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 79, $this->source); })()), 'html', null, true);
-                yield '</span>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["new_migrations"]) || array_key_exists("new_migrations", $context) ? $context["new_migrations"] : (function () { throw new RuntimeError('Variable "new_migrations" does not exist.', 79, $this->source); })()) + (isset($context["unavailable_migrations"]) || array_key_exists("unavailable_migrations", $context) ? $context["unavailable_migrations"] : (function () { throw new RuntimeError('Variable "unavailable_migrations" does not exist.', 79, $this->source); })())), "html", null, true);
+                yield "</span>
                 </span>
-            ';
+            ";
             }
             // line 82
-            yield '        </span>
-    ';
+            yield "        </span>
+    ";
         }
-
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     // line 86
     public function block_panel($context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'panel'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "panel"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'block', 'panel'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "panel"));
 
         // line 87
-        yield '    ';
-        $context['num_executed_migrations'] = CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 87, $this->source); })(), 'data', [], 'any', false, false, false, 87), 'executed_migrations', [], 'any', false, false, false, 87));
+        yield "    ";
+        $context["num_executed_migrations"] = Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 87, $this->source); })()), "data", [], "any", false, false, false, 87), "executed_migrations", [], "any", false, false, false, 87));
         // line 88
-        yield '    ';
-        $context['num_unavailable_migrations'] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 88, $this->source); })(), 'data', [], 'any', false, false, false, 88), 'unavailable_migrations_count', [], 'any', false, false, false, 88);
+        yield "    ";
+        $context["num_unavailable_migrations"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 88, $this->source); })()), "data", [], "any", false, false, false, 88), "unavailable_migrations_count", [], "any", false, false, false, 88);
         // line 89
-        yield '    ';
-        $context['num_available_migrations'] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 89, $this->source); })(), 'data', [], 'any', false, false, false, 89), 'available_migrations_count', [], 'any', false, false, false, 89);
+        yield "    ";
+        $context["num_available_migrations"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 89, $this->source); })()), "data", [], "any", false, false, false, 89), "available_migrations_count", [], "any", false, false, false, 89);
         // line 90
-        yield '    ';
-        $context['num_new_migrations'] = CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 90, $this->source); })(), 'data', [], 'any', false, false, false, 90), 'new_migrations', [], 'any', false, false, false, 90));
+        yield "    ";
+        $context["num_new_migrations"] = Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 90, $this->source); })()), "data", [], "any", false, false, false, 90), "new_migrations", [], "any", false, false, false, 90));
         // line 91
-        yield '
+        yield "
     <h2>Doctrine Migrations</h2>
-    <div class="metrics">
-        <div class="metric">
-            <span class="value">';
+    <div class=\"metrics\">
+        <div class=\"metric\">
+            <span class=\"value\">";
         // line 95
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['num_executed_migrations']) || array_key_exists('num_executed_migrations', $context) ? $context['num_executed_migrations'] : (function () { throw new RuntimeError('Variable "num_executed_migrations" does not exist.', 95, $this->source); })(), 'html', null, true);
-        yield '</span>
-            <span class="label">Executed</span>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["num_executed_migrations"]) || array_key_exists("num_executed_migrations", $context) ? $context["num_executed_migrations"] : (function () { throw new RuntimeError('Variable "num_executed_migrations" does not exist.', 95, $this->source); })()), "html", null, true);
+        yield "</span>
+            <span class=\"label\">Executed</span>
         </div>
 
-        ';
+        ";
         // line 99
-        if ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 99, $this->source); })()) >= 3) {
+        if (((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 99, $this->source); })()) >= 3)) {
             // line 100
-            yield '            <div class="metric-group">
-        ';
+            yield "            <div class=\"metric-group\">
+        ";
         }
         // line 102
-        yield '
-        <div class="metric">
-            <span class="value">';
+        yield "
+        <div class=\"metric\">
+            <span class=\"value\">";
         // line 104
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['num_unavailable_migrations']) || array_key_exists('num_unavailable_migrations', $context) ? $context['num_unavailable_migrations'] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 104, $this->source); })(), 'html', null, true);
-        yield '</span>
-            <span class="label">Unavailable</span>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["num_unavailable_migrations"]) || array_key_exists("num_unavailable_migrations", $context) ? $context["num_unavailable_migrations"] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 104, $this->source); })()), "html", null, true);
+        yield "</span>
+            <span class=\"label\">Unavailable</span>
         </div>
-        <div class="metric">
-            <span class="value">';
+        <div class=\"metric\">
+            <span class=\"value\">";
         // line 108
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['num_available_migrations']) || array_key_exists('num_available_migrations', $context) ? $context['num_available_migrations'] : (function () { throw new RuntimeError('Variable "num_available_migrations" does not exist.', 108, $this->source); })(), 'html', null, true);
-        yield '</span>
-            <span class="label">Available</span>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["num_available_migrations"]) || array_key_exists("num_available_migrations", $context) ? $context["num_available_migrations"] : (function () { throw new RuntimeError('Variable "num_available_migrations" does not exist.', 108, $this->source); })()), "html", null, true);
+        yield "</span>
+            <span class=\"label\">Available</span>
         </div>
-        <div class="metric">
-            <span class="value">';
+        <div class=\"metric\">
+            <span class=\"value\">";
         // line 112
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(isset($context['num_new_migrations']) || array_key_exists('num_new_migrations', $context) ? $context['num_new_migrations'] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 112, $this->source); })(), 'html', null, true);
-        yield '</span>
-            <span class="label">New</span>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["num_new_migrations"]) || array_key_exists("num_new_migrations", $context) ? $context["num_new_migrations"] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 112, $this->source); })()), "html", null, true);
+        yield "</span>
+            <span class=\"label\">New</span>
         </div>
 
-        ';
+        ";
         // line 116
-        if ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 116, $this->source); })()) >= 3) {
+        if (((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 116, $this->source); })()) >= 3)) {
             // line 117
-            yield '            </div>         ';
+            yield "            </div>         ";
         }
         // line 119
-        yield '    </div>
+        yield "    </div>
 
-    <div class="sf-tabs">
-        <div class="tab">
-            <h3 class="tab-title">
+    <div class=\"sf-tabs\">
+        <div class=\"tab\">
+            <h3 class=\"tab-title\">
                 Migrations
-                <span class="badge ';
+                <span class=\"badge ";
         // line 125
-        yield ((isset($context['num_new_migrations']) || array_key_exists('num_new_migrations', $context) ? $context['num_new_migrations'] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 125, $this->source); })()) > 0) ? ('status-error') : (((isset($context['num_unavailable_migrations']) || array_key_exists('num_unavailable_migrations', $context) ? $context['num_unavailable_migrations'] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 125, $this->source); })()) > 0) ? ('status-warning') : (''));
-        yield '">
-                    ';
+        yield ((((isset($context["num_new_migrations"]) || array_key_exists("num_new_migrations", $context) ? $context["num_new_migrations"] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 125, $this->source); })()) > 0)) ? ("status-error") : (((((isset($context["num_unavailable_migrations"]) || array_key_exists("num_unavailable_migrations", $context) ? $context["num_unavailable_migrations"] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 125, $this->source); })()) > 0)) ? ("status-warning") : (""))));
+        yield "\">
+                    ";
         // line 126
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context['num_new_migrations']) || array_key_exists('num_new_migrations', $context) ? $context['num_new_migrations'] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 126, $this->source); })()) > 0) ? (isset($context['num_new_migrations']) || array_key_exists('num_new_migrations', $context) ? $context['num_new_migrations'] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 126, $this->source); })()) : (((isset($context['num_unavailable_migrations']) || array_key_exists('num_unavailable_migrations', $context) ? $context['num_unavailable_migrations'] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 126, $this->source); })()) > 0) ? (isset($context['num_unavailable_migrations']) || array_key_exists('num_unavailable_migrations', $context) ? $context['num_unavailable_migrations'] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 126, $this->source); })()) : (isset($context['num_executed_migrations']) || array_key_exists('num_executed_migrations', $context) ? $context['num_executed_migrations'] : (function () { throw new RuntimeError('Variable "num_executed_migrations" does not exist.', 126, $this->source); })())), 'html', null, true);
-        yield '
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((((isset($context["num_new_migrations"]) || array_key_exists("num_new_migrations", $context) ? $context["num_new_migrations"] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 126, $this->source); })()) > 0)) ? ((isset($context["num_new_migrations"]) || array_key_exists("num_new_migrations", $context) ? $context["num_new_migrations"] : (function () { throw new RuntimeError('Variable "num_new_migrations" does not exist.', 126, $this->source); })())) : (((((isset($context["num_unavailable_migrations"]) || array_key_exists("num_unavailable_migrations", $context) ? $context["num_unavailable_migrations"] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 126, $this->source); })()) > 0)) ? ((isset($context["num_unavailable_migrations"]) || array_key_exists("num_unavailable_migrations", $context) ? $context["num_unavailable_migrations"] : (function () { throw new RuntimeError('Variable "num_unavailable_migrations" does not exist.', 126, $this->source); })())) : ((isset($context["num_executed_migrations"]) || array_key_exists("num_executed_migrations", $context) ? $context["num_executed_migrations"] : (function () { throw new RuntimeError('Variable "num_executed_migrations" does not exist.', 126, $this->source); })()))))), "html", null, true);
+        yield "
                 </span>
             </h3>
 
-            <div class="tab-content">
-                ';
+            <div class=\"tab-content\">
+                ";
         // line 131
-        yield CoreExtension::callMacro($macros['_self'], 'macro_render_migration_details', [isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 131, $this->source); })(), isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 131, $this->source); })()], 131, $context, $this->getSourceContext());
-        yield '
+        yield CoreExtension::callMacro($macros["_self"], "macro_render_migration_details", [(isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 131, $this->source); })()), (isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 131, $this->source); })())], 131, $context, $this->getSourceContext());
+        yield "
             </div>
         </div>
 
-        <div class="tab">
-            <h3 class="tab-title">Configuration</h3>
+        <div class=\"tab\">
+            <h3 class=\"tab-title\">Configuration</h3>
 
-            <div class="tab-content">
-                ';
+            <div class=\"tab-content\">
+                ";
         // line 139
-        yield CoreExtension::callMacro($macros['_self'], 'macro_render_configuration_details', [isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 139, $this->source); })(), isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 139, $this->source); })()], 139, $context, $this->getSourceContext());
-        yield '
+        yield CoreExtension::callMacro($macros["_self"], "macro_render_configuration_details", [(isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 139, $this->source); })()), (isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 139, $this->source); })())], 139, $context, $this->getSourceContext());
+        yield "
             </div>
         </div>
     </div>
-';
-
+";
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     // line 145
@@ -392,70 +396,70 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
     {
         $macros = $this->macros;
         $context = $this->env->mergeGlobals([
-            'collector' => $__collector__,
-            'varargs' => $__varargs__,
+            "collector" => $__collector__,
+            "varargs" => $__varargs__,
         ]);
 
         $blocks = [];
 
-        return ('' === $tmp = CoreExtension::captureOutput((function () use (&$context, $macros) {
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_migration_details'));
+        return ('' === $tmp = \Twig\Extension\CoreExtension::captureOutput((function () use (&$context, $macros, $blocks) {
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_migration_details"));
 
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_migration_details'));
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_migration_details"));
 
             // line 146
-            yield '    <table>
+            yield "    <table>
         <thead>
         <tr>
-            <th class="colored font-normal">Version</th>
-            <th class="colored font-normal">Description</th>
-            <th class="colored font-normal">Status</th>
-            <th class="colored font-normal">Executed at</th>
-            <th class="colored font-normal text-right">Execution time</th>
+            <th class=\"colored font-normal\">Version</th>
+            <th class=\"colored font-normal\">Description</th>
+            <th class=\"colored font-normal\">Status</th>
+            <th class=\"colored font-normal\">Executed at</th>
+            <th class=\"colored font-normal text-right\">Execution time</th>
         </tr>
         </thead>
-        ';
+        ";
             // line 156
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 156, $this->source); })(), 'data', [], 'any', false, false, false, 156), 'new_migrations', [], 'any', false, false, false, 156));
-            foreach ($context['_seq'] as $context['_key'] => $context['migration']) {
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 156, $this->source); })()), "data", [], "any", false, false, false, 156), "new_migrations", [], "any", false, false, false, 156));
+            foreach ($context['_seq'] as $context["_key"] => $context["migration"]) {
                 // line 157
-                yield '            ';
-                yield CoreExtension::callMacro($macros['_self'], 'macro_render_migration', [$context['migration']], 157, $context, $this->getSourceContext());
-                yield '
-        ';
+                yield "            ";
+                yield CoreExtension::callMacro($macros["_self"], "macro_render_migration", [$context["migration"]], 157, $context, $this->getSourceContext());
+                yield "
+        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['migration'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 159
-            yield '
-        ';
+            yield "
+        ";
             // line 160
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::reverse($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 160, $this->source); })(), 'data', [], 'any', false, false, false, 160), 'executed_migrations', [], 'any', false, false, false, 160)));
-            foreach ($context['_seq'] as $context['_key'] => $context['migration']) {
+            $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::reverse($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 160, $this->source); })()), "data", [], "any", false, false, false, 160), "executed_migrations", [], "any", false, false, false, 160)));
+            foreach ($context['_seq'] as $context["_key"] => $context["migration"]) {
                 // line 161
-                yield '            ';
-                yield CoreExtension::callMacro($macros['_self'], 'macro_render_migration', [$context['migration']], 161, $context, $this->getSourceContext());
-                yield '
-        ';
+                yield "            ";
+                yield CoreExtension::callMacro($macros["_self"], "macro_render_migration", [$context["migration"]], 161, $context, $this->getSourceContext());
+                yield "
+        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['migration'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 163
-            yield '    </table>
-';
-
+            yield "    </table>
+";
+            
             $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+            
             $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-            return;
-            yield '';
+            return; yield '';
         })())) ? '' : new Markup($tmp, $this->env->getCharset());
     }
 
@@ -464,121 +468,121 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
     {
         $macros = $this->macros;
         $context = $this->env->mergeGlobals([
-            'collector' => $__collector__,
-            'varargs' => $__varargs__,
+            "collector" => $__collector__,
+            "varargs" => $__varargs__,
         ]);
 
         $blocks = [];
 
-        return ('' === $tmp = CoreExtension::captureOutput((function () use (&$context) {
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_configuration_details'));
+        return ('' === $tmp = \Twig\Extension\CoreExtension::captureOutput((function () use (&$context, $macros, $blocks) {
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_configuration_details"));
 
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_configuration_details'));
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_configuration_details"));
 
             // line 167
-            yield '    <table>
+            yield "    <table>
         <thead>
         <tr>
-            <th colspan="2" class="colored font-normal">Storage</th>
+            <th colspan=\"2\" class=\"colored font-normal\">Storage</th>
         </tr>
         </thead>
         <tr>
-            <td class="font-normal">Type</td>
-            <td class="font-normal">';
+            <td class=\"font-normal\">Type</td>
+            <td class=\"font-normal\">";
             // line 175
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 175, $this->source); })(), 'data', [], 'any', false, false, false, 175), 'storage', [], 'any', false, false, false, 175), 'html', null, true);
-            yield '</td>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 175, $this->source); })()), "data", [], "any", false, false, false, 175), "storage", [], "any", false, false, false, 175), "html", null, true);
+            yield "</td>
         </tr>
-        ';
+        ";
             // line 177
-            if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context['collector'] ?? null, 'data', [], 'any', false, true, false, 177), 'table', [], 'any', true, true, false, 177)) {
+            if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["collector"] ?? null), "data", [], "any", false, true, false, 177), "table", [], "any", true, true, false, 177)) {
                 // line 178
-                yield '            <tr>
-                <td class="font-normal">Table Name</td>
-                <td class="font-normal">';
+                yield "            <tr>
+                <td class=\"font-normal\">Table Name</td>
+                <td class=\"font-normal\">";
                 // line 180
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 180, $this->source); })(), 'data', [], 'any', false, false, false, 180), 'table', [], 'any', false, false, false, 180), 'html', null, true);
-                yield '</td>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 180, $this->source); })()), "data", [], "any", false, false, false, 180), "table", [], "any", false, false, false, 180), "html", null, true);
+                yield "</td>
             </tr>
-        ';
+        ";
             }
             // line 183
-            yield '        ';
-            if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context['collector'] ?? null, 'data', [], 'any', false, true, false, 183), 'column', [], 'any', true, true, false, 183)) {
+            yield "        ";
+            if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["collector"] ?? null), "data", [], "any", false, true, false, 183), "column", [], "any", true, true, false, 183)) {
                 // line 184
-                yield '            <tr>
-                <td class="font-normal">Column Name</td>
-                <td class="font-normal">';
+                yield "            <tr>
+                <td class=\"font-normal\">Column Name</td>
+                <td class=\"font-normal\">";
                 // line 186
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 186, $this->source); })(), 'data', [], 'any', false, false, false, 186), 'column', [], 'any', false, false, false, 186), 'html', null, true);
-                yield '</td>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 186, $this->source); })()), "data", [], "any", false, false, false, 186), "column", [], "any", false, false, false, 186), "html", null, true);
+                yield "</td>
             </tr>
-        ';
+        ";
             }
             // line 189
-            yield '    </table>
+            yield "    </table>
 
     <table>
         <thead>
         <tr>
-            <th colspan="2" class="colored font-normal">Database</th>
+            <th colspan=\"2\" class=\"colored font-normal\">Database</th>
         </tr>
         </thead>
         <tr>
-            <td class="font-normal">Driver</td>
-            <td class="font-normal">';
+            <td class=\"font-normal\">Driver</td>
+            <td class=\"font-normal\">";
             // line 199
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 199, $this->source); })(), 'data', [], 'any', false, false, false, 199), 'driver', [], 'any', false, false, false, 199), 'html', null, true);
-            yield '</td>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 199, $this->source); })()), "data", [], "any", false, false, false, 199), "driver", [], "any", false, false, false, 199), "html", null, true);
+            yield "</td>
         </tr>
         <tr>
-            <td class="font-normal">Name</td>
-            <td class="font-normal">';
+            <td class=\"font-normal\">Name</td>
+            <td class=\"font-normal\">";
             // line 203
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 203, $this->source); })(), 'data', [], 'any', false, false, false, 203), 'name', [], 'any', false, false, false, 203), 'html', null, true);
-            yield '</td>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 203, $this->source); })()), "data", [], "any", false, false, false, 203), "name", [], "any", false, false, false, 203), "html", null, true);
+            yield "</td>
         </tr>
     </table>
 
     <table>
         <thead>
         <tr>
-            <th colspan="2" class="colored font-normal">Migration Namespaces</th>
+            <th colspan=\"2\" class=\"colored font-normal\">Migration Namespaces</th>
         </tr>
         </thead>
-        ';
+        ";
             // line 213
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, isset($context['collector']) || array_key_exists('collector', $context) ? $context['collector'] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 213, $this->source); })(), 'data', [], 'any', false, false, false, 213), 'namespaces', [], 'any', false, false, false, 213));
-            foreach ($context['_seq'] as $context['namespace'] => $context['directory']) {
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 213, $this->source); })()), "data", [], "any", false, false, false, 213), "namespaces", [], "any", false, false, false, 213));
+            foreach ($context['_seq'] as $context["namespace"] => $context["directory"]) {
                 // line 214
-                yield '            <tr>
-                <td class="font-normal">';
+                yield "            <tr>
+                <td class=\"font-normal\">";
                 // line 215
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context['namespace'], 'html', null, true);
-                yield '</td>
-                <td class="font-normal">';
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["namespace"], "html", null, true);
+                yield "</td>
+                <td class=\"font-normal\">";
                 // line 216
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context['directory'], 'html', null, true);
-                yield '</td>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["directory"], "html", null, true);
+                yield "</td>
             </tr>
-        ';
+        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['namespace'], $context['directory'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 219
-            yield '    </table>
-';
-
+            yield "    </table>
+";
+            
             $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+            
             $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-            return;
-            yield '';
+            return; yield '';
         })())) ? '' : new Markup($tmp, $this->env->getCharset());
     }
 
@@ -587,109 +591,109 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
     {
         $macros = $this->macros;
         $context = $this->env->mergeGlobals([
-            'migration' => $__migration__,
-            'profiler_markup_version' => $__profiler_markup_version__,
-            'varargs' => $__varargs__,
+            "migration" => $__migration__,
+            "profiler_markup_version" => $__profiler_markup_version__,
+            "varargs" => $__varargs__,
         ]);
 
         $blocks = [];
 
-        return ('' === $tmp = CoreExtension::captureOutput((function () use (&$context) {
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_migration'));
+        return ('' === $tmp = \Twig\Extension\CoreExtension::captureOutput((function () use (&$context, $macros, $blocks) {
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+            $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_migration"));
 
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'macro', 'render_migration'));
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+            $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_migration"));
 
             // line 223
-            yield '    <tr>
-        <td class="font-normal">
-            ';
+            yield "    <tr>
+        <td class=\"font-normal\">
+            ";
             // line 225
-            if (CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 225, $this->source); })(), 'file', [], 'any', false, false, false, 225)) {
+            if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 225, $this->source); })()), "file", [], "any", false, false, false, 225)) {
                 // line 226
-                yield '                <a href="';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bundle\WebProfilerBundle\Profiler\CodeExtension']->getFileLink(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })(), 'file', [], 'any', false, false, false, 226), 1), 'html', null, true);
-                yield '" title="';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })(), 'file', [], 'any', false, false, false, 226), 'html', null, true);
-                yield '">';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })(), 'version', [], 'any', false, false, false, 226), 'html', null, true);
-                yield '</a>
-            ';
+                yield "                <a href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bundle\WebProfilerBundle\Profiler\CodeExtension']->getFileLink(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })()), "file", [], "any", false, false, false, 226), 1), "html", null, true);
+                yield "\" title=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })()), "file", [], "any", false, false, false, 226), "html", null, true);
+                yield "\">";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 226, $this->source); })()), "version", [], "any", false, false, false, 226), "html", null, true);
+                yield "</a>
+            ";
             } else {
                 // line 228
-                yield '                ';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 228, $this->source); })(), 'version', [], 'any', false, false, false, 228), 'html', null, true);
-                yield '
-            ';
+                yield "                ";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 228, $this->source); })()), "version", [], "any", false, false, false, 228), "html", null, true);
+                yield "
+            ";
             }
             // line 230
-            yield '        </td>
-        <td class="font-normal">';
+            yield "        </td>
+        <td class=\"font-normal\">";
             // line 231
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 231, $this->source); })(), 'description', [], 'any', false, false, false, 231), 'html', null, true);
-            yield '</td>
-        <td class="font-normal align-right">
-            ';
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 231, $this->source); })()), "description", [], "any", false, false, false, 231), "html", null, true);
+            yield "</td>
+        <td class=\"font-normal align-right\">
+            ";
             // line 233
-            if (CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 233, $this->source); })(), 'is_new', [], 'any', false, false, false, 233)) {
+            if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 233, $this->source); })()), "is_new", [], "any", false, false, false, 233)) {
                 // line 234
-                yield '                <span class="';
-                yield ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 234, $this->source); })()) >= 3) ? ('badge badge-error') : ('label status-error');
-                yield '">NOT EXECUTED</span>
-            ';
+                yield "                <span class=\"";
+                yield ((((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 234, $this->source); })()) >= 3)) ? ("badge badge-error") : ("label status-error"));
+                yield "\">NOT EXECUTED</span>
+            ";
             } elseif (CoreExtension::getAttribute($this->env, $this->source,             // line 235
-                isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 235, $this->source); })(), 'is_unavailable', [], 'any', false, false, false, 235)) {
+(isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 235, $this->source); })()), "is_unavailable", [], "any", false, false, false, 235)) {
                 // line 236
-                yield '                <span class="';
-                yield ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 236, $this->source); })()) >= 3) ? ('badge badge-warning') : ('label status-warning');
-                yield '">UNAVAILABLE</span>
-            ';
+                yield "                <span class=\"";
+                yield ((((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 236, $this->source); })()) >= 3)) ? ("badge badge-warning") : ("label status-warning"));
+                yield "\">UNAVAILABLE</span>
+            ";
             } else {
                 // line 238
-                yield '                <span class="';
-                yield ((isset($context['profiler_markup_version']) || array_key_exists('profiler_markup_version', $context) ? $context['profiler_markup_version'] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 238, $this->source); })()) >= 3) ? ('badge badge-success') : ('label status-success');
-                yield '">EXECUTED</span>
-            ';
+                yield "                <span class=\"";
+                yield ((((isset($context["profiler_markup_version"]) || array_key_exists("profiler_markup_version", $context) ? $context["profiler_markup_version"] : (function () { throw new RuntimeError('Variable "profiler_markup_version" does not exist.', 238, $this->source); })()) >= 3)) ? ("badge badge-success") : ("label status-success"));
+                yield "\">EXECUTED</span>
+            ";
             }
             // line 240
-            yield '        </td>
-        <td class="font-normal">';
+            yield "        </td>
+        <td class=\"font-normal\">";
             // line 241
-            (CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 241, $this->source); })(), 'executed_at', [], 'any', false, false, false, 241)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 241, $this->source); })(), 'executed_at', [], 'any', false, false, false, 241), 'M j, Y H:i'), 'html', null, true)) : (yield 'n/a');
-            yield '</td>
-        <td class="font-normal text-right">
-            ';
+            ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 241, $this->source); })()), "executed_at", [], "any", false, false, false, 241)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 241, $this->source); })()), "executed_at", [], "any", false, false, false, 241), "M j, Y H:i"), "html", null, true)) : (yield "n/a"));
+            yield "</td>
+        <td class=\"font-normal text-right\">
+            ";
             // line 243
-            if (null === CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 243, $this->source); })(), 'execution_time', [], 'any', false, false, false, 243)) {
+            if ((null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 243, $this->source); })()), "execution_time", [], "any", false, false, false, 243))) {
                 // line 244
-                yield '                n/a
-            ';
-            } elseif (CoreExtension::getAttribute($this->env, $this->source,             // line 245
-                isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 245, $this->source); })(), 'execution_time', [], 'any', false, false, false, 245) < 1) {
+                yield "                n/a
+            ";
+            } elseif ((CoreExtension::getAttribute($this->env, $this->source,             // line 245
+(isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 245, $this->source); })()), "execution_time", [], "any", false, false, false, 245) < 1)) {
                 // line 246
-                yield '                ';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 246, $this->source); })(), 'execution_time', [], 'any', false, false, false, 246) * 1000, 0), 'html', null, true);
-                yield ' ms
-            ';
+                yield "                ";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber((CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 246, $this->source); })()), "execution_time", [], "any", false, false, false, 246) * 1000), 0), "html", null, true);
+                yield " ms
+            ";
             } else {
                 // line 248
-                yield '                ';
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, isset($context['migration']) || array_key_exists('migration', $context) ? $context['migration'] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 248, $this->source); })(), 'execution_time', [], 'any', false, false, false, 248), 2), 'html', null, true);
-                yield ' seconds
-            ';
+                yield "                ";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, (isset($context["migration"]) || array_key_exists("migration", $context) ? $context["migration"] : (function () { throw new RuntimeError('Variable "migration" does not exist.', 248, $this->source); })()), "execution_time", [], "any", false, false, false, 248), 2), "html", null, true);
+                yield " seconds
+            ";
             }
             // line 250
-            yield '        </td>
+            yield "        </td>
     </tr>
-';
-
+";
+            
             $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+            
             $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-            return;
-            yield '';
+            return; yield '';
         })())) ? '' : new Markup($tmp, $this->env->getCharset());
     }
 
@@ -698,7 +702,7 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
      */
     public function getTemplateName()
     {
-        return '@DoctrineMigrations/Collector/migrations.html.twig';
+        return "@DoctrineMigrations/Collector/migrations.html.twig";
     }
 
     /**
@@ -714,7 +718,7 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
      */
     public function getDebugInfo()
     {
-        return [687 => 250,  681 => 248,  675 => 246,  673 => 245,  670 => 244,  668 => 243,  663 => 241,  660 => 240,  654 => 238,  648 => 236,  646 => 235,  641 => 234,  639 => 233,  634 => 231,  631 => 230,  625 => 228,  615 => 226,  613 => 225,  609 => 223,  590 => 222,  577 => 219,  568 => 216,  564 => 215,  561 => 214,  557 => 213,  544 => 203,  537 => 199,  525 => 189,  519 => 186,  515 => 184,  512 => 183,  506 => 180,  502 => 178,  500 => 177,  495 => 175,  485 => 167,  467 => 166,  454 => 163,  445 => 161,  441 => 160,  438 => 159,  429 => 157,  425 => 156,  413 => 146,  395 => 145,  379 => 139,  368 => 131,  360 => 126,  356 => 125,  348 => 119,  345 => 117,  343 => 116,  336 => 112,  329 => 108,  322 => 104,  318 => 102,  314 => 100,  312 => 99,  305 => 95,  299 => 91,  296 => 90,  293 => 89,  290 => 88,  287 => 87,  277 => 86,  264 => 82,  258 => 79,  255 => 78,  253 => 77,  248 => 74,  242 => 72,  236 => 70,  234 => 69,  228 => 67,  225 => 66,  222 => 65,  219 => 64,  216 => 63,  213 => 62,  203 => 61,  191 => 58,  186 => 56,  183 => 55,  173 => 51,  166 => 47,  157 => 43,  150 => 39,  135 => 27,  130 => 24,  128 => 23,  125 => 22,  119 => 20,  116 => 19,  110 => 17,  104 => 15,  101 => 14,  99 => 13,  96 => 12,  93 => 11,  90 => 10,  87 => 9,  84 => 8,  81 => 7,  78 => 6,  75 => 5,  72 => 4,  62 => 3,  39 => 1];
+        return array (  687 => 250,  681 => 248,  675 => 246,  673 => 245,  670 => 244,  668 => 243,  663 => 241,  660 => 240,  654 => 238,  648 => 236,  646 => 235,  641 => 234,  639 => 233,  634 => 231,  631 => 230,  625 => 228,  615 => 226,  613 => 225,  609 => 223,  590 => 222,  577 => 219,  568 => 216,  564 => 215,  561 => 214,  557 => 213,  544 => 203,  537 => 199,  525 => 189,  519 => 186,  515 => 184,  512 => 183,  506 => 180,  502 => 178,  500 => 177,  495 => 175,  485 => 167,  467 => 166,  454 => 163,  445 => 161,  441 => 160,  438 => 159,  429 => 157,  425 => 156,  413 => 146,  395 => 145,  379 => 139,  368 => 131,  360 => 126,  356 => 125,  348 => 119,  345 => 117,  343 => 116,  336 => 112,  329 => 108,  322 => 104,  318 => 102,  314 => 100,  312 => 99,  305 => 95,  299 => 91,  296 => 90,  293 => 89,  290 => 88,  287 => 87,  277 => 86,  264 => 82,  258 => 79,  255 => 78,  253 => 77,  248 => 74,  242 => 72,  236 => 70,  234 => 69,  228 => 67,  225 => 66,  222 => 65,  219 => 64,  216 => 63,  213 => 62,  203 => 61,  191 => 58,  186 => 56,  183 => 55,  173 => 51,  166 => 47,  157 => 43,  150 => 39,  135 => 27,  130 => 24,  128 => 23,  125 => 22,  119 => 20,  116 => 19,  110 => 17,  104 => 15,  101 => 14,  99 => 13,  96 => 12,  93 => 11,  90 => 10,  87 => 9,  84 => 8,  81 => 7,  78 => 6,  75 => 5,  72 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -971,6 +975,6 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
         </td>
     </tr>
 {% endmacro %}
-", '@DoctrineMigrations/Collector/migrations.html.twig', '/Users/ahmed/Herd/products_api/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig');
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/var/www/html/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }

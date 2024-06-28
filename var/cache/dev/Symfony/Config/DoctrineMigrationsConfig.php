@@ -4,8 +4,8 @@ namespace Symfony\Config;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'DoctrineMigrations'.\DIRECTORY_SEPARATOR.'StorageConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -62,14 +62,13 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Storage to use for migration status metadata.
-     *
      * @default {"table_storage":{"table_name":null,"version_column_name":null,"version_column_length":null,"executed_at_column_name":null,"execution_time_column_name":null}}
-     */
-    public function storage(array $value = []): DoctrineMigrations\StorageConfig
+    */
+    public function storage(array $value = []): \Symfony\Config\DoctrineMigrations\StorageConfig
     {
         if (null === $this->storage) {
             $this->_usedProperties['storage'] = true;
-            $this->storage = new DoctrineMigrations\StorageConfig($value);
+            $this->storage = new \Symfony\Config\DoctrineMigrations\StorageConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "storage()" has already been initialized. You cannot pass values the second time you call storage().');
         }
@@ -92,11 +91,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Connection name to use for the migrations database.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function connection($value): static
@@ -109,11 +105,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Entity manager name to use for the migrations database (available when doctrine/orm is installed).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function em($value): static
@@ -126,11 +119,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Run all migrations in a transaction.
-     *
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function allOrNothing($value): static
@@ -143,11 +133,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Adds an extra check in the generated migrations to allow execution only on the same platform as they were initially generated on.
-     *
      * @default true
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkDatabasePlatform($value): static
@@ -160,11 +147,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Custom template path for generated migration classes.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function customTemplate($value): static
@@ -176,12 +160,9 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     }
 
     /**
-     * Organize migrations mode. Possible values are: "BY_YEAR", "BY_YEAR_AND_MONTH", false.
-     *
+     * Organize migrations mode. Possible values are: "BY_YEAR", "BY_YEAR_AND_MONTH", false
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function organizeMigrations($value): static
@@ -194,11 +175,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Whether or not to enable the profiler collector to calculate and visualize migration status. This adds some queries overhead.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableProfiler($value): static
@@ -211,11 +189,8 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
     /**
      * Whether or not to wrap migrations in a single transaction.
-     *
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function transactional($value): static
@@ -253,7 +228,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
         if (array_key_exists('storage', $value)) {
             $this->_usedProperties['storage'] = true;
-            $this->storage = new DoctrineMigrations\StorageConfig($value['storage']);
+            $this->storage = new \Symfony\Config\DoctrineMigrations\StorageConfig($value['storage']);
             unset($value['storage']);
         }
 
@@ -361,4 +336,5 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
 
         return $output;
     }
+
 }

@@ -6,27 +6,27 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'ProviderConfig'.\DIRECTORY_SEPARATOR.
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ProviderConfig'.\DIRECTORY_SEPARATOR.'EntityConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ProviderConfig'.\DIRECTORY_SEPARATOR.'MemoryConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ProviderConfig'.\DIRECTORY_SEPARATOR.'LdapConfig.php';
+require_once __DIR__.\DIRECTORY_SEPARATOR.'ProviderConfig'.\DIRECTORY_SEPARATOR.'LexikJwtConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ProviderConfig
+class ProviderConfig 
 {
     private $id;
     private $chain;
     private $entity;
     private $memory;
     private $ldap;
+    private $lexikJwt;
     private $_usedProperties = [];
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -37,11 +37,11 @@ class ProviderConfig
         return $this;
     }
 
-    public function chain(array $value = []): ProviderConfig\ChainConfig
+    public function chain(array $value = []): \Symfony\Config\Security\ProviderConfig\ChainConfig
     {
         if (null === $this->chain) {
             $this->_usedProperties['chain'] = true;
-            $this->chain = new ProviderConfig\ChainConfig($value);
+            $this->chain = new \Symfony\Config\Security\ProviderConfig\ChainConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "chain()" has already been initialized. You cannot pass values the second time you call chain().');
         }
@@ -49,11 +49,11 @@ class ProviderConfig
         return $this->chain;
     }
 
-    public function entity(array $value = []): ProviderConfig\EntityConfig
+    public function entity(array $value = []): \Symfony\Config\Security\ProviderConfig\EntityConfig
     {
         if (null === $this->entity) {
             $this->_usedProperties['entity'] = true;
-            $this->entity = new ProviderConfig\EntityConfig($value);
+            $this->entity = new \Symfony\Config\Security\ProviderConfig\EntityConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "entity()" has already been initialized. You cannot pass values the second time you call entity().');
         }
@@ -61,11 +61,11 @@ class ProviderConfig
         return $this->entity;
     }
 
-    public function memory(array $value = []): ProviderConfig\MemoryConfig
+    public function memory(array $value = []): \Symfony\Config\Security\ProviderConfig\MemoryConfig
     {
         if (null === $this->memory) {
             $this->_usedProperties['memory'] = true;
-            $this->memory = new ProviderConfig\MemoryConfig($value);
+            $this->memory = new \Symfony\Config\Security\ProviderConfig\MemoryConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "memory()" has already been initialized. You cannot pass values the second time you call memory().');
         }
@@ -73,16 +73,28 @@ class ProviderConfig
         return $this->memory;
     }
 
-    public function ldap(array $value = []): ProviderConfig\LdapConfig
+    public function ldap(array $value = []): \Symfony\Config\Security\ProviderConfig\LdapConfig
     {
         if (null === $this->ldap) {
             $this->_usedProperties['ldap'] = true;
-            $this->ldap = new ProviderConfig\LdapConfig($value);
+            $this->ldap = new \Symfony\Config\Security\ProviderConfig\LdapConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "ldap()" has already been initialized. You cannot pass values the second time you call ldap().');
         }
 
         return $this->ldap;
+    }
+
+    public function lexikJwt(array $value = []): \Symfony\Config\Security\ProviderConfig\LexikJwtConfig
+    {
+        if (null === $this->lexikJwt) {
+            $this->_usedProperties['lexikJwt'] = true;
+            $this->lexikJwt = new \Symfony\Config\Security\ProviderConfig\LexikJwtConfig($value);
+        } elseif (0 < \func_num_args()) {
+            throw new InvalidConfigurationException('The node created by "lexikJwt()" has already been initialized. You cannot pass values the second time you call lexikJwt().');
+        }
+
+        return $this->lexikJwt;
     }
 
     public function __construct(array $value = [])
@@ -95,26 +107,32 @@ class ProviderConfig
 
         if (array_key_exists('chain', $value)) {
             $this->_usedProperties['chain'] = true;
-            $this->chain = new ProviderConfig\ChainConfig($value['chain']);
+            $this->chain = new \Symfony\Config\Security\ProviderConfig\ChainConfig($value['chain']);
             unset($value['chain']);
         }
 
         if (array_key_exists('entity', $value)) {
             $this->_usedProperties['entity'] = true;
-            $this->entity = new ProviderConfig\EntityConfig($value['entity']);
+            $this->entity = new \Symfony\Config\Security\ProviderConfig\EntityConfig($value['entity']);
             unset($value['entity']);
         }
 
         if (array_key_exists('memory', $value)) {
             $this->_usedProperties['memory'] = true;
-            $this->memory = new ProviderConfig\MemoryConfig($value['memory']);
+            $this->memory = new \Symfony\Config\Security\ProviderConfig\MemoryConfig($value['memory']);
             unset($value['memory']);
         }
 
         if (array_key_exists('ldap', $value)) {
             $this->_usedProperties['ldap'] = true;
-            $this->ldap = new ProviderConfig\LdapConfig($value['ldap']);
+            $this->ldap = new \Symfony\Config\Security\ProviderConfig\LdapConfig($value['ldap']);
             unset($value['ldap']);
+        }
+
+        if (array_key_exists('lexik_jwt', $value)) {
+            $this->_usedProperties['lexikJwt'] = true;
+            $this->lexikJwt = new \Symfony\Config\Security\ProviderConfig\LexikJwtConfig($value['lexik_jwt']);
+            unset($value['lexik_jwt']);
         }
 
         if ([] !== $value) {
@@ -140,7 +158,11 @@ class ProviderConfig
         if (isset($this->_usedProperties['ldap'])) {
             $output['ldap'] = $this->ldap->toArray();
         }
+        if (isset($this->_usedProperties['lexikJwt'])) {
+            $output['lexik_jwt'] = $this->lexikJwt->toArray();
+        }
 
         return $output;
     }
+
 }

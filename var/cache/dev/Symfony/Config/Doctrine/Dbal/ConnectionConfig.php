@@ -5,13 +5,13 @@ namespace Symfony\Config\Doctrine\Dbal;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ConnectionConfig'.\DIRECTORY_SEPARATOR.'SlaveConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ConnectionConfig'.\DIRECTORY_SEPARATOR.'ReplicaConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ConnectionConfig
+class ConnectionConfig 
 {
     private $url;
     private $dbname;
@@ -67,12 +67,9 @@ class ConnectionConfig
     private $_usedProperties = [];
 
     /**
-     * A URL with connection information; any parameter value parsed from this string will override explicitly set parameters.
-     *
+     * A URL with connection information; any parameter value parsed from this string will override explicitly set parameters
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function url($value): static
@@ -85,9 +82,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dbname($value): static
@@ -100,11 +95,8 @@ class ConnectionConfig
 
     /**
      * Defaults to "localhost" at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function host($value): static
@@ -117,11 +109,8 @@ class ConnectionConfig
 
     /**
      * Defaults to null at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -134,11 +123,8 @@ class ConnectionConfig
 
     /**
      * Defaults to "root" at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function user($value): static
@@ -151,11 +137,8 @@ class ConnectionConfig
 
     /**
      * Defaults to null at runtime.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function password($value): static
@@ -168,11 +151,8 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @deprecated The "doctrine.dbal.override_url" configuration key is deprecated.
-     *
      * @return $this
      */
     public function overrideUrl($value): static
@@ -185,9 +165,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dbnameSuffix($value): static
@@ -200,9 +178,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function applicationName($value): static
@@ -215,9 +191,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function charset($value): static
@@ -230,9 +204,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -245,9 +217,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function memory($value): static
@@ -259,12 +229,9 @@ class ConnectionConfig
     }
 
     /**
-     * The unix socket to use for MySQL.
-     *
+     * The unix socket to use for MySQL
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function unixSocket($value): static
@@ -276,12 +243,9 @@ class ConnectionConfig
     }
 
     /**
-     * True to use as persistent connection for the ibm_db2 driver.
-     *
+     * True to use as persistent connection for the ibm_db2 driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function persistent($value): static
@@ -293,12 +257,9 @@ class ConnectionConfig
     }
 
     /**
-     * The protocol to use for the ibm_db2 driver (default to TCPIP if omitted).
-     *
+     * The protocol to use for the ibm_db2 driver (default to TCPIP if omitted)
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function protocol($value): static
@@ -310,12 +271,9 @@ class ConnectionConfig
     }
 
     /**
-     * True to use SERVICE_NAME as connection parameter instead of SID for Oracle.
-     *
+     * True to use SERVICE_NAME as connection parameter instead of SID for Oracle
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -328,11 +286,8 @@ class ConnectionConfig
 
     /**
      * Overrules dbname parameter if given and used as SERVICE_NAME or SID connection parameter for Oracle depending on the service parameter.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function servicename($value): static
@@ -344,12 +299,9 @@ class ConnectionConfig
     }
 
     /**
-     * The session mode to use for the oci8 driver.
-     *
+     * The session mode to use for the oci8 driver
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sessionMode($value): static
@@ -362,11 +314,8 @@ class ConnectionConfig
 
     /**
      * The name of a running database server to connect to for SQL Anywhere.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function server($value): static
@@ -379,11 +328,8 @@ class ConnectionConfig
 
     /**
      * Override the default database (postgres) to connect to for PostgreSQL connexion.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultDbname($value): static
@@ -396,11 +342,8 @@ class ConnectionConfig
 
     /**
      * Determines whether or with what priority a SSL TCP/IP connection will be negotiated with the server for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslmode($value): static
@@ -413,11 +356,8 @@ class ConnectionConfig
 
     /**
      * The name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslrootcert($value): static
@@ -430,11 +370,8 @@ class ConnectionConfig
 
     /**
      * The path to the SSL client certificate file for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslcert($value): static
@@ -447,11 +384,8 @@ class ConnectionConfig
 
     /**
      * The path to the SSL client key file for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslkey($value): static
@@ -464,11 +398,8 @@ class ConnectionConfig
 
     /**
      * The file name of the SSL certificate revocation list for PostgreSQL.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function sslcrl($value): static
@@ -480,12 +411,9 @@ class ConnectionConfig
     }
 
     /**
-     * True to use a pooled server with the oci8/pdo_oracle driver.
-     *
+     * True to use a pooled server with the oci8/pdo_oracle driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function pooled($value): static
@@ -497,12 +425,9 @@ class ConnectionConfig
     }
 
     /**
-     * Configuring MultipleActiveResultSets for the pdo_sqlsrv driver.
-     *
+     * Configuring MultipleActiveResultSets for the pdo_sqlsrv driver
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function multipleActiveResultSets($value): static
@@ -514,12 +439,9 @@ class ConnectionConfig
     }
 
     /**
-     * Use savepoints for nested transactions.
-     *
+     * Use savepoints for nested transactions
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useSavepoints($value): static
@@ -532,11 +454,8 @@ class ConnectionConfig
 
     /**
      * Optional parameter, complete whether to add the INSTANCE_NAME parameter in the connection. It is generally used to connect to an Oracle RAC server to select the name of a particular instance.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function instancename($value): static
@@ -549,11 +468,8 @@ class ConnectionConfig
 
     /**
      * Complete Easy Connect connection descriptor, see https://docs.oracle.com/database/121/NETAG/naming.htm.When using this option, you will still need to provide the user and password parameters, but the other parameters will no longer be used. Note that when using this parameter, the getHost and getPort methods from Doctrine\DBAL\Connection will no longer function as expected.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function connectstring($value): static
@@ -566,9 +482,7 @@ class ConnectionConfig
 
     /**
      * @default 'pdo_mysql'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function driver($value): static
@@ -581,11 +495,8 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @deprecated The "platform_service" configuration key is deprecated since doctrine-bundle 2.9. DBAL 4 will not support setting a custom platform via connection params anymore.
-     *
      * @return $this
      */
     public function platformService($value): static
@@ -598,9 +509,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function autoCommit($value): static
@@ -613,9 +522,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function schemaFilter($value): static
@@ -628,9 +535,7 @@ class ConnectionConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function logging($value): static
@@ -643,9 +548,7 @@ class ConnectionConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function profiling($value): static
@@ -657,12 +560,9 @@ class ConnectionConfig
     }
 
     /**
-     * Enables collecting backtraces when profiling is enabled.
-     *
+     * Enables collecting backtraces when profiling is enabled
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function profilingCollectBacktrace($value): static
@@ -674,12 +574,9 @@ class ConnectionConfig
     }
 
     /**
-     * Enables collecting schema errors when profiling is enabled.
-     *
+     * Enables collecting schema errors when profiling is enabled
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function profilingCollectSchemaErrors($value): static
@@ -692,9 +589,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function disableTypeComments($value): static
@@ -707,9 +602,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function serverVersion($value): static
@@ -722,9 +615,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function driverClass($value): static
@@ -737,9 +628,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function wrapperClass($value): static
@@ -752,11 +641,8 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @deprecated The "keep_slave" configuration key is deprecated since doctrine-bundle 2.2. Use the "keep_replica" configuration key instead.
-     *
      * @return $this
      */
     public function keepSlave($value): static
@@ -769,9 +655,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function keepReplica($value): static
@@ -817,9 +701,7 @@ class ConnectionConfig
 
     /**
      * @default 'doctrine.dbal.legacy_schema_manager_factory'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function schemaManagerFactory($value): static
@@ -832,9 +714,7 @@ class ConnectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function resultCache($value): static
@@ -847,16 +727,12 @@ class ConnectionConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @deprecated The "slaves" configuration key will be renamed to "replicas" in doctrine-bundle 3.0. "slaves" is deprecated since doctrine-bundle 2.2.
-     *
-     * @return ConnectionConfig\SlaveConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig : static)
      */
-    public function slave(string $name, mixed $value = []): ConnectionConfig\SlaveConfig|static
+    public function slave(string $name, mixed $value = []): \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['slaves'] = true;
@@ -865,9 +741,9 @@ class ConnectionConfig
             return $this;
         }
 
-        if (!isset($this->slaves[$name]) || !$this->slaves[$name] instanceof ConnectionConfig\SlaveConfig) {
+        if (!isset($this->slaves[$name]) || !$this->slaves[$name] instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig) {
             $this->_usedProperties['slaves'] = true;
-            $this->slaves[$name] = new ConnectionConfig\SlaveConfig($value);
+            $this->slaves[$name] = new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "slave()" has already been initialized. You cannot pass values the second time you call slave().');
         }
@@ -877,14 +753,11 @@ class ConnectionConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return ConnectionConfig\ReplicaConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig : static)
      */
-    public function replica(string $name, mixed $value = []): ConnectionConfig\ReplicaConfig|static
+    public function replica(string $name, mixed $value = []): \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['replicas'] = true;
@@ -893,9 +766,9 @@ class ConnectionConfig
             return $this;
         }
 
-        if (!isset($this->replicas[$name]) || !$this->replicas[$name] instanceof ConnectionConfig\ReplicaConfig) {
+        if (!isset($this->replicas[$name]) || !$this->replicas[$name] instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig) {
             $this->_usedProperties['replicas'] = true;
-            $this->replicas[$name] = new ConnectionConfig\ReplicaConfig($value);
+            $this->replicas[$name] = new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "replica()" has already been initialized. You cannot pass values the second time you call replica().');
         }
@@ -1201,13 +1074,13 @@ class ConnectionConfig
 
         if (array_key_exists('slaves', $value)) {
             $this->_usedProperties['slaves'] = true;
-            $this->slaves = array_map(fn ($v) => \is_array($v) ? new ConnectionConfig\SlaveConfig($v) : $v, $value['slaves']);
+            $this->slaves = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig($v) : $v, $value['slaves']);
             unset($value['slaves']);
         }
 
         if (array_key_exists('replicas', $value)) {
             $this->_usedProperties['replicas'] = true;
-            $this->replicas = array_map(fn ($v) => \is_array($v) ? new ConnectionConfig\ReplicaConfig($v) : $v, $value['replicas']);
+            $this->replicas = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig($v) : $v, $value['replicas']);
             unset($value['replicas']);
         }
 
@@ -1367,12 +1240,13 @@ class ConnectionConfig
             $output['result_cache'] = $this->resultCache;
         }
         if (isset($this->_usedProperties['slaves'])) {
-            $output['slaves'] = array_map(fn ($v) => $v instanceof ConnectionConfig\SlaveConfig ? $v->toArray() : $v, $this->slaves);
+            $output['slaves'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\SlaveConfig ? $v->toArray() : $v, $this->slaves);
         }
         if (isset($this->_usedProperties['replicas'])) {
-            $output['replicas'] = array_map(fn ($v) => $v instanceof ConnectionConfig\ReplicaConfig ? $v->toArray() : $v, $this->replicas);
+            $output['replicas'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig ? $v->toArray() : $v, $this->replicas);
         }
 
         return $output;
     }
+
 }

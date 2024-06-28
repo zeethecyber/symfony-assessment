@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class FormLoginLdapConfig
+class FormLoginLdapConfig 
 {
     private $provider;
     private $rememberMe;
@@ -40,9 +40,7 @@ class FormLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -55,9 +53,7 @@ class FormLoginLdapConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function rememberMe($value): static
@@ -70,9 +66,7 @@ class FormLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -85,9 +79,7 @@ class FormLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -100,9 +92,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '/login_check'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkPath($value): static
@@ -115,9 +105,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useForward($value): static
@@ -130,9 +118,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '/login'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function loginPath($value): static
@@ -145,9 +131,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '_username'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function usernameParameter($value): static
@@ -160,9 +144,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '_password'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passwordParameter($value): static
@@ -175,9 +157,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '_csrf_token'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfParameter($value): static
@@ -190,9 +170,7 @@ class FormLoginLdapConfig
 
     /**
      * @default 'authenticate'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfTokenId($value): static
@@ -205,9 +183,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableCsrf($value): static
@@ -220,9 +196,7 @@ class FormLoginLdapConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function postOnly($value): static
@@ -235,9 +209,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function formOnly($value): static
@@ -250,9 +222,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function alwaysUseDefaultTargetPath($value): static
@@ -265,9 +235,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultTargetPath($value): static
@@ -280,9 +248,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '_target_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function targetPathParameter($value): static
@@ -295,9 +261,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useReferer($value): static
@@ -310,9 +274,7 @@ class FormLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePath($value): static
@@ -325,9 +287,7 @@ class FormLoginLdapConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function failureForward($value): static
@@ -340,9 +300,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '_failure_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePathParameter($value): static
@@ -355,9 +313,7 @@ class FormLoginLdapConfig
 
     /**
      * @default 'ldap'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -370,9 +326,7 @@ class FormLoginLdapConfig
 
     /**
      * @default '{user_identifier}'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function dnString($value): static
@@ -385,9 +339,7 @@ class FormLoginLdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function queryString($value): static
@@ -400,7 +352,6 @@ class FormLoginLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchDn($value): static
@@ -413,7 +364,6 @@ class FormLoginLdapConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchPassword($value): static
@@ -671,4 +621,5 @@ class FormLoginLdapConfig
 
         return $output;
     }
+
 }

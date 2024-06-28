@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Assets;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PackageConfig
+class PackageConfig 
 {
     private $strictMode;
     private $versionStrategy;
@@ -20,12 +20,9 @@ class PackageConfig
     private $_usedProperties = [];
 
     /**
-     * Throw an exception if an entry is missing from the manifest.json.
-     *
+     * Throw an exception if an entry is missing from the manifest.json
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function strictMode($value): static
@@ -38,9 +35,7 @@ class PackageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionStrategy($value): static
@@ -53,9 +48,7 @@ class PackageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function version($value): static
@@ -68,9 +61,7 @@ class PackageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionFormat($value): static
@@ -83,9 +74,7 @@ class PackageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function jsonManifestPath($value): static
@@ -98,7 +87,6 @@ class PackageConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function basePath($value): static
@@ -198,4 +186,5 @@ class PackageConfig
 
         return $output;
     }
+
 }

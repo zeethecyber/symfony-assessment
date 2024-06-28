@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Workflows\WorkflowsConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MarkingStoreConfig
+class MarkingStoreConfig 
 {
     private $type;
     private $property;
@@ -17,9 +17,7 @@ class MarkingStoreConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|'method' $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -32,9 +30,7 @@ class MarkingStoreConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function property($value): static
@@ -47,9 +43,7 @@ class MarkingStoreConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -100,4 +94,5 @@ class MarkingStoreConfig
 
         return $output;
     }
+
 }

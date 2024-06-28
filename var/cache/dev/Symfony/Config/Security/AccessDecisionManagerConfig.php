@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AccessDecisionManagerConfig
+class AccessDecisionManagerConfig 
 {
     private $strategy;
     private $service;
@@ -19,9 +19,7 @@ class AccessDecisionManagerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|'affirmative'|'consensus'|'unanimous'|'priority' $value
-     *
      * @return $this
      */
     public function strategy($value): static
@@ -34,9 +32,7 @@ class AccessDecisionManagerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -49,9 +45,7 @@ class AccessDecisionManagerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function strategyService($value): static
@@ -64,9 +58,7 @@ class AccessDecisionManagerConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowIfAllAbstain($value): static
@@ -79,9 +71,7 @@ class AccessDecisionManagerConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowIfEqualGrantedDenied($value): static
@@ -150,4 +140,5 @@ class AccessDecisionManagerConfig
 
         return $output;
     }
+
 }

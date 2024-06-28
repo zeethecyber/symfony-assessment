@@ -6,13 +6,13 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'TokenHandler'.\DIRECTORY_SEPARATOR.'O
 require_once __DIR__.\DIRECTORY_SEPARATOR.'TokenHandler'.\DIRECTORY_SEPARATOR.'OidcConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'TokenHandler'.\DIRECTORY_SEPARATOR.'CasConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TokenHandlerConfig
+class TokenHandlerConfig 
 {
     private $id;
     private $oidcUserInfo;
@@ -22,9 +22,7 @@ class TokenHandlerConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -37,14 +35,11 @@ class TokenHandlerConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return TokenHandler\OidcUserInfoConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig : static)
      */
-    public function oidcUserInfo(string|array $value = []): TokenHandler\OidcUserInfoConfig|static
+    public function oidcUserInfo(string|array $value = []): \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['oidcUserInfo'] = true;
@@ -53,9 +48,9 @@ class TokenHandlerConfig
             return $this;
         }
 
-        if (!$this->oidcUserInfo instanceof TokenHandler\OidcUserInfoConfig) {
+        if (!$this->oidcUserInfo instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig) {
             $this->_usedProperties['oidcUserInfo'] = true;
-            $this->oidcUserInfo = new TokenHandler\OidcUserInfoConfig($value);
+            $this->oidcUserInfo = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "oidcUserInfo()" has already been initialized. You cannot pass values the second time you call oidcUserInfo().');
         }
@@ -65,14 +60,11 @@ class TokenHandlerConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return TokenHandler\OidcConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig : static)
      */
-    public function oidc(mixed $value = []): TokenHandler\OidcConfig|static
+    public function oidc(mixed $value = []): \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['oidc'] = true;
@@ -81,9 +73,9 @@ class TokenHandlerConfig
             return $this;
         }
 
-        if (!$this->oidc instanceof TokenHandler\OidcConfig) {
+        if (!$this->oidc instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig) {
             $this->_usedProperties['oidc'] = true;
-            $this->oidc = new TokenHandler\OidcConfig($value);
+            $this->oidc = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "oidc()" has already been initialized. You cannot pass values the second time you call oidc().');
         }
@@ -91,11 +83,11 @@ class TokenHandlerConfig
         return $this->oidc;
     }
 
-    public function cas(array $value = []): TokenHandler\CasConfig
+    public function cas(array $value = []): \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\CasConfig
     {
         if (null === $this->cas) {
             $this->_usedProperties['cas'] = true;
-            $this->cas = new TokenHandler\CasConfig($value);
+            $this->cas = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\CasConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "cas()" has already been initialized. You cannot pass values the second time you call cas().');
         }
@@ -113,19 +105,19 @@ class TokenHandlerConfig
 
         if (array_key_exists('oidc_user_info', $value)) {
             $this->_usedProperties['oidcUserInfo'] = true;
-            $this->oidcUserInfo = \is_array($value['oidc_user_info']) ? new TokenHandler\OidcUserInfoConfig($value['oidc_user_info']) : $value['oidc_user_info'];
+            $this->oidcUserInfo = \is_array($value['oidc_user_info']) ? new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig($value['oidc_user_info']) : $value['oidc_user_info'];
             unset($value['oidc_user_info']);
         }
 
         if (array_key_exists('oidc', $value)) {
             $this->_usedProperties['oidc'] = true;
-            $this->oidc = \is_array($value['oidc']) ? new TokenHandler\OidcConfig($value['oidc']) : $value['oidc'];
+            $this->oidc = \is_array($value['oidc']) ? new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig($value['oidc']) : $value['oidc'];
             unset($value['oidc']);
         }
 
         if (array_key_exists('cas', $value)) {
             $this->_usedProperties['cas'] = true;
-            $this->cas = new TokenHandler\CasConfig($value['cas']);
+            $this->cas = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\CasConfig($value['cas']);
             unset($value['cas']);
         }
 
@@ -141,10 +133,10 @@ class TokenHandlerConfig
             $output['id'] = $this->id;
         }
         if (isset($this->_usedProperties['oidcUserInfo'])) {
-            $output['oidc_user_info'] = $this->oidcUserInfo instanceof TokenHandler\OidcUserInfoConfig ? $this->oidcUserInfo->toArray() : $this->oidcUserInfo;
+            $output['oidc_user_info'] = $this->oidcUserInfo instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcUserInfoConfig ? $this->oidcUserInfo->toArray() : $this->oidcUserInfo;
         }
         if (isset($this->_usedProperties['oidc'])) {
-            $output['oidc'] = $this->oidc instanceof TokenHandler\OidcConfig ? $this->oidc->toArray() : $this->oidc;
+            $output['oidc'] = $this->oidc instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\OidcConfig ? $this->oidc->toArray() : $this->oidc;
         }
         if (isset($this->_usedProperties['cas'])) {
             $output['cas'] = $this->cas->toArray();
@@ -152,4 +144,5 @@ class TokenHandlerConfig
 
         return $output;
     }
+
 }

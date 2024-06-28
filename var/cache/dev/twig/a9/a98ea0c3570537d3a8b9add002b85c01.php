@@ -598,6 +598,6 @@ class __TwigTemplate_e4fd97b2d7569f7dd61e5b42f7358038 extends Template
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
     }
 }

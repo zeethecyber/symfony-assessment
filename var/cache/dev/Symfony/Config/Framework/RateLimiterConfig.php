@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'RateLimiter'.\DIRECTORY_SEPARATOR.'LimiterConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RateLimiterConfig
+class RateLimiterConfig 
 {
     private $enabled;
     private $limiters;
@@ -18,9 +18,7 @@ class RateLimiterConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -31,11 +29,11 @@ class RateLimiterConfig
         return $this;
     }
 
-    public function limiter(string $name, array $value = []): RateLimiter\LimiterConfig
+    public function limiter(string $name, array $value = []): \Symfony\Config\Framework\RateLimiter\LimiterConfig
     {
         if (!isset($this->limiters[$name])) {
             $this->_usedProperties['limiters'] = true;
-            $this->limiters[$name] = new RateLimiter\LimiterConfig($value);
+            $this->limiters[$name] = new \Symfony\Config\Framework\RateLimiter\LimiterConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "limiter()" has already been initialized. You cannot pass values the second time you call limiter().');
         }
@@ -53,7 +51,7 @@ class RateLimiterConfig
 
         if (array_key_exists('limiters', $value)) {
             $this->_usedProperties['limiters'] = true;
-            $this->limiters = array_map(fn ($v) => new RateLimiter\LimiterConfig($v), $value['limiters']);
+            $this->limiters = array_map(fn ($v) => new \Symfony\Config\Framework\RateLimiter\LimiterConfig($v), $value['limiters']);
             unset($value['limiters']);
         }
 
@@ -74,4 +72,5 @@ class RateLimiterConfig
 
         return $output;
     }
+
 }

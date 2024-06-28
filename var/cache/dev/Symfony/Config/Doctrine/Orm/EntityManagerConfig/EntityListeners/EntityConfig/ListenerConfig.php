@@ -9,23 +9,23 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class ListenerConfig
+class ListenerConfig 
 {
     private $events;
     private $_usedProperties = [];
 
-    public function event(array $value = []): ListenerConfig\EventConfig
+    public function event(array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig
     {
         $this->_usedProperties['events'] = true;
 
-        return $this->events[] = new ListenerConfig\EventConfig($value);
+        return $this->events[] = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig($value);
     }
 
     public function __construct(array $value = [])
     {
         if (array_key_exists('events', $value)) {
             $this->_usedProperties['events'] = true;
-            $this->events = array_map(fn ($v) => new ListenerConfig\EventConfig($v), $value['events']);
+            $this->events = array_map(fn ($v) => new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig($v), $value['events']);
             unset($value['events']);
         }
 
@@ -43,4 +43,5 @@ class ListenerConfig
 
         return $output;
     }
+
 }

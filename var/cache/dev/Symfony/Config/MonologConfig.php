@@ -4,8 +4,8 @@ namespace Symfony\Config;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Monolog'.\DIRECTORY_SEPARATOR.'HandlerConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -19,9 +19,7 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function useMicroseconds($value): static
@@ -47,18 +45,14 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @example {"type":"stream","path":"\/var\/log\/symfony.log","level":"ERROR","bubble":"false","formatter":"my_formatter"}
      * @example {"type":"fingers_crossed","action_level":"WARNING","buffer_size":30,"handler":"custom"}
      * @example {"type":"service","id":"my_handler"}
-     *
-     * @return Monolog\HandlerConfig|$this
-     *
+     * @return \Symfony\Config\Monolog\HandlerConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Monolog\HandlerConfig : static)
      */
-    public function handler(string $name, mixed $value = []): Monolog\HandlerConfig|static
+    public function handler(string $name, mixed $value = []): \Symfony\Config\Monolog\HandlerConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['handlers'] = true;
@@ -67,9 +61,9 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
             return $this;
         }
 
-        if (!isset($this->handlers[$name]) || !$this->handlers[$name] instanceof Monolog\HandlerConfig) {
+        if (!isset($this->handlers[$name]) || !$this->handlers[$name] instanceof \Symfony\Config\Monolog\HandlerConfig) {
             $this->_usedProperties['handlers'] = true;
-            $this->handlers[$name] = new Monolog\HandlerConfig($value);
+            $this->handlers[$name] = new \Symfony\Config\Monolog\HandlerConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "handler()" has already been initialized. You cannot pass values the second time you call handler().');
         }
@@ -98,7 +92,7 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
 
         if (array_key_exists('handlers', $value)) {
             $this->_usedProperties['handlers'] = true;
-            $this->handlers = array_map(fn ($v) => \is_array($v) ? new Monolog\HandlerConfig($v) : $v, $value['handlers']);
+            $this->handlers = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Monolog\HandlerConfig($v) : $v, $value['handlers']);
             unset($value['handlers']);
         }
 
@@ -117,9 +111,10 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
             $output['channels'] = $this->channels;
         }
         if (isset($this->_usedProperties['handlers'])) {
-            $output['handlers'] = array_map(fn ($v) => $v instanceof Monolog\HandlerConfig ? $v->toArray() : $v, $this->handlers);
+            $output['handlers'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Monolog\HandlerConfig ? $v->toArray() : $v, $this->handlers);
         }
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class EmailPrototypeConfig
+class EmailPrototypeConfig 
 {
     private $id;
     private $method;
@@ -16,9 +16,7 @@ class EmailPrototypeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -31,9 +29,7 @@ class EmailPrototypeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function method($value): static
@@ -75,4 +71,5 @@ class EmailPrototypeConfig
 
         return $output;
     }
+
 }

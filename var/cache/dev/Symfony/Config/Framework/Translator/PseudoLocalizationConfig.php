@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Translator;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PseudoLocalizationConfig
+class PseudoLocalizationConfig 
 {
     private $enabled;
     private $accents;
@@ -20,9 +20,7 @@ class PseudoLocalizationConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -35,9 +33,7 @@ class PseudoLocalizationConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function accents($value): static
@@ -50,9 +46,7 @@ class PseudoLocalizationConfig
 
     /**
      * @default 1.0
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function expansionFactor($value): static
@@ -65,9 +59,7 @@ class PseudoLocalizationConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function brackets($value): static
@@ -80,9 +72,7 @@ class PseudoLocalizationConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function parseHtml($value): static
@@ -173,4 +163,5 @@ class PseudoLocalizationConfig
 
         return $output;
     }
+
 }

@@ -7,8 +7,9 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AlgorithmConfig
+class AlgorithmConfig 
 {
+
     public function __construct(array $value = [])
     {
         if ([] !== $value) {
@@ -22,4 +23,5 @@ class AlgorithmConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class EventConfig
+class EventConfig 
 {
     private $type;
     private $method;
@@ -16,9 +16,7 @@ class EventConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -31,9 +29,7 @@ class EventConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function method($value): static
@@ -75,4 +71,5 @@ class EventConfig
 
         return $output;
     }
+
 }

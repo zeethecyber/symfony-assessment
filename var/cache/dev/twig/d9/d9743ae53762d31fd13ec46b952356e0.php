@@ -1,7 +1,15 @@
 <?php
 
 use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
 use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
@@ -26,14 +34,14 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions['Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension'];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/settings.html.twig'));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/settings.html.twig"));
 
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions['Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension'];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new Twig\Profiler\Profile($this->getTemplateName(), 'template', '@WebProfiler/Profiler/settings.html.twig'));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/settings.html.twig"));
 
         // line 1
-        yield '<style>
+        yield "<style>
 :root {
     --settings-modal-shadow: 0 0 0 1px var(--gray-400), 5px 5px 20px 0 var(--gray-800);
     --settings-modal-header-background: var(--gray-200);
@@ -225,54 +233,54 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
 }
 </style>
 
-<a href="#" id="open-settings">
-    <span class="icon">';
+<a href=\"#\" id=\"open-settings\">
+    <span class=\"icon\">";
         // line 194
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings.svg');
-        yield '</span>
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings.svg");
+        yield "</span>
     Profiler settings
 </a>
 
-<div class="modal-wrap" id="profiler-settings">
-    <div class="modal-container">
-        <div class="modal-header">
+<div class=\"modal-wrap\" id=\"profiler-settings\">
+    <div class=\"modal-container\">
+        <div class=\"modal-header\">
             <h3>Configuration Settings</h3>
-            <button aria-label="Close" class="close-modal">&times;</button>
+            <button aria-label=\"Close\" class=\"close-modal\">&times;</button>
         </div>
 
-        <div class="modal-content">
+        <div class=\"modal-content\">
             <h4>Theme</h4>
 
-            <div class="settings-group">
-                <label for="settings-theme-auto">
-                    <input class="config-option" type="radio" name="theme" value="auto" id="settings-theme-auto">
+            <div class=\"settings-group\">
+                <label for=\"settings-theme-auto\">
+                    <input class=\"config-option\" type=\"radio\" name=\"theme\" value=\"auto\" id=\"settings-theme-auto\">
                     <p>
-                        ';
+                        ";
         // line 212
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings-theme-system.svg');
-        yield '
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings-theme-system.svg");
+        yield "
                         <span>System / OS</span>
                     </p>
                 </label>
 
-                <label for="settings-theme-light">
-                    <input class="config-option" type="radio" name="theme" value="light" id="settings-theme-light">
+                <label for=\"settings-theme-light\">
+                    <input class=\"config-option\" type=\"radio\" name=\"theme\" value=\"light\" id=\"settings-theme-light\">
                     <p>
-                        ';
+                        ";
         // line 220
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings-theme-light.svg');
-        yield '
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings-theme-light.svg");
+        yield "
                         <span>Light</span>
                     </p>
                 </label>
 
-                <label for="settings-theme-dark">
-                    <input class="config-option" type="radio" name="theme" value="dark" id="settings-theme-dark">
+                <label for=\"settings-theme-dark\">
+                    <input class=\"config-option\" type=\"radio\" name=\"theme\" value=\"dark\" id=\"settings-theme-dark\">
                     <p>
-                        ';
+                        ";
         // line 228
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings-theme-dark.svg');
-        yield '
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings-theme-dark.svg");
+        yield "
                         <span>Dark</span>
                     </p>
                 </label>
@@ -280,24 +288,24 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
 
             <h4>Page Width</h4>
 
-            <div class="settings-group">
-                <label for="settings-width-normal">
-                    <input class="config-option" type="radio" name="width" value="normal" id="settings-width-normal">
+            <div class=\"settings-group\">
+                <label for=\"settings-width-normal\">
+                    <input class=\"config-option\" type=\"radio\" name=\"width\" value=\"normal\" id=\"settings-width-normal\">
                     <p>
-                        ';
+                        ";
         // line 240
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings-width-fixed.svg');
-        yield '
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings-width-fixed.svg");
+        yield "
                         <span>Fixed width</span>
                     </p>
                 </label>
 
-                <label for="settings-width-full">
-                    <input class="config-option" type="radio" name="width" value="full" id="settings-width-full">
+                <label for=\"settings-width-full\">
+                    <input class=\"config-option\" type=\"radio\" name=\"width\" value=\"full\" id=\"settings-width-full\">
                     <p>
-                        ';
+                        ";
         // line 248
-        yield CoreExtension::source($this->env, '@WebProfiler/Icon/settings-width-fitted.svg');
+        yield Twig\Extension\CoreExtension::source($this->env, "@WebProfiler/Icon/settings-width-fitted.svg");
         yield "
                         <span>Fit to window</span>
                     </p>
@@ -368,13 +376,13 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
 })();
 </script>
 ";
-
+        
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
+        
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-        return;
-        yield '';
+        return; yield '';
     }
 
     /**
@@ -382,7 +390,7 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
      */
     public function getTemplateName()
     {
-        return '@WebProfiler/Profiler/settings.html.twig';
+        return "@WebProfiler/Profiler/settings.html.twig";
     }
 
     /**
@@ -398,7 +406,7 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
      */
     public function getDebugInfo()
     {
-        return [308 => 248,  297 => 240,  282 => 228,  271 => 220,  260 => 212,  239 => 194,  44 => 1];
+        return array (  308 => 248,  297 => 240,  282 => 228,  271 => 220,  260 => 212,  239 => 194,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -719,6 +727,6 @@ class __TwigTemplate_efd4b054d20e38eb4eb08f82e3fb8f62 extends Template
     });
 })();
 </script>
-", '@WebProfiler/Profiler/settings.html.twig', '/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig');
+", "@WebProfiler/Profiler/settings.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig");
     }
 }

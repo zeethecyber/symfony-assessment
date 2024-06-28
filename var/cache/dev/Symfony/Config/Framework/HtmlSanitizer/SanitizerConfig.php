@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\HtmlSanitizer;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SanitizerConfig
+class SanitizerConfig 
 {
     private $allowSafeElements;
     private $allowStaticElements;
@@ -32,11 +32,8 @@ class SanitizerConfig
 
     /**
      * Allows "safe" elements and attributes.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowSafeElements($value): static
@@ -49,11 +46,8 @@ class SanitizerConfig
 
     /**
      * Allows all static elements and attributes from the W3C Sanitizer API standard.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowStaticElements($value): static
@@ -136,11 +130,8 @@ class SanitizerConfig
 
     /**
      * Transforms URLs using the HTTP scheme to use the HTTPS scheme instead.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function forceHttpsUrls($value): static
@@ -166,14 +157,12 @@ class SanitizerConfig
 
     /**
      * Allows only a given list of hosts to be used in links href attributes.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
      */
-    public function allowedLinkHosts(mixed $value = null): static
+    public function allowedLinkHosts(mixed $value = NULL): static
     {
         $this->_usedProperties['allowedLinkHosts'] = true;
         $this->allowedLinkHosts = $value;
@@ -183,11 +172,8 @@ class SanitizerConfig
 
     /**
      * Allows relative URLs to be used in links href attributes.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowRelativeLinks($value): static
@@ -213,14 +199,12 @@ class SanitizerConfig
 
     /**
      * Allows only a given list of hosts to be used in media source attributes (img, audio, video, ...).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
      */
-    public function allowedMediaHosts(mixed $value = null): static
+    public function allowedMediaHosts(mixed $value = NULL): static
     {
         $this->_usedProperties['allowedMediaHosts'] = true;
         $this->allowedMediaHosts = $value;
@@ -230,11 +214,8 @@ class SanitizerConfig
 
     /**
      * Allows relative URLs to be used in media source attributes (img, audio, video, ...).
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowRelativeMedias($value): static
@@ -273,11 +254,8 @@ class SanitizerConfig
 
     /**
      * The maximum length allowed for the sanitized input.
-     *
      * @default 0
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxInputLength($value): static
@@ -463,4 +441,5 @@ class SanitizerConfig
 
         return $output;
     }
+
 }

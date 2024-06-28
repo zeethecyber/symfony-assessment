@@ -4,13 +4,13 @@ namespace Symfony\Config\Security\FirewallConfig\RememberMe;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'TokenProvider'.\DIRECTORY_SEPARATOR.'DoctrineConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TokenProviderConfig
+class TokenProviderConfig 
 {
     private $service;
     private $doctrine;
@@ -18,11 +18,8 @@ class TokenProviderConfig
 
     /**
      * The service ID of a custom rememberme token provider.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -35,16 +32,12 @@ class TokenProviderConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false,"connection":null}
-     *
-     * @return TokenProvider\DoctrineConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig : static)
      */
-    public function doctrine(array $value = []): TokenProvider\DoctrineConfig|static
+    public function doctrine(array $value = []): \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['doctrine'] = true;
@@ -53,9 +46,9 @@ class TokenProviderConfig
             return $this;
         }
 
-        if (!$this->doctrine instanceof TokenProvider\DoctrineConfig) {
+        if (!$this->doctrine instanceof \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig) {
             $this->_usedProperties['doctrine'] = true;
-            $this->doctrine = new TokenProvider\DoctrineConfig($value);
+            $this->doctrine = new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "doctrine()" has already been initialized. You cannot pass values the second time you call doctrine().');
         }
@@ -73,7 +66,7 @@ class TokenProviderConfig
 
         if (array_key_exists('doctrine', $value)) {
             $this->_usedProperties['doctrine'] = true;
-            $this->doctrine = \is_array($value['doctrine']) ? new TokenProvider\DoctrineConfig($value['doctrine']) : $value['doctrine'];
+            $this->doctrine = \is_array($value['doctrine']) ? new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig($value['doctrine']) : $value['doctrine'];
             unset($value['doctrine']);
         }
 
@@ -89,9 +82,10 @@ class TokenProviderConfig
             $output['service'] = $this->service;
         }
         if (isset($this->_usedProperties['doctrine'])) {
-            $output['doctrine'] = $this->doctrine instanceof TokenProvider\DoctrineConfig ? $this->doctrine->toArray() : $this->doctrine;
+            $output['doctrine'] = $this->doctrine instanceof \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProvider\DoctrineConfig ? $this->doctrine->toArray() : $this->doctrine;
         }
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\DoctrineMigrations\Storage;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TableStorageConfig
+class TableStorageConfig 
 {
     private $tableName;
     private $versionColumnName;
@@ -19,9 +19,7 @@ class TableStorageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function tableName($value): static
@@ -34,9 +32,7 @@ class TableStorageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionColumnName($value): static
@@ -49,9 +45,7 @@ class TableStorageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionColumnLength($value): static
@@ -64,9 +58,7 @@ class TableStorageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function executedAtColumnName($value): static
@@ -79,9 +71,7 @@ class TableStorageConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function executionTimeColumnName($value): static
@@ -150,4 +140,5 @@ class TableStorageConfig
 
         return $output;
     }
+
 }

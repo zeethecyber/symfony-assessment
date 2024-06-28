@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Assets'.\DIRECTORY_SEPARATOR.'PackageConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AssetsConfig
+class AssetsConfig 
 {
     private $enabled;
     private $strictMode;
@@ -24,10 +24,8 @@ class AssetsConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -39,12 +37,9 @@ class AssetsConfig
     }
 
     /**
-     * Throw an exception if an entry is missing from the manifest.json.
-     *
+     * Throw an exception if an entry is missing from the manifest.json
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function strictMode($value): static
@@ -57,9 +52,7 @@ class AssetsConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionStrategy($value): static
@@ -72,9 +65,7 @@ class AssetsConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function version($value): static
@@ -87,9 +78,7 @@ class AssetsConfig
 
     /**
      * @default '%%s?%%s'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function versionFormat($value): static
@@ -102,9 +91,7 @@ class AssetsConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function jsonManifestPath($value): static
@@ -117,7 +104,6 @@ class AssetsConfig
 
     /**
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function basePath($value): static
@@ -141,11 +127,11 @@ class AssetsConfig
         return $this;
     }
 
-    public function package(string $name, array $value = []): Assets\PackageConfig
+    public function package(string $name, array $value = []): \Symfony\Config\Framework\Assets\PackageConfig
     {
         if (!isset($this->packages[$name])) {
             $this->_usedProperties['packages'] = true;
-            $this->packages[$name] = new Assets\PackageConfig($value);
+            $this->packages[$name] = new \Symfony\Config\Framework\Assets\PackageConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "package()" has already been initialized. You cannot pass values the second time you call package().');
         }
@@ -205,7 +191,7 @@ class AssetsConfig
 
         if (array_key_exists('packages', $value)) {
             $this->_usedProperties['packages'] = true;
-            $this->packages = array_map(fn ($v) => new Assets\PackageConfig($v), $value['packages']);
+            $this->packages = array_map(fn ($v) => new \Symfony\Config\Framework\Assets\PackageConfig($v), $value['packages']);
             unset($value['packages']);
         }
 
@@ -247,4 +233,5 @@ class AssetsConfig
 
         return $output;
     }
+
 }

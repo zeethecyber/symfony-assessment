@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HtmlSanitizer'.\DIRECTORY_SEPARATOR.'SanitizerConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HtmlSanitizerConfig
+class HtmlSanitizerConfig 
 {
     private $enabled;
     private $sanitizers;
@@ -18,9 +18,7 @@ class HtmlSanitizerConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -31,11 +29,11 @@ class HtmlSanitizerConfig
         return $this;
     }
 
-    public function sanitizer(string $name, array $value = []): HtmlSanitizer\SanitizerConfig
+    public function sanitizer(string $name, array $value = []): \Symfony\Config\Framework\HtmlSanitizer\SanitizerConfig
     {
         if (!isset($this->sanitizers[$name])) {
             $this->_usedProperties['sanitizers'] = true;
-            $this->sanitizers[$name] = new HtmlSanitizer\SanitizerConfig($value);
+            $this->sanitizers[$name] = new \Symfony\Config\Framework\HtmlSanitizer\SanitizerConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "sanitizer()" has already been initialized. You cannot pass values the second time you call sanitizer().');
         }
@@ -53,7 +51,7 @@ class HtmlSanitizerConfig
 
         if (array_key_exists('sanitizers', $value)) {
             $this->_usedProperties['sanitizers'] = true;
-            $this->sanitizers = array_map(fn ($v) => new HtmlSanitizer\SanitizerConfig($v), $value['sanitizers']);
+            $this->sanitizers = array_map(fn ($v) => new \Symfony\Config\Framework\HtmlSanitizer\SanitizerConfig($v), $value['sanitizers']);
             unset($value['sanitizers']);
         }
 
@@ -74,4 +72,5 @@ class HtmlSanitizerConfig
 
         return $output;
     }
+
 }

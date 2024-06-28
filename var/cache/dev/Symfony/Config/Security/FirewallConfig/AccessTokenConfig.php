@@ -4,13 +4,13 @@ namespace Symfony\Config\Security\FirewallConfig;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'AccessToken'.\DIRECTORY_SEPARATOR.'TokenHandlerConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class AccessTokenConfig
+class AccessTokenConfig 
 {
     private $provider;
     private $rememberMe;
@@ -23,9 +23,7 @@ class AccessTokenConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -38,9 +36,7 @@ class AccessTokenConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function rememberMe($value): static
@@ -53,9 +49,7 @@ class AccessTokenConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -68,9 +62,7 @@ class AccessTokenConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -83,9 +75,7 @@ class AccessTokenConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function realm($value): static
@@ -111,16 +101,12 @@ class AccessTokenConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @example "App\\Security\\CustomTokenHandler"
-     *
-     * @return AccessToken\TokenHandlerConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig : static)
      */
-    public function tokenHandler(mixed $value = []): AccessToken\TokenHandlerConfig|static
+    public function tokenHandler(mixed $value = []): \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['tokenHandler'] = true;
@@ -129,9 +115,9 @@ class AccessTokenConfig
             return $this;
         }
 
-        if (!$this->tokenHandler instanceof AccessToken\TokenHandlerConfig) {
+        if (!$this->tokenHandler instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig) {
             $this->_usedProperties['tokenHandler'] = true;
-            $this->tokenHandler = new AccessToken\TokenHandlerConfig($value);
+            $this->tokenHandler = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "tokenHandler()" has already been initialized. You cannot pass values the second time you call tokenHandler().');
         }
@@ -179,7 +165,7 @@ class AccessTokenConfig
 
         if (array_key_exists('token_handler', $value)) {
             $this->_usedProperties['tokenHandler'] = true;
-            $this->tokenHandler = \is_array($value['token_handler']) ? new AccessToken\TokenHandlerConfig($value['token_handler']) : $value['token_handler'];
+            $this->tokenHandler = \is_array($value['token_handler']) ? new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig($value['token_handler']) : $value['token_handler'];
             unset($value['token_handler']);
         }
 
@@ -210,9 +196,10 @@ class AccessTokenConfig
             $output['token_extractors'] = $this->tokenExtractors;
         }
         if (isset($this->_usedProperties['tokenHandler'])) {
-            $output['token_handler'] = $this->tokenHandler instanceof AccessToken\TokenHandlerConfig ? $this->tokenHandler->toArray() : $this->tokenHandler;
+            $output['token_handler'] = $this->tokenHandler instanceof \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandlerConfig ? $this->tokenHandler->toArray() : $this->tokenHandler;
         }
 
         return $output;
     }
+
 }

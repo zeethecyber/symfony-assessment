@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PasswordHasherConfig
+class PasswordHasherConfig 
 {
     private $algorithm;
     private $migrateFrom;
@@ -25,9 +25,7 @@ class PasswordHasherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function algorithm($value): static
@@ -53,11 +51,8 @@ class PasswordHasherConfig
 
     /**
      * Name of hashing algorithm for PBKDF2 (i.e. sha256, sha512, etc..) See hash_algos() for a list of supported algorithms.
-     *
      * @default 'sha512'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function hashAlgorithm($value): static
@@ -70,9 +65,7 @@ class PasswordHasherConfig
 
     /**
      * @default 40
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function keyLength($value): static
@@ -85,9 +78,7 @@ class PasswordHasherConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function ignoreCase($value): static
@@ -100,9 +91,7 @@ class PasswordHasherConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function encodeAsBase64($value): static
@@ -115,9 +104,7 @@ class PasswordHasherConfig
 
     /**
      * @default 5000
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function iterations($value): static
@@ -130,9 +117,7 @@ class PasswordHasherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function cost($value): static
@@ -145,9 +130,7 @@ class PasswordHasherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function memoryCost($value): static
@@ -160,9 +143,7 @@ class PasswordHasherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function timeCost($value): static
@@ -175,9 +156,7 @@ class PasswordHasherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -300,4 +279,5 @@ class PasswordHasherConfig
 
         return $output;
     }
+
 }

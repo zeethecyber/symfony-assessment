@@ -10,7 +10,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RegionConfig
+class RegionConfig 
 {
     private $cacheDriver;
     private $lockPath;
@@ -23,16 +23,12 @@ class RegionConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"type":null}
-     *
-     * @return RegionConfig\CacheDriverConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig : static)
      */
-    public function cacheDriver(string|array $value = []): RegionConfig\CacheDriverConfig|static
+    public function cacheDriver(string|array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['cacheDriver'] = true;
@@ -41,9 +37,9 @@ class RegionConfig
             return $this;
         }
 
-        if (!$this->cacheDriver instanceof RegionConfig\CacheDriverConfig) {
+        if (!$this->cacheDriver instanceof \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig) {
             $this->_usedProperties['cacheDriver'] = true;
-            $this->cacheDriver = new RegionConfig\CacheDriverConfig($value);
+            $this->cacheDriver = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "cacheDriver()" has already been initialized. You cannot pass values the second time you call cacheDriver().');
         }
@@ -53,9 +49,7 @@ class RegionConfig
 
     /**
      * @default '%kernel.cache_dir%/doctrine/orm/slc/filelock'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function lockPath($value): static
@@ -68,9 +62,7 @@ class RegionConfig
 
     /**
      * @default 60
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function lockLifetime($value): static
@@ -83,9 +75,7 @@ class RegionConfig
 
     /**
      * @default 'default'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -98,9 +88,7 @@ class RegionConfig
 
     /**
      * @default 0
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function lifetime($value): static
@@ -113,9 +101,7 @@ class RegionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -128,9 +114,7 @@ class RegionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function name($value): static
@@ -145,7 +129,7 @@ class RegionConfig
     {
         if (array_key_exists('cache_driver', $value)) {
             $this->_usedProperties['cacheDriver'] = true;
-            $this->cacheDriver = \is_array($value['cache_driver']) ? new RegionConfig\CacheDriverConfig($value['cache_driver']) : $value['cache_driver'];
+            $this->cacheDriver = \is_array($value['cache_driver']) ? new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig($value['cache_driver']) : $value['cache_driver'];
             unset($value['cache_driver']);
         }
 
@@ -194,7 +178,7 @@ class RegionConfig
     {
         $output = [];
         if (isset($this->_usedProperties['cacheDriver'])) {
-            $output['cache_driver'] = $this->cacheDriver instanceof RegionConfig\CacheDriverConfig ? $this->cacheDriver->toArray() : $this->cacheDriver;
+            $output['cache_driver'] = $this->cacheDriver instanceof \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig ? $this->cacheDriver->toArray() : $this->cacheDriver;
         }
         if (isset($this->_usedProperties['lockPath'])) {
             $output['lock_path'] = $this->lockPath;
@@ -217,4 +201,5 @@ class RegionConfig
 
         return $output;
     }
+
 }

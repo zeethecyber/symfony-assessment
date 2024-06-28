@@ -1,22 +1,27 @@
 # Symfony RESTful API Development Challenge
 
 ## Objective
+
 The objective of this challenge is to evaluate proficiency in PHP Symfony development, Docker, and static code analysis within a time limit of 4 hours.
 
 ## Repository
+
 - **Code Repository**: [GitHub Repository Link](https://github.com/ahmed-cmyk/symfony_products_api)
 
 ## Overview
+
 This project involves building a RESTful API using Symfony 5.4+, Dockerizing the application, and integrating static code analysis tools like PHPStan and PHP_CodeSniffer.
 
 ## Setup Instructions
 
 ### Prerequisites
+
 Make sure you have Docker and Docker Compose installed on your machine.
 
 ### Steps to Run the Project
 
 1. **Clone the Repository**
+
 ```bash
 git clone <repository-url>
 cd <repository-name>
@@ -25,13 +30,16 @@ cd <repository-name>
 2. **Build and Run Docker Containers**
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 3. **Install Dependencies and Setup Database**
 
 ```bash
-docker compose run app php composer install
+docker compose run app composer install
+
+docker compose run app php bin/console doctrine:schema:drop --force
+
 docker compose run app php bin/console doctrine:migrations:migrate --no-interaction
 ```
 
@@ -61,8 +69,8 @@ The request body should be in the JSON format and should follow the following fo
 
 ```json
 {
-    "email": "email@example.com",
-    "password": "password"
+  "email": "email@example.com",
+  "password": "password"
 }
 ```
 
@@ -78,8 +86,8 @@ The request body should be in the JSON format and should follow the following fo
 
 ```json
 {
-    "username": "email@example.com",
-    "password": "password"
+  "username": "email@example.com",
+  "password": "password"
 }
 ```
 

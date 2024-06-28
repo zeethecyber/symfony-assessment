@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class CasConfig
+class CasConfig 
 {
     private $validationUrl;
     private $prefix;
@@ -16,12 +16,9 @@ class CasConfig
     private $_usedProperties = [];
 
     /**
-     * CAS server validation URL.
-     *
+     * CAS server validation URL
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function validationUrl($value): static
@@ -33,12 +30,9 @@ class CasConfig
     }
 
     /**
-     * CAS prefix.
-     *
+     * CAS prefix
      * @default 'cas'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function prefix($value): static
@@ -50,12 +44,9 @@ class CasConfig
     }
 
     /**
-     * HTTP Client service.
-     *
+     * HTTP Client service
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function httpClient($value): static
@@ -106,4 +97,5 @@ class CasConfig
 
         return $output;
     }
+
 }

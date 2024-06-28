@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class UidConfig
+class UidConfig 
 {
     private $enabled;
     private $defaultUuidVersion;
@@ -20,9 +20,7 @@ class UidConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -35,9 +33,7 @@ class UidConfig
 
     /**
      * @default 7
-     *
      * @param ParamConfigurator|7|6|4|1 $value
-     *
      * @return $this
      */
     public function defaultUuidVersion($value): static
@@ -50,9 +46,7 @@ class UidConfig
 
     /**
      * @default 5
-     *
      * @param ParamConfigurator|5|3 $value
-     *
      * @return $this
      */
     public function nameBasedUuidVersion($value): static
@@ -65,9 +59,7 @@ class UidConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function nameBasedUuidNamespace($value): static
@@ -80,9 +72,7 @@ class UidConfig
 
     /**
      * @default 7
-     *
      * @param ParamConfigurator|7|6|1 $value
-     *
      * @return $this
      */
     public function timeBasedUuidVersion($value): static
@@ -95,9 +85,7 @@ class UidConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function timeBasedUuidNode($value): static
@@ -175,4 +163,5 @@ class UidConfig
 
         return $output;
     }
+
 }

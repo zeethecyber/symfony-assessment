@@ -7,8 +7,8 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'Twig'.\DIRECTORY_SEPARATOR.'DateConfi
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Twig'.\DIRECTORY_SEPARATOR.'NumberFormatConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Twig'.\DIRECTORY_SEPARATOR.'MailerConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -49,17 +49,13 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @example "@bar"
      * @example 3.14
-     *
-     * @return Twig\GlobalConfig|$this
-     *
+     * @return \Symfony\Config\Twig\GlobalConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Twig\GlobalConfig : static)
      */
-    public function global(string $key, mixed $value = []): Twig\GlobalConfig|static
+    public function global(string $key, mixed $value = []): \Symfony\Config\Twig\GlobalConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['globals'] = true;
@@ -68,9 +64,9 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
             return $this;
         }
 
-        if (!isset($this->globals[$key]) || !$this->globals[$key] instanceof Twig\GlobalConfig) {
+        if (!isset($this->globals[$key]) || !$this->globals[$key] instanceof \Symfony\Config\Twig\GlobalConfig) {
             $this->_usedProperties['globals'] = true;
-            $this->globals[$key] = new Twig\GlobalConfig($value);
+            $this->globals[$key] = new \Symfony\Config\Twig\GlobalConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "global()" has already been initialized. You cannot pass values the second time you call global().');
         }
@@ -80,9 +76,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function autoescapeService($value): static
@@ -95,9 +89,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function autoescapeServiceMethod($value): static
@@ -110,13 +102,9 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @example Twig\Template
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
-     * @deprecated the child node "base_template_class" at path "twig" is deprecated
-     *
+     * @deprecated The child node "base_template_class" at path "twig" is deprecated.
      * @return $this
      */
     public function baseTemplateClass($value): static
@@ -129,9 +117,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default '%kernel.cache_dir%/twig'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cache($value): static
@@ -144,9 +130,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default '%kernel.charset%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function charset($value): static
@@ -159,9 +143,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default '%kernel.debug%'
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function debug($value): static
@@ -174,9 +156,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default '%kernel.debug%'
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function strictVariables($value): static
@@ -189,9 +169,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function autoReload($value): static
@@ -204,9 +182,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function optimizations($value): static
@@ -218,12 +194,9 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
     }
 
     /**
-     * The default path used to load templates.
-     *
+     * The default path used to load templates
      * @default '%kernel.project_dir%/templates'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultPath($value): static
@@ -259,15 +232,14 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
     }
 
     /**
-     * The default format options used by the date filter.
-     *
+     * The default format options used by the date filter
      * @default {"format":"F j, Y H:i","interval_format":"%d days","timezone":null}
-     */
-    public function date(array $value = []): Twig\DateConfig
+    */
+    public function date(array $value = []): \Symfony\Config\Twig\DateConfig
     {
         if (null === $this->date) {
             $this->_usedProperties['date'] = true;
-            $this->date = new Twig\DateConfig($value);
+            $this->date = new \Symfony\Config\Twig\DateConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "date()" has already been initialized. You cannot pass values the second time you call date().');
         }
@@ -276,15 +248,14 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
     }
 
     /**
-     * The default format options for the number_format filter.
-     *
+     * The default format options for the number_format filter
      * @default {"decimals":0,"decimal_point":".","thousands_separator":","}
-     */
-    public function numberFormat(array $value = []): Twig\NumberFormatConfig
+    */
+    public function numberFormat(array $value = []): \Symfony\Config\Twig\NumberFormatConfig
     {
         if (null === $this->numberFormat) {
             $this->_usedProperties['numberFormat'] = true;
-            $this->numberFormat = new Twig\NumberFormatConfig($value);
+            $this->numberFormat = new \Symfony\Config\Twig\NumberFormatConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "numberFormat()" has already been initialized. You cannot pass values the second time you call numberFormat().');
         }
@@ -292,11 +263,11 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
         return $this->numberFormat;
     }
 
-    public function mailer(array $value = []): Twig\MailerConfig
+    public function mailer(array $value = []): \Symfony\Config\Twig\MailerConfig
     {
         if (null === $this->mailer) {
             $this->_usedProperties['mailer'] = true;
-            $this->mailer = new Twig\MailerConfig($value);
+            $this->mailer = new \Symfony\Config\Twig\MailerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "mailer()" has already been initialized. You cannot pass values the second time you call mailer().');
         }
@@ -319,7 +290,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
         if (array_key_exists('globals', $value)) {
             $this->_usedProperties['globals'] = true;
-            $this->globals = array_map(fn ($v) => \is_array($v) ? new Twig\GlobalConfig($v) : $v, $value['globals']);
+            $this->globals = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Twig\GlobalConfig($v) : $v, $value['globals']);
             unset($value['globals']);
         }
 
@@ -397,19 +368,19 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
         if (array_key_exists('date', $value)) {
             $this->_usedProperties['date'] = true;
-            $this->date = new Twig\DateConfig($value['date']);
+            $this->date = new \Symfony\Config\Twig\DateConfig($value['date']);
             unset($value['date']);
         }
 
         if (array_key_exists('number_format', $value)) {
             $this->_usedProperties['numberFormat'] = true;
-            $this->numberFormat = new Twig\NumberFormatConfig($value['number_format']);
+            $this->numberFormat = new \Symfony\Config\Twig\NumberFormatConfig($value['number_format']);
             unset($value['number_format']);
         }
 
         if (array_key_exists('mailer', $value)) {
             $this->_usedProperties['mailer'] = true;
-            $this->mailer = new Twig\MailerConfig($value['mailer']);
+            $this->mailer = new \Symfony\Config\Twig\MailerConfig($value['mailer']);
             unset($value['mailer']);
         }
 
@@ -425,7 +396,7 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
             $output['form_themes'] = $this->formThemes;
         }
         if (isset($this->_usedProperties['globals'])) {
-            $output['globals'] = array_map(fn ($v) => $v instanceof Twig\GlobalConfig ? $v->toArray() : $v, $this->globals);
+            $output['globals'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Twig\GlobalConfig ? $v->toArray() : $v, $this->globals);
         }
         if (isset($this->_usedProperties['autoescapeService'])) {
             $output['autoescape_service'] = $this->autoescapeService;
@@ -475,4 +446,5 @@ class TwigConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInter
 
         return $output;
     }
+
 }

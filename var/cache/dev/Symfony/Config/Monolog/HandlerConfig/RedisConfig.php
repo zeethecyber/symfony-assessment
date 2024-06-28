@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RedisConfig
+class RedisConfig 
 {
     private $id;
     private $host;
@@ -20,9 +20,7 @@ class RedisConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -35,9 +33,7 @@ class RedisConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function host($value): static
@@ -50,9 +46,7 @@ class RedisConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function password($value): static
@@ -65,9 +59,7 @@ class RedisConfig
 
     /**
      * @default 6379
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -80,9 +72,7 @@ class RedisConfig
 
     /**
      * @default 0
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function database($value): static
@@ -95,9 +85,7 @@ class RedisConfig
 
     /**
      * @default 'monolog_redis'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function keyName($value): static
@@ -175,4 +163,5 @@ class RedisConfig
 
         return $output;
     }
+
 }

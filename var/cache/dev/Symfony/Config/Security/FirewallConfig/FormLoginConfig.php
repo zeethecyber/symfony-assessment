@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class FormLoginConfig
+class FormLoginConfig 
 {
     private $provider;
     private $rememberMe;
@@ -35,9 +35,7 @@ class FormLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -50,9 +48,7 @@ class FormLoginConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function rememberMe($value): static
@@ -65,9 +61,7 @@ class FormLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function successHandler($value): static
@@ -80,9 +74,7 @@ class FormLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failureHandler($value): static
@@ -95,9 +87,7 @@ class FormLoginConfig
 
     /**
      * @default '/login_check'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function checkPath($value): static
@@ -110,9 +100,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useForward($value): static
@@ -125,9 +113,7 @@ class FormLoginConfig
 
     /**
      * @default '/login'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function loginPath($value): static
@@ -140,9 +126,7 @@ class FormLoginConfig
 
     /**
      * @default '_username'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function usernameParameter($value): static
@@ -155,9 +139,7 @@ class FormLoginConfig
 
     /**
      * @default '_password'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passwordParameter($value): static
@@ -170,9 +152,7 @@ class FormLoginConfig
 
     /**
      * @default '_csrf_token'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfParameter($value): static
@@ -185,9 +165,7 @@ class FormLoginConfig
 
     /**
      * @default 'authenticate'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function csrfTokenId($value): static
@@ -200,9 +178,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableCsrf($value): static
@@ -215,9 +191,7 @@ class FormLoginConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function postOnly($value): static
@@ -230,9 +204,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function formOnly($value): static
@@ -245,9 +217,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function alwaysUseDefaultTargetPath($value): static
@@ -260,9 +230,7 @@ class FormLoginConfig
 
     /**
      * @default '/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultTargetPath($value): static
@@ -275,9 +243,7 @@ class FormLoginConfig
 
     /**
      * @default '_target_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function targetPathParameter($value): static
@@ -290,9 +256,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function useReferer($value): static
@@ -305,9 +269,7 @@ class FormLoginConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePath($value): static
@@ -320,9 +282,7 @@ class FormLoginConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function failureForward($value): static
@@ -335,9 +295,7 @@ class FormLoginConfig
 
     /**
      * @default '_failure_path'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function failurePathParameter($value): static
@@ -550,4 +508,5 @@ class FormLoginConfig
 
         return $output;
     }
+
 }

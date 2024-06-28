@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RouterConfig
+class RouterConfig 
 {
     private $enabled;
     private $resource;
@@ -23,9 +23,7 @@ class RouterConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -38,9 +36,7 @@ class RouterConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function resource($value): static
@@ -53,9 +49,7 @@ class RouterConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -68,11 +62,8 @@ class RouterConfig
 
     /**
      * @default '%kernel.build_dir%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @deprecated Setting the "router.cache_dir" configuration option is deprecated. It will be removed in version 8.0.
-     *
      * @return $this
      */
     public function cacheDir($value): static
@@ -84,12 +75,9 @@ class RouterConfig
     }
 
     /**
-     * The default URI used to generate URLs in a non-HTTP context.
-     *
+     * The default URI used to generate URLs in a non-HTTP context
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultUri($value): static
@@ -102,9 +90,7 @@ class RouterConfig
 
     /**
      * @default 80
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function httpPort($value): static
@@ -117,9 +103,7 @@ class RouterConfig
 
     /**
      * @default 443
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function httpsPort($value): static
@@ -132,14 +116,11 @@ class RouterConfig
 
     /**
      * set to true to throw an exception when a parameter does not match the requirements
-     * set to false to disable exceptions when a parameter does not match the requirements (and return null instead)
-     * set to null to disable parameter checks against requirements
-     * 'true' is the preferred configuration in development mode, while 'false' or 'null' might be preferred in production.
-     *
+    set to false to disable exceptions when a parameter does not match the requirements (and return null instead)
+    set to null to disable parameter checks against requirements
+    'true' is the preferred configuration in development mode, while 'false' or 'null' might be preferred in production
      * @default true
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function strictRequirements($value): static
@@ -152,9 +133,7 @@ class RouterConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function utf8($value): static
@@ -259,4 +238,5 @@ class RouterConfig
 
         return $output;
     }
+
 }

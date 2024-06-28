@@ -5,13 +5,13 @@ namespace Symfony\Config\Doctrine;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Orm'.\DIRECTORY_SEPARATOR.'ControllerResolverConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Orm'.\DIRECTORY_SEPARATOR.'EntityManagerConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class OrmConfig
+class OrmConfig 
 {
     private $defaultEntityManager;
     private $autoGenerateProxyClasses;
@@ -25,9 +25,7 @@ class OrmConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultEntityManager($value): static
@@ -39,12 +37,9 @@ class OrmConfig
     }
 
     /**
-     * Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL", "FILE_NOT_EXISTS_OR_CHANGED".
-     *
+     * Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL", "FILE_NOT_EXISTS_OR_CHANGED"
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function autoGenerateProxyClasses($value): static
@@ -56,12 +51,9 @@ class OrmConfig
     }
 
     /**
-     * Enables the new implementation of proxies based on lazy ghosts instead of using the legacy implementation.
-     *
+     * Enables the new implementation of proxies based on lazy ghosts instead of using the legacy implementation
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enableLazyGhostObjects($value): static
@@ -74,9 +66,7 @@ class OrmConfig
 
     /**
      * @default '%kernel.cache_dir%/doctrine/orm/Proxies'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function proxyDir($value): static
@@ -89,9 +79,7 @@ class OrmConfig
 
     /**
      * @default 'Proxies'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function proxyNamespace($value): static
@@ -104,12 +92,12 @@ class OrmConfig
 
     /**
      * @default {"enabled":true,"auto_mapping":null,"evict_cache":false}
-     */
-    public function controllerResolver(array $value = []): Orm\ControllerResolverConfig
+    */
+    public function controllerResolver(array $value = []): \Symfony\Config\Doctrine\Orm\ControllerResolverConfig
     {
         if (null === $this->controllerResolver) {
             $this->_usedProperties['controllerResolver'] = true;
-            $this->controllerResolver = new Orm\ControllerResolverConfig($value);
+            $this->controllerResolver = new \Symfony\Config\Doctrine\Orm\ControllerResolverConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "controllerResolver()" has already been initialized. You cannot pass values the second time you call controllerResolver().');
         }
@@ -117,11 +105,11 @@ class OrmConfig
         return $this->controllerResolver;
     }
 
-    public function entityManager(string $name, array $value = []): Orm\EntityManagerConfig
+    public function entityManager(string $name, array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig
     {
         if (!isset($this->entityManagers[$name])) {
             $this->_usedProperties['entityManagers'] = true;
-            $this->entityManagers[$name] = new Orm\EntityManagerConfig($value);
+            $this->entityManagers[$name] = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "entityManager()" has already been initialized. You cannot pass values the second time you call entityManager().');
         }
@@ -174,13 +162,13 @@ class OrmConfig
 
         if (array_key_exists('controller_resolver', $value)) {
             $this->_usedProperties['controllerResolver'] = true;
-            $this->controllerResolver = new Orm\ControllerResolverConfig($value['controller_resolver']);
+            $this->controllerResolver = new \Symfony\Config\Doctrine\Orm\ControllerResolverConfig($value['controller_resolver']);
             unset($value['controller_resolver']);
         }
 
         if (array_key_exists('entity_managers', $value)) {
             $this->_usedProperties['entityManagers'] = true;
-            $this->entityManagers = array_map(fn ($v) => new Orm\EntityManagerConfig($v), $value['entity_managers']);
+            $this->entityManagers = array_map(fn ($v) => new \Symfony\Config\Doctrine\Orm\EntityManagerConfig($v), $value['entity_managers']);
             unset($value['entity_managers']);
         }
 
@@ -225,4 +213,5 @@ class OrmConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\ProviderConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class EntityConfig
+class EntityConfig 
 {
     private $class;
     private $property;
@@ -17,11 +17,8 @@ class EntityConfig
 
     /**
      * The full entity class name of your user class.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function class($value): static
@@ -34,9 +31,7 @@ class EntityConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function property($value): static
@@ -49,9 +44,7 @@ class EntityConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function managerName($value): static
@@ -102,4 +95,5 @@ class EntityConfig
 
         return $output;
     }
+
 }

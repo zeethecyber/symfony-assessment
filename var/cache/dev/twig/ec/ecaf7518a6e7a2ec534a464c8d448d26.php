@@ -320,6 +320,6 @@ class __TwigTemplate_ad51edc52f1b718b08f83c9d51f53862 extends Template
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
     }
 }

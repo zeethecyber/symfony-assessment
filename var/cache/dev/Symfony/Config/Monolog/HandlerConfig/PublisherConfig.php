@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PublisherConfig
+class PublisherConfig 
 {
     private $id;
     private $hostname;
@@ -18,9 +18,7 @@ class PublisherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -33,9 +31,7 @@ class PublisherConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function hostname($value): static
@@ -48,9 +44,7 @@ class PublisherConfig
 
     /**
      * @default 12201
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -63,9 +57,7 @@ class PublisherConfig
 
     /**
      * @default 1420
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function chunkSize($value): static
@@ -125,4 +117,5 @@ class PublisherConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Serializer;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MappingConfig
+class MappingConfig 
 {
     private $paths;
     private $_usedProperties = [];
@@ -48,4 +48,5 @@ class MappingConfig
 
         return $output;
     }
+
 }

@@ -5,13 +5,13 @@ namespace Symfony\Config\Framework;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HttpClient'.\DIRECTORY_SEPARATOR.'DefaultOptionsConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HttpClient'.\DIRECTORY_SEPARATOR.'ScopedClientConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HttpClientConfig
+class HttpClientConfig 
 {
     private $enabled;
     private $maxHostConnections;
@@ -21,10 +21,8 @@ class HttpClientConfig
     private $_usedProperties = [];
 
     /**
-     * @default false
-     *
+     * @default true
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -37,11 +35,8 @@ class HttpClientConfig
 
     /**
      * The maximum number of connections to a single host.
-     *
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxHostConnections($value): static
@@ -52,11 +47,11 @@ class HttpClientConfig
         return $this;
     }
 
-    public function defaultOptions(array $value = []): HttpClient\DefaultOptionsConfig
+    public function defaultOptions(array $value = []): \Symfony\Config\Framework\HttpClient\DefaultOptionsConfig
     {
         if (null === $this->defaultOptions) {
             $this->_usedProperties['defaultOptions'] = true;
-            $this->defaultOptions = new HttpClient\DefaultOptionsConfig($value);
+            $this->defaultOptions = new \Symfony\Config\Framework\HttpClient\DefaultOptionsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "defaultOptions()" has already been initialized. You cannot pass values the second time you call defaultOptions().');
         }
@@ -66,11 +61,8 @@ class HttpClientConfig
 
     /**
      * The id of the service that should generate mock responses. It should be either an invokable or an iterable.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function mockResponseFactory($value): static
@@ -83,14 +75,11 @@ class HttpClientConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return HttpClient\ScopedClientConfig|$this
-     *
+     * @return \Symfony\Config\Framework\HttpClient\ScopedClientConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HttpClient\ScopedClientConfig : static)
      */
-    public function scopedClient(string $name, mixed $value = []): HttpClient\ScopedClientConfig|static
+    public function scopedClient(string $name, mixed $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['scopedClients'] = true;
@@ -99,9 +88,9 @@ class HttpClientConfig
             return $this;
         }
 
-        if (!isset($this->scopedClients[$name]) || !$this->scopedClients[$name] instanceof HttpClient\ScopedClientConfig) {
+        if (!isset($this->scopedClients[$name]) || !$this->scopedClients[$name] instanceof \Symfony\Config\Framework\HttpClient\ScopedClientConfig) {
             $this->_usedProperties['scopedClients'] = true;
-            $this->scopedClients[$name] = new HttpClient\ScopedClientConfig($value);
+            $this->scopedClients[$name] = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "scopedClient()" has already been initialized. You cannot pass values the second time you call scopedClient().');
         }
@@ -125,7 +114,7 @@ class HttpClientConfig
 
         if (array_key_exists('default_options', $value)) {
             $this->_usedProperties['defaultOptions'] = true;
-            $this->defaultOptions = new HttpClient\DefaultOptionsConfig($value['default_options']);
+            $this->defaultOptions = new \Symfony\Config\Framework\HttpClient\DefaultOptionsConfig($value['default_options']);
             unset($value['default_options']);
         }
 
@@ -137,7 +126,7 @@ class HttpClientConfig
 
         if (array_key_exists('scoped_clients', $value)) {
             $this->_usedProperties['scopedClients'] = true;
-            $this->scopedClients = array_map(fn ($v) => \is_array($v) ? new HttpClient\ScopedClientConfig($v) : $v, $value['scoped_clients']);
+            $this->scopedClients = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\HttpClient\ScopedClientConfig($v) : $v, $value['scoped_clients']);
             unset($value['scoped_clients']);
         }
 
@@ -162,9 +151,10 @@ class HttpClientConfig
             $output['mock_response_factory'] = $this->mockResponseFactory;
         }
         if (isset($this->_usedProperties['scopedClients'])) {
-            $output['scoped_clients'] = array_map(fn ($v) => $v instanceof HttpClient\ScopedClientConfig ? $v->toArray() : $v, $this->scopedClients);
+            $output['scoped_clients'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\HttpClient\ScopedClientConfig ? $v->toArray() : $v, $this->scopedClients);
         }
 
         return $output;
     }
+
 }

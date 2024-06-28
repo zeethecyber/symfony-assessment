@@ -4,13 +4,13 @@ namespace Symfony\Config\Turbo;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Broadcast'.\DIRECTORY_SEPARATOR.'DoctrineOrmConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class BroadcastConfig
+class BroadcastConfig 
 {
     private $enabled;
     private $entityTemplatePrefixes;
@@ -19,9 +19,7 @@ class BroadcastConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -46,15 +44,14 @@ class BroadcastConfig
     }
 
     /**
-     * Enable the Doctrine ORM integration.
-     *
+     * Enable the Doctrine ORM integration
      * @default {"enabled":true}
-     */
-    public function doctrineOrm(array $value = []): Broadcast\DoctrineOrmConfig
+    */
+    public function doctrineOrm(array $value = []): \Symfony\Config\Turbo\Broadcast\DoctrineOrmConfig
     {
         if (null === $this->doctrineOrm) {
             $this->_usedProperties['doctrineOrm'] = true;
-            $this->doctrineOrm = new Broadcast\DoctrineOrmConfig($value);
+            $this->doctrineOrm = new \Symfony\Config\Turbo\Broadcast\DoctrineOrmConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "doctrineOrm()" has already been initialized. You cannot pass values the second time you call doctrineOrm().');
         }
@@ -78,7 +75,7 @@ class BroadcastConfig
 
         if (array_key_exists('doctrine_orm', $value)) {
             $this->_usedProperties['doctrineOrm'] = true;
-            $this->doctrineOrm = new Broadcast\DoctrineOrmConfig($value['doctrine_orm']);
+            $this->doctrineOrm = new \Symfony\Config\Turbo\Broadcast\DoctrineOrmConfig($value['doctrine_orm']);
             unset($value['doctrine_orm']);
         }
 
@@ -102,4 +99,5 @@ class BroadcastConfig
 
         return $output;
     }
+
 }

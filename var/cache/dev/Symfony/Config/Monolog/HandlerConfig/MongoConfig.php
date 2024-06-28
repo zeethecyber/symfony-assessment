@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Monolog\HandlerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class MongoConfig
+class MongoConfig 
 {
     private $id;
     private $host;
@@ -21,9 +21,7 @@ class MongoConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -36,9 +34,7 @@ class MongoConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function host($value): static
@@ -51,9 +47,7 @@ class MongoConfig
 
     /**
      * @default 27017
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function port($value): static
@@ -66,9 +60,7 @@ class MongoConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function user($value): static
@@ -81,9 +73,7 @@ class MongoConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function pass($value): static
@@ -96,9 +86,7 @@ class MongoConfig
 
     /**
      * @default 'monolog'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function database($value): static
@@ -111,9 +99,7 @@ class MongoConfig
 
     /**
      * @default 'logs'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function collection($value): static
@@ -200,4 +186,5 @@ class MongoConfig
 
         return $output;
     }
+
 }

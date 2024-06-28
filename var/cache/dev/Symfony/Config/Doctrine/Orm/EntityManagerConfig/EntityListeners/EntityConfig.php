@@ -9,16 +9,16 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 /**
  * This class is automatically generated to help in creating a config.
  */
-class EntityConfig
+class EntityConfig 
 {
     private $listeners;
     private $_usedProperties = [];
 
-    public function listener(string $class, array $value = []): EntityConfig\ListenerConfig
+    public function listener(string $class, array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig
     {
         if (!isset($this->listeners[$class])) {
             $this->_usedProperties['listeners'] = true;
-            $this->listeners[$class] = new EntityConfig\ListenerConfig($value);
+            $this->listeners[$class] = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "listener()" has already been initialized. You cannot pass values the second time you call listener().');
         }
@@ -30,7 +30,7 @@ class EntityConfig
     {
         if (array_key_exists('listeners', $value)) {
             $this->_usedProperties['listeners'] = true;
-            $this->listeners = array_map(fn ($v) => new EntityConfig\ListenerConfig($v), $value['listeners']);
+            $this->listeners = array_map(fn ($v) => new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig($v), $value['listeners']);
             unset($value['listeners']);
         }
 
@@ -48,4 +48,5 @@ class EntityConfig
 
         return $output;
     }
+
 }

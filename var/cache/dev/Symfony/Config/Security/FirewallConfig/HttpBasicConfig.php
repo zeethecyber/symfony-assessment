@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HttpBasicConfig
+class HttpBasicConfig 
 {
     private $provider;
     private $realm;
@@ -16,9 +16,7 @@ class HttpBasicConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -31,9 +29,7 @@ class HttpBasicConfig
 
     /**
      * @default 'Secured Area'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function realm($value): static
@@ -75,4 +71,5 @@ class HttpBasicConfig
 
         return $output;
     }
+
 }

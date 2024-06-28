@@ -4,13 +4,13 @@ namespace Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Oidc'.\DIRECTORY_SEPARATOR.'AlgorithmConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class OidcConfig
+class OidcConfig 
 {
     private $claim;
     private $audience;
@@ -23,11 +23,8 @@ class OidcConfig
 
     /**
      * Claim which contains the user identifier (e.g.: sub, email..).
-     *
      * @default 'sub'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function claim($value): static
@@ -40,11 +37,8 @@ class OidcConfig
 
     /**
      * Audience set in the token, for validation purpose.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function audience($value): static
@@ -70,14 +64,13 @@ class OidcConfig
 
     /**
      * Algorithm used to sign the token.
-     *
      * @deprecated The "algorithm" option is deprecated and will be removed in 8.0. Use the "algorithms" option instead.
-     */
-    public function algorithm(array $value = []): Oidc\AlgorithmConfig
+    */
+    public function algorithm(array $value = []): \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\Oidc\AlgorithmConfig
     {
         if (null === $this->algorithm) {
             $this->_usedProperties['algorithm'] = true;
-            $this->algorithm = new Oidc\AlgorithmConfig($value);
+            $this->algorithm = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\Oidc\AlgorithmConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "algorithm()" has already been initialized. You cannot pass values the second time you call algorithm().');
         }
@@ -100,13 +93,9 @@ class OidcConfig
 
     /**
      * JSON-encoded JWK used to sign the token (must contain a "kty" key).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @deprecated The "key" option is deprecated and will be removed in 8.0. Use the "keyset" option instead.
-     *
      * @return $this
      */
     public function key($value): static
@@ -119,11 +108,8 @@ class OidcConfig
 
     /**
      * JSON-encoded JWKSet used to sign the token (must contain a list of valid keys).
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function keyset($value): static
@@ -156,7 +142,7 @@ class OidcConfig
 
         if (array_key_exists('algorithm', $value)) {
             $this->_usedProperties['algorithm'] = true;
-            $this->algorithm = new Oidc\AlgorithmConfig($value['algorithm']);
+            $this->algorithm = new \Symfony\Config\Security\FirewallConfig\AccessToken\TokenHandler\Oidc\AlgorithmConfig($value['algorithm']);
             unset($value['algorithm']);
         }
 
@@ -210,4 +196,5 @@ class OidcConfig
 
         return $output;
     }
+
 }

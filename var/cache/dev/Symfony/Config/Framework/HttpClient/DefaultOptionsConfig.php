@@ -5,13 +5,13 @@ namespace Symfony\Config\Framework\HttpClient;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'DefaultOptions'.\DIRECTORY_SEPARATOR.'PeerFingerprintConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'DefaultOptions'.\DIRECTORY_SEPARATOR.'RetryFailedConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class DefaultOptionsConfig
+class DefaultOptionsConfig 
 {
     private $headers;
     private $vars;
@@ -64,11 +64,8 @@ class DefaultOptionsConfig
 
     /**
      * The maximum number of redirects to follow.
-     *
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function maxRedirects($value): static
@@ -81,11 +78,8 @@ class DefaultOptionsConfig
 
     /**
      * The default HTTP version, typically 1.1 or 2.0, leave to null for the best version.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function httpVersion($value): static
@@ -109,11 +103,8 @@ class DefaultOptionsConfig
 
     /**
      * The URL of the proxy to pass requests through or null for automatic detection.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function proxy($value): static
@@ -126,11 +117,8 @@ class DefaultOptionsConfig
 
     /**
      * A comma separated list of hosts that do not require a proxy to be reached.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function noProxy($value): static
@@ -143,11 +131,8 @@ class DefaultOptionsConfig
 
     /**
      * The idle timeout, defaults to the "default_socket_timeout" ini parameter.
-     *
      * @default null
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function timeout($value): static
@@ -160,11 +145,8 @@ class DefaultOptionsConfig
 
     /**
      * The maximum execution time for the request+response as a whole.
-     *
      * @default null
-     *
      * @param ParamConfigurator|float $value
-     *
      * @return $this
      */
     public function maxDuration($value): static
@@ -177,11 +159,8 @@ class DefaultOptionsConfig
 
     /**
      * A network interface name, IP address, a host name or a UNIX socket to bind to.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function bindto($value): static
@@ -194,11 +173,8 @@ class DefaultOptionsConfig
 
     /**
      * Indicates if the peer should be verified in a TLS context.
-     *
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function verifyPeer($value): static
@@ -211,11 +187,8 @@ class DefaultOptionsConfig
 
     /**
      * Indicates if the host should exist as a certificate common name.
-     *
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function verifyHost($value): static
@@ -228,11 +201,8 @@ class DefaultOptionsConfig
 
     /**
      * A certificate authority file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cafile($value): static
@@ -245,11 +215,8 @@ class DefaultOptionsConfig
 
     /**
      * A directory that contains multiple certificate authority files.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function capath($value): static
@@ -262,11 +229,8 @@ class DefaultOptionsConfig
 
     /**
      * A PEM formatted certificate file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function localCert($value): static
@@ -279,11 +243,8 @@ class DefaultOptionsConfig
 
     /**
      * A private key file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function localPk($value): static
@@ -296,11 +257,8 @@ class DefaultOptionsConfig
 
     /**
      * The passphrase used to encrypt the "local_pk" file.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passphrase($value): static
@@ -312,12 +270,9 @@ class DefaultOptionsConfig
     }
 
     /**
-     * A list of TLS ciphers separated by colons, commas or spaces (e.g. "RC3-SHA:TLS13-AES-128-GCM-SHA256"...).
-     *
+     * A list of TLS ciphers separated by colons, commas or spaces (e.g. "RC3-SHA:TLS13-AES-128-GCM-SHA256"...)
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function ciphers($value): static
@@ -330,12 +285,12 @@ class DefaultOptionsConfig
 
     /**
      * Associative array: hashing algorithm => hash(es).
-     */
-    public function peerFingerprint(array $value = []): DefaultOptions\PeerFingerprintConfig
+    */
+    public function peerFingerprint(array $value = []): \Symfony\Config\Framework\HttpClient\DefaultOptions\PeerFingerprintConfig
     {
         if (null === $this->peerFingerprint) {
             $this->_usedProperties['peerFingerprint'] = true;
-            $this->peerFingerprint = new DefaultOptions\PeerFingerprintConfig($value);
+            $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\DefaultOptions\PeerFingerprintConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "peerFingerprint()" has already been initialized. You cannot pass values the second time you call peerFingerprint().');
         }
@@ -345,11 +300,8 @@ class DefaultOptionsConfig
 
     /**
      * The minimum version of TLS to accept; must be one of STREAM_CRYPTO_METHOD_TLSv*_CLIENT constants.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function cryptoMethod($value): static
@@ -374,12 +326,9 @@ class DefaultOptionsConfig
     }
 
     /**
-     * Rate limiter name to use for throttling requests.
-     *
+     * Rate limiter name to use for throttling requests
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function rateLimiter($value): static
@@ -392,16 +341,12 @@ class DefaultOptionsConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false,"retry_strategy":null,"http_codes":[],"max_retries":3,"delay":1000,"multiplier":2,"max_delay":0,"jitter":0.1}
-     *
-     * @return DefaultOptions\RetryFailedConfig|$this
-     *
+     * @return \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig : static)
      */
-    public function retryFailed(mixed $value = []): DefaultOptions\RetryFailedConfig|static
+    public function retryFailed(mixed $value = []): \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['retryFailed'] = true;
@@ -410,9 +355,9 @@ class DefaultOptionsConfig
             return $this;
         }
 
-        if (!$this->retryFailed instanceof DefaultOptions\RetryFailedConfig) {
+        if (!$this->retryFailed instanceof \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig) {
             $this->_usedProperties['retryFailed'] = true;
-            $this->retryFailed = new DefaultOptions\RetryFailedConfig($value);
+            $this->retryFailed = new \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "retryFailed()" has already been initialized. You cannot pass values the second time you call retryFailed().');
         }
@@ -532,7 +477,7 @@ class DefaultOptionsConfig
 
         if (array_key_exists('peer_fingerprint', $value)) {
             $this->_usedProperties['peerFingerprint'] = true;
-            $this->peerFingerprint = new DefaultOptions\PeerFingerprintConfig($value['peer_fingerprint']);
+            $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\DefaultOptions\PeerFingerprintConfig($value['peer_fingerprint']);
             unset($value['peer_fingerprint']);
         }
 
@@ -556,7 +501,7 @@ class DefaultOptionsConfig
 
         if (array_key_exists('retry_failed', $value)) {
             $this->_usedProperties['retryFailed'] = true;
-            $this->retryFailed = \is_array($value['retry_failed']) ? new DefaultOptions\RetryFailedConfig($value['retry_failed']) : $value['retry_failed'];
+            $this->retryFailed = \is_array($value['retry_failed']) ? new \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig($value['retry_failed']) : $value['retry_failed'];
             unset($value['retry_failed']);
         }
 
@@ -635,9 +580,10 @@ class DefaultOptionsConfig
             $output['rate_limiter'] = $this->rateLimiter;
         }
         if (isset($this->_usedProperties['retryFailed'])) {
-            $output['retry_failed'] = $this->retryFailed instanceof DefaultOptions\RetryFailedConfig ? $this->retryFailed->toArray() : $this->retryFailed;
+            $output['retry_failed'] = $this->retryFailed instanceof \Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailedConfig ? $this->retryFailed->toArray() : $this->retryFailed;
         }
 
         return $output;
     }
+
 }

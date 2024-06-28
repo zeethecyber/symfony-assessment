@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Workflows\WorkflowsConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TransitionConfig
+class TransitionConfig 
 {
     private $name;
     private $guard;
@@ -19,9 +19,7 @@ class TransitionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function name($value): static
@@ -33,14 +31,10 @@ class TransitionConfig
     }
 
     /**
-     * An expression to block the transition.
-     *
+     * An expression to block the transition
      * @example is_fully_authenticated() and is_granted('ROLE_JOURNALIST') and subject.getTitle() == 'My first article'
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function guard($value): static
@@ -148,4 +142,5 @@ class TransitionConfig
 
         return $output;
     }
+
 }

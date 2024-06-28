@@ -4,13 +4,13 @@ namespace Symfony\Config\Framework;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Cache'.\DIRECTORY_SEPARATOR.'PoolConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class CacheConfig
+class CacheConfig 
 {
     private $prefixSeed;
     private $app;
@@ -25,14 +25,10 @@ class CacheConfig
     private $_usedProperties = [];
 
     /**
-     * Used to namespace cache keys when using several apps with the same shared backend.
-     *
+     * Used to namespace cache keys when using several apps with the same shared backend
      * @example my-application-name/%kernel.environment%
-     *
      * @default '_%kernel.project_dir%.%kernel.container_class%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function prefixSeed($value): static
@@ -44,12 +40,9 @@ class CacheConfig
     }
 
     /**
-     * App related cache pools configuration.
-     *
+     * App related cache pools configuration
      * @default 'cache.adapter.filesystem'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function app($value): static
@@ -61,12 +54,9 @@ class CacheConfig
     }
 
     /**
-     * System related cache pools configuration.
-     *
+     * System related cache pools configuration
      * @default 'cache.adapter.system'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function system($value): static
@@ -79,9 +69,7 @@ class CacheConfig
 
     /**
      * @default '%kernel.cache_dir%/pools/app'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function directory($value): static
@@ -94,9 +82,7 @@ class CacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultPsr6Provider($value): static
@@ -109,9 +95,7 @@ class CacheConfig
 
     /**
      * @default 'redis://localhost'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultRedisProvider($value): static
@@ -124,9 +108,7 @@ class CacheConfig
 
     /**
      * @default 'memcached://localhost'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultMemcachedProvider($value): static
@@ -139,9 +121,7 @@ class CacheConfig
 
     /**
      * @default 'database_connection'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultDoctrineDbalProvider($value): static
@@ -154,9 +134,7 @@ class CacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultPdoProvider($value): static
@@ -169,14 +147,11 @@ class CacheConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Cache\PoolConfig|$this
-     *
+     * @return \Symfony\Config\Framework\Cache\PoolConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\Cache\PoolConfig : static)
      */
-    public function pool(string $name, mixed $value = []): Cache\PoolConfig|static
+    public function pool(string $name, mixed $value = []): \Symfony\Config\Framework\Cache\PoolConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['pools'] = true;
@@ -185,9 +160,9 @@ class CacheConfig
             return $this;
         }
 
-        if (!isset($this->pools[$name]) || !$this->pools[$name] instanceof Cache\PoolConfig) {
+        if (!isset($this->pools[$name]) || !$this->pools[$name] instanceof \Symfony\Config\Framework\Cache\PoolConfig) {
             $this->_usedProperties['pools'] = true;
-            $this->pools[$name] = new Cache\PoolConfig($value);
+            $this->pools[$name] = new \Symfony\Config\Framework\Cache\PoolConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "pool()" has already been initialized. You cannot pass values the second time you call pool().');
         }
@@ -253,7 +228,7 @@ class CacheConfig
 
         if (array_key_exists('pools', $value)) {
             $this->_usedProperties['pools'] = true;
-            $this->pools = array_map(fn ($v) => \is_array($v) ? new Cache\PoolConfig($v) : $v, $value['pools']);
+            $this->pools = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Framework\Cache\PoolConfig($v) : $v, $value['pools']);
             unset($value['pools']);
         }
 
@@ -293,9 +268,10 @@ class CacheConfig
             $output['default_pdo_provider'] = $this->defaultPdoProvider;
         }
         if (isset($this->_usedProperties['pools'])) {
-            $output['pools'] = array_map(fn ($v) => $v instanceof Cache\PoolConfig ? $v->toArray() : $v, $this->pools);
+            $output['pools'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Framework\Cache\PoolConfig ? $v->toArray() : $v, $this->pools);
         }
 
         return $output;
     }
+
 }

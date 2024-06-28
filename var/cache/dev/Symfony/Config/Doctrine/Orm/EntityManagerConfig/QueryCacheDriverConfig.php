@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Orm\EntityManagerConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class QueryCacheDriverConfig
+class QueryCacheDriverConfig 
 {
     private $type;
     private $id;
@@ -17,9 +17,7 @@ class QueryCacheDriverConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function type($value): static
@@ -32,9 +30,7 @@ class QueryCacheDriverConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function id($value): static
@@ -47,9 +43,7 @@ class QueryCacheDriverConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function pool($value): static
@@ -100,4 +94,5 @@ class QueryCacheDriverConfig
 
         return $output;
     }
+
 }

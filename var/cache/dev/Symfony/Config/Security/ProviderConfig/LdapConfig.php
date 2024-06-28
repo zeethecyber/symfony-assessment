@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\ProviderConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class LdapConfig
+class LdapConfig 
 {
     private $service;
     private $baseDn;
@@ -23,9 +23,7 @@ class LdapConfig
 
     /**
      * @default 'ldap'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -38,9 +36,7 @@ class LdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function baseDn($value): static
@@ -53,9 +49,7 @@ class LdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchDn($value): static
@@ -68,9 +62,7 @@ class LdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function searchPassword($value): static
@@ -109,9 +101,7 @@ class LdapConfig
 
     /**
      * @default 'sAMAccountName'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function uidKey($value): static
@@ -124,9 +114,7 @@ class LdapConfig
 
     /**
      * @default '({uid_key}={user_identifier})'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function filter($value): static
@@ -139,9 +127,7 @@ class LdapConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function passwordAttribute($value): static
@@ -246,4 +232,5 @@ class LdapConfig
 
         return $output;
     }
+
 }

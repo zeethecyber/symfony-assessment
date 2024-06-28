@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Doctrine\Dbal;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class TypeConfig
+class TypeConfig 
 {
     private $class;
     private $commented;
@@ -16,9 +16,7 @@ class TypeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function class($value): static
@@ -31,11 +29,8 @@ class TypeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @deprecated The doctrine-bundle type commenting features were removed; the corresponding config parameter was deprecated in 2.0 and will be dropped in 3.0.
-     *
      * @return $this
      */
     public function commented($value): static
@@ -77,4 +72,5 @@ class TypeConfig
 
         return $output;
     }
+
 }

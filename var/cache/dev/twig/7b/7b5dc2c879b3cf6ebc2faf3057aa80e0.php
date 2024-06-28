@@ -2197,6 +2197,6 @@ class __TwigTemplate_68f5a22623a6f5fd1a14cc4b2ea7f7e9 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

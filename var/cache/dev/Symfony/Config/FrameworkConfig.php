@@ -40,8 +40,8 @@ require_once __DIR__.\DIRECTORY_SEPARATOR.'Framework'.\DIRECTORY_SEPARATOR.'Html
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Framework'.\DIRECTORY_SEPARATOR.'WebhookConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Framework'.\DIRECTORY_SEPARATOR.'RemoteeventConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -104,9 +104,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function secret($value): static
@@ -118,12 +116,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * Set true to enable support for the '_method' request parameter to determine the intended HTTP method on POST requests. Note: When using the HttpCache, you need to call the method in your front controller instead.
-     *
+     * Set true to enable support for the '_method' request parameter to determine the intended HTTP method on POST requests. Note: When using the HttpCache, you need to call the method in your front controller instead
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function httpMethodOverride($value): static
@@ -136,11 +131,8 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * Set true to enable support for xsendfile in binary file responses.
-     *
      * @default false
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function trustXSendfileTypeHeader($value): static
@@ -153,9 +145,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default '%env(default::SYMFONY_IDE)%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function ide($value): static
@@ -168,9 +158,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function test($value): static
@@ -183,9 +171,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default 'en'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultLocale($value): static
@@ -198,11 +184,8 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * Whether to use the Accept-Language HTTP header to set the Request locale (only when the "_locale" request attribute is not passed).
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function setLocaleFromAcceptLanguage($value): static
@@ -215,11 +198,8 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * Whether to set the Content-Language HTTP header on the Response using the Request locale.
-     *
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function setContentLanguageFromLocale($value): static
@@ -258,9 +238,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function trustedProxies($value): static
@@ -286,9 +264,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default 'error_controller'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function errorController($value): static
@@ -300,12 +276,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * HttpKernel will handle all kinds of \Throwable.
-     *
+     * HttpKernel will handle all kinds of \Throwable
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function handleAllThrowables($value): static
@@ -318,12 +291,12 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default {"enabled":null}
-     */
-    public function csrfProtection(array $value = []): Framework\CsrfProtectionConfig
+    */
+    public function csrfProtection(array $value = []): \Symfony\Config\Framework\CsrfProtectionConfig
     {
         if (null === $this->csrfProtection) {
             $this->_usedProperties['csrfProtection'] = true;
-            $this->csrfProtection = new Framework\CsrfProtectionConfig($value);
+            $this->csrfProtection = new \Symfony\Config\Framework\CsrfProtectionConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "csrfProtection()" has already been initialized. You cannot pass values the second time you call csrfProtection().');
         }
@@ -332,29 +305,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      form configuration
-     *
-     * @default {"enabled":false,"csrf_protection":{"enabled":null,"field_name":"_token"}}
-     *
-     * @return Framework\FormConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\FormConfig : static)
-     */
-    public function form(array $value = []): Framework\FormConfig|static
+     * form configuration
+     * @default {"enabled":true,"csrf_protection":{"enabled":null,"field_name":"_token"}}
+    */
+    public function form(array $value = []): \Symfony\Config\Framework\FormConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->form) {
             $this->_usedProperties['form'] = true;
-            $this->form = $value;
-
-            return $this;
-        }
-
-        if (!$this->form instanceof Framework\FormConfig) {
-            $this->_usedProperties['form'] = true;
-            $this->form = new Framework\FormConfig($value);
+            $this->form = new \Symfony\Config\Framework\FormConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "form()" has already been initialized. You cannot pass values the second time you call form().');
         }
@@ -364,17 +322,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      HTTP cache configuration
-     *
+     * HTTP cache configuration
      * @default {"enabled":false,"debug":"%kernel.debug%","private_headers":[],"skip_response_headers":[]}
-     *
-     * @return Framework\HttpCacheConfig|$this
-     *
+     * @return \Symfony\Config\Framework\HttpCacheConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HttpCacheConfig : static)
      */
-    public function httpCache(array $value = []): Framework\HttpCacheConfig|static
+    public function httpCache(array $value = []): \Symfony\Config\Framework\HttpCacheConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['httpCache'] = true;
@@ -383,9 +337,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->httpCache instanceof Framework\HttpCacheConfig) {
+        if (!$this->httpCache instanceof \Symfony\Config\Framework\HttpCacheConfig) {
             $this->_usedProperties['httpCache'] = true;
-            $this->httpCache = new Framework\HttpCacheConfig($value);
+            $this->httpCache = new \Symfony\Config\Framework\HttpCacheConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "httpCache()" has already been initialized. You cannot pass values the second time you call httpCache().');
         }
@@ -395,17 +349,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      esi configuration
-     *
+     * esi configuration
      * @default {"enabled":false}
-     *
-     * @return Framework\EsiConfig|$this
-     *
+     * @return \Symfony\Config\Framework\EsiConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\EsiConfig : static)
      */
-    public function esi(array $value = []): Framework\EsiConfig|static
+    public function esi(array $value = []): \Symfony\Config\Framework\EsiConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['esi'] = true;
@@ -414,9 +364,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->esi instanceof Framework\EsiConfig) {
+        if (!$this->esi instanceof \Symfony\Config\Framework\EsiConfig) {
             $this->_usedProperties['esi'] = true;
-            $this->esi = new Framework\EsiConfig($value);
+            $this->esi = new \Symfony\Config\Framework\EsiConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "esi()" has already been initialized. You cannot pass values the second time you call esi().');
         }
@@ -426,17 +376,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      ssi configuration
-     *
+     * ssi configuration
      * @default {"enabled":false}
-     *
-     * @return Framework\SsiConfig|$this
-     *
+     * @return \Symfony\Config\Framework\SsiConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\SsiConfig : static)
      */
-    public function ssi(array $value = []): Framework\SsiConfig|static
+    public function ssi(array $value = []): \Symfony\Config\Framework\SsiConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['ssi'] = true;
@@ -445,9 +391,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->ssi instanceof Framework\SsiConfig) {
+        if (!$this->ssi instanceof \Symfony\Config\Framework\SsiConfig) {
             $this->_usedProperties['ssi'] = true;
-            $this->ssi = new Framework\SsiConfig($value);
+            $this->ssi = new \Symfony\Config\Framework\SsiConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "ssi()" has already been initialized. You cannot pass values the second time you call ssi().');
         }
@@ -457,17 +403,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      fragments configuration
-     *
+     * fragments configuration
      * @default {"enabled":false,"hinclude_default_template":null,"path":"\/_fragment"}
-     *
-     * @return Framework\FragmentsConfig|$this
-     *
+     * @return \Symfony\Config\Framework\FragmentsConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\FragmentsConfig : static)
      */
-    public function fragments(array $value = []): Framework\FragmentsConfig|static
+    public function fragments(array $value = []): \Symfony\Config\Framework\FragmentsConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['fragments'] = true;
@@ -476,9 +418,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->fragments instanceof Framework\FragmentsConfig) {
+        if (!$this->fragments instanceof \Symfony\Config\Framework\FragmentsConfig) {
             $this->_usedProperties['fragments'] = true;
-            $this->fragments = new Framework\FragmentsConfig($value);
+            $this->fragments = new \Symfony\Config\Framework\FragmentsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "fragments()" has already been initialized. You cannot pass values the second time you call fragments().');
         }
@@ -488,17 +430,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      profiler configuration
-     *
+     * profiler configuration
      * @default {"enabled":false,"collect":true,"collect_parameter":null,"only_exceptions":false,"only_main_requests":false,"dsn":"file:%kernel.cache_dir%\/profiler","collect_serializer_data":false}
-     *
-     * @return Framework\ProfilerConfig|$this
-     *
+     * @return \Symfony\Config\Framework\ProfilerConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\ProfilerConfig : static)
      */
-    public function profiler(array $value = []): Framework\ProfilerConfig|static
+    public function profiler(array $value = []): \Symfony\Config\Framework\ProfilerConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['profiler'] = true;
@@ -507,9 +445,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->profiler instanceof Framework\ProfilerConfig) {
+        if (!$this->profiler instanceof \Symfony\Config\Framework\ProfilerConfig) {
             $this->_usedProperties['profiler'] = true;
-            $this->profiler = new Framework\ProfilerConfig($value);
+            $this->profiler = new \Symfony\Config\Framework\ProfilerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "profiler()" has already been initialized. You cannot pass values the second time you call profiler().');
         }
@@ -519,16 +457,12 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false,"workflows":[]}
-     *
-     * @return Framework\WorkflowsConfig|$this
-     *
+     * @return \Symfony\Config\Framework\WorkflowsConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\WorkflowsConfig : static)
      */
-    public function workflows(mixed $value = []): Framework\WorkflowsConfig|static
+    public function workflows(mixed $value = []): \Symfony\Config\Framework\WorkflowsConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['workflows'] = true;
@@ -537,9 +471,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->workflows instanceof Framework\WorkflowsConfig) {
+        if (!$this->workflows instanceof \Symfony\Config\Framework\WorkflowsConfig) {
             $this->_usedProperties['workflows'] = true;
-            $this->workflows = new Framework\WorkflowsConfig($value);
+            $this->workflows = new \Symfony\Config\Framework\WorkflowsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "workflows()" has already been initialized. You cannot pass values the second time you call workflows().');
         }
@@ -549,17 +483,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      router configuration
-     *
+     * router configuration
      * @default {"enabled":false,"cache_dir":"%kernel.build_dir%","default_uri":null,"http_port":80,"https_port":443,"strict_requirements":true,"utf8":true}
-     *
-     * @return Framework\RouterConfig|$this
-     *
+     * @return \Symfony\Config\Framework\RouterConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\RouterConfig : static)
      */
-    public function router(array $value = []): Framework\RouterConfig|static
+    public function router(array $value = []): \Symfony\Config\Framework\RouterConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['router'] = true;
@@ -568,9 +498,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->router instanceof Framework\RouterConfig) {
+        if (!$this->router instanceof \Symfony\Config\Framework\RouterConfig) {
             $this->_usedProperties['router'] = true;
-            $this->router = new Framework\RouterConfig($value);
+            $this->router = new \Symfony\Config\Framework\RouterConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "router()" has already been initialized. You cannot pass values the second time you call router().');
         }
@@ -580,17 +510,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      session configuration
-     *
+     * session configuration
      * @default {"enabled":false,"storage_factory_id":"session.storage.factory.native","cookie_secure":"auto","cookie_httponly":true,"cookie_samesite":"lax","gc_probability":1,"metadata_update_threshold":0}
-     *
-     * @return Framework\SessionConfig|$this
-     *
+     * @return \Symfony\Config\Framework\SessionConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\SessionConfig : static)
      */
-    public function session(array $value = []): Framework\SessionConfig|static
+    public function session(array $value = []): \Symfony\Config\Framework\SessionConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['session'] = true;
@@ -599,9 +525,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->session instanceof Framework\SessionConfig) {
+        if (!$this->session instanceof \Symfony\Config\Framework\SessionConfig) {
             $this->_usedProperties['session'] = true;
-            $this->session = new Framework\SessionConfig($value);
+            $this->session = new \Symfony\Config\Framework\SessionConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "session()" has already been initialized. You cannot pass values the second time you call session().');
         }
@@ -611,17 +537,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      request configuration
-     *
+     * request configuration
      * @default {"enabled":false,"formats":[]}
-     *
-     * @return Framework\RequestConfig|$this
-     *
+     * @return \Symfony\Config\Framework\RequestConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\RequestConfig : static)
      */
-    public function request(array $value = []): Framework\RequestConfig|static
+    public function request(array $value = []): \Symfony\Config\Framework\RequestConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['request'] = true;
@@ -630,9 +552,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->request instanceof Framework\RequestConfig) {
+        if (!$this->request instanceof \Symfony\Config\Framework\RequestConfig) {
             $this->_usedProperties['request'] = true;
-            $this->request = new Framework\RequestConfig($value);
+            $this->request = new \Symfony\Config\Framework\RequestConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "request()" has already been initialized. You cannot pass values the second time you call request().');
         }
@@ -641,29 +563,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      assets configuration
-     *
-     * @default {"enabled":false,"strict_mode":false,"version_strategy":null,"version":null,"version_format":"%%s?%%s","json_manifest_path":null,"base_path":"","base_urls":[],"packages":[]}
-     *
-     * @return Framework\AssetsConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\AssetsConfig : static)
-     */
-    public function assets(array $value = []): Framework\AssetsConfig|static
+     * assets configuration
+     * @default {"enabled":true,"strict_mode":false,"version_strategy":null,"version":null,"version_format":"%%s?%%s","json_manifest_path":null,"base_path":"","base_urls":[],"packages":[]}
+    */
+    public function assets(array $value = []): \Symfony\Config\Framework\AssetsConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->assets) {
             $this->_usedProperties['assets'] = true;
-            $this->assets = $value;
-
-            return $this;
-        }
-
-        if (!$this->assets instanceof Framework\AssetsConfig) {
-            $this->_usedProperties['assets'] = true;
-            $this->assets = new Framework\AssetsConfig($value);
+            $this->assets = new \Symfony\Config\Framework\AssetsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "assets()" has already been initialized. You cannot pass values the second time you call assets().');
         }
@@ -672,29 +579,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Asset Mapper configuration
-     *
-     * @default {"enabled":false,"paths":[],"excluded_patterns":[],"exclude_dotfiles":true,"server":true,"public_prefix":"\/assets\/","missing_import_mode":"warn","extensions":[],"importmap_path":"%kernel.project_dir%\/importmap.php","importmap_polyfill":"es-module-shims","importmap_script_attributes":[],"vendor_dir":"%kernel.project_dir%\/assets\/vendor"}
-     *
-     * @return Framework\AssetMapperConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\AssetMapperConfig : static)
-     */
-    public function assetMapper(array $value = []): Framework\AssetMapperConfig|static
+     * Asset Mapper configuration
+     * @default {"enabled":true,"paths":[],"excluded_patterns":[],"exclude_dotfiles":true,"server":true,"public_prefix":"\/assets\/","missing_import_mode":"warn","extensions":[],"importmap_path":"%kernel.project_dir%\/importmap.php","importmap_polyfill":"es-module-shims","importmap_script_attributes":[],"vendor_dir":"%kernel.project_dir%\/assets\/vendor"}
+    */
+    public function assetMapper(array $value = []): \Symfony\Config\Framework\AssetMapperConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->assetMapper) {
             $this->_usedProperties['assetMapper'] = true;
-            $this->assetMapper = $value;
-
-            return $this;
-        }
-
-        if (!$this->assetMapper instanceof Framework\AssetMapperConfig) {
-            $this->_usedProperties['assetMapper'] = true;
-            $this->assetMapper = new Framework\AssetMapperConfig($value);
+            $this->assetMapper = new \Symfony\Config\Framework\AssetMapperConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "assetMapper()" has already been initialized. You cannot pass values the second time you call assetMapper().');
         }
@@ -703,29 +595,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      translator configuration
-     *
-     * @default {"enabled":false,"fallbacks":[],"logging":false,"formatter":"translator.formatter.default","cache_dir":"%kernel.cache_dir%\/translations","default_path":"%kernel.project_dir%\/translations","paths":[],"pseudo_localization":{"enabled":false,"accents":true,"expansion_factor":1,"brackets":true,"parse_html":false,"localizable_html_attributes":[]},"providers":[]}
-     *
-     * @return Framework\TranslatorConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\TranslatorConfig : static)
-     */
-    public function translator(array $value = []): Framework\TranslatorConfig|static
+     * translator configuration
+     * @default {"enabled":true,"fallbacks":[],"logging":false,"formatter":"translator.formatter.default","cache_dir":"%kernel.cache_dir%\/translations","default_path":"%kernel.project_dir%\/translations","paths":[],"pseudo_localization":{"enabled":false,"accents":true,"expansion_factor":1,"brackets":true,"parse_html":false,"localizable_html_attributes":[]},"providers":[]}
+    */
+    public function translator(array $value = []): \Symfony\Config\Framework\TranslatorConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->translator) {
             $this->_usedProperties['translator'] = true;
-            $this->translator = $value;
-
-            return $this;
-        }
-
-        if (!$this->translator instanceof Framework\TranslatorConfig) {
-            $this->_usedProperties['translator'] = true;
-            $this->translator = new Framework\TranslatorConfig($value);
+            $this->translator = new \Symfony\Config\Framework\TranslatorConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "translator()" has already been initialized. You cannot pass values the second time you call translator().');
         }
@@ -734,29 +611,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      validation configuration
-     *
-     * @default {"enabled":false,"enable_attributes":true,"static_method":["loadValidatorMetadata"],"translation_domain":"validators","email_validation_mode":"html5","mapping":{"paths":[]},"not_compromised_password":{"enabled":true,"endpoint":null},"auto_mapping":[]}
-     *
-     * @return Framework\ValidationConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\ValidationConfig : static)
-     */
-    public function validation(array $value = []): Framework\ValidationConfig|static
+     * validation configuration
+     * @default {"enabled":true,"enable_attributes":true,"static_method":["loadValidatorMetadata"],"translation_domain":"validators","email_validation_mode":"html5","mapping":{"paths":[]},"not_compromised_password":{"enabled":true,"endpoint":null},"auto_mapping":[]}
+    */
+    public function validation(array $value = []): \Symfony\Config\Framework\ValidationConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->validation) {
             $this->_usedProperties['validation'] = true;
-            $this->validation = $value;
-
-            return $this;
-        }
-
-        if (!$this->validation instanceof Framework\ValidationConfig) {
-            $this->_usedProperties['validation'] = true;
-            $this->validation = new Framework\ValidationConfig($value);
+            $this->validation = new \Symfony\Config\Framework\ValidationConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "validation()" has already been initialized. You cannot pass values the second time you call validation().');
         }
@@ -766,16 +628,12 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
      * @default {"enabled":false}
-     *
-     * @return Framework\AnnotationsConfig|$this
-     *
+     * @return \Symfony\Config\Framework\AnnotationsConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\AnnotationsConfig : static)
      */
-    public function annotations(array $value = []): Framework\AnnotationsConfig|static
+    public function annotations(array $value = []): \Symfony\Config\Framework\AnnotationsConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['annotations'] = true;
@@ -784,9 +642,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->annotations instanceof Framework\AnnotationsConfig) {
+        if (!$this->annotations instanceof \Symfony\Config\Framework\AnnotationsConfig) {
             $this->_usedProperties['annotations'] = true;
-            $this->annotations = new Framework\AnnotationsConfig($value);
+            $this->annotations = new \Symfony\Config\Framework\AnnotationsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "annotations()" has already been initialized. You cannot pass values the second time you call annotations().');
         }
@@ -795,29 +653,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      serializer configuration
-     *
-     * @default {"enabled":false,"enable_attributes":true,"mapping":{"paths":[]},"default_context":[]}
-     *
-     * @return Framework\SerializerConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\SerializerConfig : static)
-     */
-    public function serializer(array $value = []): Framework\SerializerConfig|static
+     * serializer configuration
+     * @default {"enabled":true,"enable_attributes":true,"mapping":{"paths":[]},"default_context":[]}
+    */
+    public function serializer(array $value = []): \Symfony\Config\Framework\SerializerConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->serializer) {
             $this->_usedProperties['serializer'] = true;
-            $this->serializer = $value;
-
-            return $this;
-        }
-
-        if (!$this->serializer instanceof Framework\SerializerConfig) {
-            $this->_usedProperties['serializer'] = true;
-            $this->serializer = new Framework\SerializerConfig($value);
+            $this->serializer = new \Symfony\Config\Framework\SerializerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "serializer()" has already been initialized. You cannot pass values the second time you call serializer().');
         }
@@ -826,29 +669,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Property access configuration
-     *
-     * @default {"enabled":false,"magic_call":false,"magic_get":true,"magic_set":true,"throw_exception_on_invalid_index":false,"throw_exception_on_invalid_property_path":true}
-     *
-     * @return Framework\PropertyAccessConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\PropertyAccessConfig : static)
-     */
-    public function propertyAccess(array $value = []): Framework\PropertyAccessConfig|static
+     * Property access configuration
+     * @default {"enabled":true,"magic_call":false,"magic_get":true,"magic_set":true,"throw_exception_on_invalid_index":false,"throw_exception_on_invalid_property_path":true}
+    */
+    public function propertyAccess(array $value = []): \Symfony\Config\Framework\PropertyAccessConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->propertyAccess) {
             $this->_usedProperties['propertyAccess'] = true;
-            $this->propertyAccess = $value;
-
-            return $this;
-        }
-
-        if (!$this->propertyAccess instanceof Framework\PropertyAccessConfig) {
-            $this->_usedProperties['propertyAccess'] = true;
-            $this->propertyAccess = new Framework\PropertyAccessConfig($value);
+            $this->propertyAccess = new \Symfony\Config\Framework\PropertyAccessConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "propertyAccess()" has already been initialized. You cannot pass values the second time you call propertyAccess().');
         }
@@ -857,29 +685,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Type info configuration
-     *
-     * @default {"enabled":false}
-     *
-     * @return Framework\TypeInfoConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\TypeInfoConfig : static)
-     */
-    public function typeInfo(array $value = []): Framework\TypeInfoConfig|static
+     * Type info configuration
+     * @default {"enabled":true}
+    */
+    public function typeInfo(array $value = []): \Symfony\Config\Framework\TypeInfoConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->typeInfo) {
             $this->_usedProperties['typeInfo'] = true;
-            $this->typeInfo = $value;
-
-            return $this;
-        }
-
-        if (!$this->typeInfo instanceof Framework\TypeInfoConfig) {
-            $this->_usedProperties['typeInfo'] = true;
-            $this->typeInfo = new Framework\TypeInfoConfig($value);
+            $this->typeInfo = new \Symfony\Config\Framework\TypeInfoConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "typeInfo()" has already been initialized. You cannot pass values the second time you call typeInfo().');
         }
@@ -888,29 +701,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Property info configuration
-     *
-     * @default {"enabled":false}
-     *
-     * @return Framework\PropertyInfoConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\PropertyInfoConfig : static)
-     */
-    public function propertyInfo(array $value = []): Framework\PropertyInfoConfig|static
+     * Property info configuration
+     * @default {"enabled":true}
+    */
+    public function propertyInfo(array $value = []): \Symfony\Config\Framework\PropertyInfoConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->propertyInfo) {
             $this->_usedProperties['propertyInfo'] = true;
-            $this->propertyInfo = $value;
-
-            return $this;
-        }
-
-        if (!$this->propertyInfo instanceof Framework\PropertyInfoConfig) {
-            $this->_usedProperties['propertyInfo'] = true;
-            $this->propertyInfo = new Framework\PropertyInfoConfig($value);
+            $this->propertyInfo = new \Symfony\Config\Framework\PropertyInfoConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "propertyInfo()" has already been initialized. You cannot pass values the second time you call propertyInfo().');
         }
@@ -919,15 +717,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * Cache configuration.
-     *
+     * Cache configuration
      * @default {"prefix_seed":"_%kernel.project_dir%.%kernel.container_class%","app":"cache.adapter.filesystem","system":"cache.adapter.system","directory":"%kernel.cache_dir%\/pools\/app","default_redis_provider":"redis:\/\/localhost","default_memcached_provider":"memcached:\/\/localhost","default_doctrine_dbal_provider":"database_connection","default_pdo_provider":null,"pools":[]}
-     */
-    public function cache(array $value = []): Framework\CacheConfig
+    */
+    public function cache(array $value = []): \Symfony\Config\Framework\CacheConfig
     {
         if (null === $this->cache) {
             $this->_usedProperties['cache'] = true;
-            $this->cache = new Framework\CacheConfig($value);
+            $this->cache = new \Symfony\Config\Framework\CacheConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "cache()" has already been initialized. You cannot pass values the second time you call cache().');
         }
@@ -936,15 +733,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * PHP errors handling configuration.
-     *
+     * PHP errors handling configuration
      * @default {"log":true,"throw":true}
-     */
-    public function phpErrors(array $value = []): Framework\PhpErrorsConfig
+    */
+    public function phpErrors(array $value = []): \Symfony\Config\Framework\PhpErrorsConfig
     {
         if (null === $this->phpErrors) {
             $this->_usedProperties['phpErrors'] = true;
-            $this->phpErrors = new Framework\PhpErrorsConfig($value);
+            $this->phpErrors = new \Symfony\Config\Framework\PhpErrorsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "phpErrors()" has already been initialized. You cannot pass values the second time you call phpErrors().');
         }
@@ -953,13 +749,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * Exception handling configuration.
-     */
-    public function exception(string $class, array $value = []): Framework\ExceptionConfig
+     * Exception handling configuration
+    */
+    public function exception(string $class, array $value = []): \Symfony\Config\Framework\ExceptionConfig
     {
         if (!isset($this->exceptions[$class])) {
             $this->_usedProperties['exceptions'] = true;
-            $this->exceptions[$class] = new Framework\ExceptionConfig($value);
+            $this->exceptions[$class] = new \Symfony\Config\Framework\ExceptionConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "exception()" has already been initialized. You cannot pass values the second time you call exception().');
         }
@@ -968,29 +764,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      web links configuration
-     *
-     * @default {"enabled":false}
-     *
-     * @return Framework\WebLinkConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\WebLinkConfig : static)
-     */
-    public function webLink(array $value = []): Framework\WebLinkConfig|static
+     * web links configuration
+     * @default {"enabled":true}
+    */
+    public function webLink(array $value = []): \Symfony\Config\Framework\WebLinkConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->webLink) {
             $this->_usedProperties['webLink'] = true;
-            $this->webLink = $value;
-
-            return $this;
-        }
-
-        if (!$this->webLink instanceof Framework\WebLinkConfig) {
-            $this->_usedProperties['webLink'] = true;
-            $this->webLink = new Framework\WebLinkConfig($value);
+            $this->webLink = new \Symfony\Config\Framework\WebLinkConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "webLink()" has already been initialized. You cannot pass values the second time you call webLink().');
         }
@@ -1000,17 +781,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Lock configuration
-     *
+     * Lock configuration
      * @default {"enabled":false,"resources":{"default":["flock"]}}
-     *
-     * @return Framework\LockConfig|$this
-     *
+     * @return \Symfony\Config\Framework\LockConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\LockConfig : static)
      */
-    public function lock(mixed $value = []): Framework\LockConfig|static
+    public function lock(mixed $value = []): \Symfony\Config\Framework\LockConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['lock'] = true;
@@ -1019,9 +796,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->lock instanceof Framework\LockConfig) {
+        if (!$this->lock instanceof \Symfony\Config\Framework\LockConfig) {
             $this->_usedProperties['lock'] = true;
-            $this->lock = new Framework\LockConfig($value);
+            $this->lock = new \Symfony\Config\Framework\LockConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "lock()" has already been initialized. You cannot pass values the second time you call lock().');
         }
@@ -1031,17 +808,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Semaphore configuration
-     *
+     * Semaphore configuration
      * @default {"enabled":false,"resources":[]}
-     *
-     * @return Framework\SemaphoreConfig|$this
-     *
+     * @return \Symfony\Config\Framework\SemaphoreConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\SemaphoreConfig : static)
      */
-    public function semaphore(mixed $value = []): Framework\SemaphoreConfig|static
+    public function semaphore(mixed $value = []): \Symfony\Config\Framework\SemaphoreConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['semaphore'] = true;
@@ -1050,9 +823,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->semaphore instanceof Framework\SemaphoreConfig) {
+        if (!$this->semaphore instanceof \Symfony\Config\Framework\SemaphoreConfig) {
             $this->_usedProperties['semaphore'] = true;
-            $this->semaphore = new Framework\SemaphoreConfig($value);
+            $this->semaphore = new \Symfony\Config\Framework\SemaphoreConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "semaphore()" has already been initialized. You cannot pass values the second time you call semaphore().');
         }
@@ -1061,29 +834,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Messenger configuration
-     *
-     * @default {"enabled":false,"routing":[],"serializer":{"default_serializer":"messenger.transport.native_php_serializer","symfony_serializer":{"format":"json","context":[]}},"transports":[],"failure_transport":null,"stop_worker_on_signals":[],"default_bus":null,"buses":{"messenger.bus.default":{"default_middleware":{"enabled":true,"allow_no_handlers":false,"allow_no_senders":true},"middleware":[]}}}
-     *
-     * @return Framework\MessengerConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\MessengerConfig : static)
-     */
-    public function messenger(array $value = []): Framework\MessengerConfig|static
+     * Messenger configuration
+     * @default {"enabled":true,"routing":[],"serializer":{"default_serializer":"messenger.transport.native_php_serializer","symfony_serializer":{"format":"json","context":[]}},"transports":[],"failure_transport":null,"stop_worker_on_signals":[],"default_bus":null,"buses":{"messenger.bus.default":{"default_middleware":{"enabled":true,"allow_no_handlers":false,"allow_no_senders":true},"middleware":[]}}}
+    */
+    public function messenger(array $value = []): \Symfony\Config\Framework\MessengerConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->messenger) {
             $this->_usedProperties['messenger'] = true;
-            $this->messenger = $value;
-
-            return $this;
-        }
-
-        if (!$this->messenger instanceof Framework\MessengerConfig) {
-            $this->_usedProperties['messenger'] = true;
-            $this->messenger = new Framework\MessengerConfig($value);
+            $this->messenger = new \Symfony\Config\Framework\MessengerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "messenger()" has already been initialized. You cannot pass values the second time you call messenger().');
         }
@@ -1093,17 +851,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Scheduler configuration
-     *
+     * Scheduler configuration
      * @default {"enabled":false}
-     *
-     * @return Framework\SchedulerConfig|$this
-     *
+     * @return \Symfony\Config\Framework\SchedulerConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\SchedulerConfig : static)
      */
-    public function scheduler(array $value = []): Framework\SchedulerConfig|static
+    public function scheduler(array $value = []): \Symfony\Config\Framework\SchedulerConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['scheduler'] = true;
@@ -1112,9 +866,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->scheduler instanceof Framework\SchedulerConfig) {
+        if (!$this->scheduler instanceof \Symfony\Config\Framework\SchedulerConfig) {
             $this->_usedProperties['scheduler'] = true;
-            $this->scheduler = new Framework\SchedulerConfig($value);
+            $this->scheduler = new \Symfony\Config\Framework\SchedulerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "scheduler()" has already been initialized. You cannot pass values the second time you call scheduler().');
         }
@@ -1124,11 +878,8 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * Enabled by default when debug is enabled.
-     *
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function disallowSearchEngineIndex($value): static
@@ -1141,17 +892,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      HTTP Client configuration
-     *
-     * @default {"enabled":false,"scoped_clients":[]}
-     *
-     * @return Framework\HttpClientConfig|$this
-     *
+     * HTTP Client configuration
+     * @default {"enabled":true,"scoped_clients":[]}
+     * @return \Symfony\Config\Framework\HttpClientConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HttpClientConfig : static)
      */
-    public function httpClient(mixed $value = []): Framework\HttpClientConfig|static
+    public function httpClient(mixed $value = []): \Symfony\Config\Framework\HttpClientConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['httpClient'] = true;
@@ -1160,9 +907,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->httpClient instanceof Framework\HttpClientConfig) {
+        if (!$this->httpClient instanceof \Symfony\Config\Framework\HttpClientConfig) {
             $this->_usedProperties['httpClient'] = true;
-            $this->httpClient = new Framework\HttpClientConfig($value);
+            $this->httpClient = new \Symfony\Config\Framework\HttpClientConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "httpClient()" has already been initialized. You cannot pass values the second time you call httpClient().');
         }
@@ -1171,29 +918,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Mailer configuration
-     *
-     * @default {"enabled":false,"message_bus":null,"dsn":null,"transports":[],"headers":[]}
-     *
-     * @return Framework\MailerConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\MailerConfig : static)
-     */
-    public function mailer(array $value = []): Framework\MailerConfig|static
+     * Mailer configuration
+     * @default {"enabled":true,"message_bus":null,"dsn":null,"transports":[],"headers":[]}
+    */
+    public function mailer(array $value = []): \Symfony\Config\Framework\MailerConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->mailer) {
             $this->_usedProperties['mailer'] = true;
-            $this->mailer = $value;
-
-            return $this;
-        }
-
-        if (!$this->mailer instanceof Framework\MailerConfig) {
-            $this->_usedProperties['mailer'] = true;
-            $this->mailer = new Framework\MailerConfig($value);
+            $this->mailer = new \Symfony\Config\Framework\MailerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "mailer()" has already been initialized. You cannot pass values the second time you call mailer().');
         }
@@ -1203,12 +935,12 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @default {"enabled":true,"vault_directory":"%kernel.project_dir%\/config\/secrets\/%kernel.runtime_environment%","local_dotenv_file":"%kernel.project_dir%\/.env.%kernel.environment%.local","decryption_env_var":"base64:default::SYMFONY_DECRYPTION_SECRET"}
-     */
-    public function secrets(array $value = []): Framework\SecretsConfig
+    */
+    public function secrets(array $value = []): \Symfony\Config\Framework\SecretsConfig
     {
         if (null === $this->secrets) {
             $this->_usedProperties['secrets'] = true;
-            $this->secrets = new Framework\SecretsConfig($value);
+            $this->secrets = new \Symfony\Config\Framework\SecretsConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "secrets()" has already been initialized. You cannot pass values the second time you call secrets().');
         }
@@ -1217,29 +949,14 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     *
-     * @param TValue $value
-     *                      Notifier configuration
-     *
-     * @default {"enabled":false,"message_bus":null,"chatter_transports":[],"texter_transports":[],"notification_on_failed_messages":false,"channel_policy":[],"admin_recipients":[]}
-     *
-     * @return Framework\NotifierConfig|$this
-     *
-     * @psalm-return (TValue is array ? \Symfony\Config\Framework\NotifierConfig : static)
-     */
-    public function notifier(array $value = []): Framework\NotifierConfig|static
+     * Notifier configuration
+     * @default {"enabled":true,"message_bus":null,"chatter_transports":[],"texter_transports":[],"notification_on_failed_messages":false,"channel_policy":[],"admin_recipients":[]}
+    */
+    public function notifier(array $value = []): \Symfony\Config\Framework\NotifierConfig
     {
-        if (!\is_array($value)) {
+        if (null === $this->notifier) {
             $this->_usedProperties['notifier'] = true;
-            $this->notifier = $value;
-
-            return $this;
-        }
-
-        if (!$this->notifier instanceof Framework\NotifierConfig) {
-            $this->_usedProperties['notifier'] = true;
-            $this->notifier = new Framework\NotifierConfig($value);
+            $this->notifier = new \Symfony\Config\Framework\NotifierConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "notifier()" has already been initialized. You cannot pass values the second time you call notifier().');
         }
@@ -1249,17 +966,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Rate limiter configuration
-     *
+     * Rate limiter configuration
      * @default {"enabled":false,"limiters":[]}
-     *
-     * @return Framework\RateLimiterConfig|$this
-     *
+     * @return \Symfony\Config\Framework\RateLimiterConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\RateLimiterConfig : static)
      */
-    public function rateLimiter(mixed $value = []): Framework\RateLimiterConfig|static
+    public function rateLimiter(mixed $value = []): \Symfony\Config\Framework\RateLimiterConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['rateLimiter'] = true;
@@ -1268,9 +981,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->rateLimiter instanceof Framework\RateLimiterConfig) {
+        if (!$this->rateLimiter instanceof \Symfony\Config\Framework\RateLimiterConfig) {
             $this->_usedProperties['rateLimiter'] = true;
-            $this->rateLimiter = new Framework\RateLimiterConfig($value);
+            $this->rateLimiter = new \Symfony\Config\Framework\RateLimiterConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "rateLimiter()" has already been initialized. You cannot pass values the second time you call rateLimiter().');
         }
@@ -1280,17 +993,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Uid configuration
-     *
+     * Uid configuration
      * @default {"enabled":false,"default_uuid_version":7,"name_based_uuid_version":5,"time_based_uuid_version":7}
-     *
-     * @return Framework\UidConfig|$this
-     *
+     * @return \Symfony\Config\Framework\UidConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\UidConfig : static)
      */
-    public function uid(array $value = []): Framework\UidConfig|static
+    public function uid(array $value = []): \Symfony\Config\Framework\UidConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['uid'] = true;
@@ -1299,9 +1008,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->uid instanceof Framework\UidConfig) {
+        if (!$this->uid instanceof \Symfony\Config\Framework\UidConfig) {
             $this->_usedProperties['uid'] = true;
-            $this->uid = new Framework\UidConfig($value);
+            $this->uid = new \Symfony\Config\Framework\UidConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "uid()" has already been initialized. You cannot pass values the second time you call uid().');
         }
@@ -1311,17 +1020,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      HtmlSanitizer configuration
-     *
+     * HtmlSanitizer configuration
      * @default {"enabled":false,"sanitizers":[]}
-     *
-     * @return Framework\HtmlSanitizerConfig|$this
-     *
+     * @return \Symfony\Config\Framework\HtmlSanitizerConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\HtmlSanitizerConfig : static)
      */
-    public function htmlSanitizer(array $value = []): Framework\HtmlSanitizerConfig|static
+    public function htmlSanitizer(array $value = []): \Symfony\Config\Framework\HtmlSanitizerConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['htmlSanitizer'] = true;
@@ -1330,9 +1035,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->htmlSanitizer instanceof Framework\HtmlSanitizerConfig) {
+        if (!$this->htmlSanitizer instanceof \Symfony\Config\Framework\HtmlSanitizerConfig) {
             $this->_usedProperties['htmlSanitizer'] = true;
-            $this->htmlSanitizer = new Framework\HtmlSanitizerConfig($value);
+            $this->htmlSanitizer = new \Symfony\Config\Framework\HtmlSanitizerConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "htmlSanitizer()" has already been initialized. You cannot pass values the second time you call htmlSanitizer().');
         }
@@ -1342,17 +1047,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      Webhook configuration
-     *
+     * Webhook configuration
      * @default {"enabled":false,"message_bus":"messenger.default_bus","routing":[]}
-     *
-     * @return Framework\WebhookConfig|$this
-     *
+     * @return \Symfony\Config\Framework\WebhookConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\WebhookConfig : static)
      */
-    public function webhook(array $value = []): Framework\WebhookConfig|static
+    public function webhook(array $value = []): \Symfony\Config\Framework\WebhookConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['webhook'] = true;
@@ -1361,9 +1062,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->webhook instanceof Framework\WebhookConfig) {
+        if (!$this->webhook instanceof \Symfony\Config\Framework\WebhookConfig) {
             $this->_usedProperties['webhook'] = true;
-            $this->webhook = new Framework\WebhookConfig($value);
+            $this->webhook = new \Symfony\Config\Framework\WebhookConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "webhook()" has already been initialized. You cannot pass values the second time you call webhook().');
         }
@@ -1373,17 +1074,13 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *                      RemoteEvent configuration
-     *
+     * RemoteEvent configuration
      * @default {"enabled":false}
-     *
-     * @return Framework\RemoteeventConfig|$this
-     *
+     * @return \Symfony\Config\Framework\RemoteeventConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\RemoteeventConfig : static)
      */
-    public function remoteevent(array $value = []): Framework\RemoteeventConfig|static
+    public function remoteevent(array $value = []): \Symfony\Config\Framework\RemoteeventConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['remoteevent'] = true;
@@ -1392,9 +1089,9 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             return $this;
         }
 
-        if (!$this->remoteevent instanceof Framework\RemoteeventConfig) {
+        if (!$this->remoteevent instanceof \Symfony\Config\Framework\RemoteeventConfig) {
             $this->_usedProperties['remoteevent'] = true;
-            $this->remoteevent = new Framework\RemoteeventConfig($value);
+            $this->remoteevent = new \Symfony\Config\Framework\RemoteeventConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "remoteevent()" has already been initialized. You cannot pass values the second time you call remoteevent().');
         }
@@ -1495,169 +1192,169 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
         if (array_key_exists('csrf_protection', $value)) {
             $this->_usedProperties['csrfProtection'] = true;
-            $this->csrfProtection = new Framework\CsrfProtectionConfig($value['csrf_protection']);
+            $this->csrfProtection = new \Symfony\Config\Framework\CsrfProtectionConfig($value['csrf_protection']);
             unset($value['csrf_protection']);
         }
 
         if (array_key_exists('form', $value)) {
             $this->_usedProperties['form'] = true;
-            $this->form = \is_array($value['form']) ? new Framework\FormConfig($value['form']) : $value['form'];
+            $this->form = new \Symfony\Config\Framework\FormConfig($value['form']);
             unset($value['form']);
         }
 
         if (array_key_exists('http_cache', $value)) {
             $this->_usedProperties['httpCache'] = true;
-            $this->httpCache = \is_array($value['http_cache']) ? new Framework\HttpCacheConfig($value['http_cache']) : $value['http_cache'];
+            $this->httpCache = \is_array($value['http_cache']) ? new \Symfony\Config\Framework\HttpCacheConfig($value['http_cache']) : $value['http_cache'];
             unset($value['http_cache']);
         }
 
         if (array_key_exists('esi', $value)) {
             $this->_usedProperties['esi'] = true;
-            $this->esi = \is_array($value['esi']) ? new Framework\EsiConfig($value['esi']) : $value['esi'];
+            $this->esi = \is_array($value['esi']) ? new \Symfony\Config\Framework\EsiConfig($value['esi']) : $value['esi'];
             unset($value['esi']);
         }
 
         if (array_key_exists('ssi', $value)) {
             $this->_usedProperties['ssi'] = true;
-            $this->ssi = \is_array($value['ssi']) ? new Framework\SsiConfig($value['ssi']) : $value['ssi'];
+            $this->ssi = \is_array($value['ssi']) ? new \Symfony\Config\Framework\SsiConfig($value['ssi']) : $value['ssi'];
             unset($value['ssi']);
         }
 
         if (array_key_exists('fragments', $value)) {
             $this->_usedProperties['fragments'] = true;
-            $this->fragments = \is_array($value['fragments']) ? new Framework\FragmentsConfig($value['fragments']) : $value['fragments'];
+            $this->fragments = \is_array($value['fragments']) ? new \Symfony\Config\Framework\FragmentsConfig($value['fragments']) : $value['fragments'];
             unset($value['fragments']);
         }
 
         if (array_key_exists('profiler', $value)) {
             $this->_usedProperties['profiler'] = true;
-            $this->profiler = \is_array($value['profiler']) ? new Framework\ProfilerConfig($value['profiler']) : $value['profiler'];
+            $this->profiler = \is_array($value['profiler']) ? new \Symfony\Config\Framework\ProfilerConfig($value['profiler']) : $value['profiler'];
             unset($value['profiler']);
         }
 
         if (array_key_exists('workflows', $value)) {
             $this->_usedProperties['workflows'] = true;
-            $this->workflows = \is_array($value['workflows']) ? new Framework\WorkflowsConfig($value['workflows']) : $value['workflows'];
+            $this->workflows = \is_array($value['workflows']) ? new \Symfony\Config\Framework\WorkflowsConfig($value['workflows']) : $value['workflows'];
             unset($value['workflows']);
         }
 
         if (array_key_exists('router', $value)) {
             $this->_usedProperties['router'] = true;
-            $this->router = \is_array($value['router']) ? new Framework\RouterConfig($value['router']) : $value['router'];
+            $this->router = \is_array($value['router']) ? new \Symfony\Config\Framework\RouterConfig($value['router']) : $value['router'];
             unset($value['router']);
         }
 
         if (array_key_exists('session', $value)) {
             $this->_usedProperties['session'] = true;
-            $this->session = \is_array($value['session']) ? new Framework\SessionConfig($value['session']) : $value['session'];
+            $this->session = \is_array($value['session']) ? new \Symfony\Config\Framework\SessionConfig($value['session']) : $value['session'];
             unset($value['session']);
         }
 
         if (array_key_exists('request', $value)) {
             $this->_usedProperties['request'] = true;
-            $this->request = \is_array($value['request']) ? new Framework\RequestConfig($value['request']) : $value['request'];
+            $this->request = \is_array($value['request']) ? new \Symfony\Config\Framework\RequestConfig($value['request']) : $value['request'];
             unset($value['request']);
         }
 
         if (array_key_exists('assets', $value)) {
             $this->_usedProperties['assets'] = true;
-            $this->assets = \is_array($value['assets']) ? new Framework\AssetsConfig($value['assets']) : $value['assets'];
+            $this->assets = new \Symfony\Config\Framework\AssetsConfig($value['assets']);
             unset($value['assets']);
         }
 
         if (array_key_exists('asset_mapper', $value)) {
             $this->_usedProperties['assetMapper'] = true;
-            $this->assetMapper = \is_array($value['asset_mapper']) ? new Framework\AssetMapperConfig($value['asset_mapper']) : $value['asset_mapper'];
+            $this->assetMapper = new \Symfony\Config\Framework\AssetMapperConfig($value['asset_mapper']);
             unset($value['asset_mapper']);
         }
 
         if (array_key_exists('translator', $value)) {
             $this->_usedProperties['translator'] = true;
-            $this->translator = \is_array($value['translator']) ? new Framework\TranslatorConfig($value['translator']) : $value['translator'];
+            $this->translator = new \Symfony\Config\Framework\TranslatorConfig($value['translator']);
             unset($value['translator']);
         }
 
         if (array_key_exists('validation', $value)) {
             $this->_usedProperties['validation'] = true;
-            $this->validation = \is_array($value['validation']) ? new Framework\ValidationConfig($value['validation']) : $value['validation'];
+            $this->validation = new \Symfony\Config\Framework\ValidationConfig($value['validation']);
             unset($value['validation']);
         }
 
         if (array_key_exists('annotations', $value)) {
             $this->_usedProperties['annotations'] = true;
-            $this->annotations = \is_array($value['annotations']) ? new Framework\AnnotationsConfig($value['annotations']) : $value['annotations'];
+            $this->annotations = \is_array($value['annotations']) ? new \Symfony\Config\Framework\AnnotationsConfig($value['annotations']) : $value['annotations'];
             unset($value['annotations']);
         }
 
         if (array_key_exists('serializer', $value)) {
             $this->_usedProperties['serializer'] = true;
-            $this->serializer = \is_array($value['serializer']) ? new Framework\SerializerConfig($value['serializer']) : $value['serializer'];
+            $this->serializer = new \Symfony\Config\Framework\SerializerConfig($value['serializer']);
             unset($value['serializer']);
         }
 
         if (array_key_exists('property_access', $value)) {
             $this->_usedProperties['propertyAccess'] = true;
-            $this->propertyAccess = \is_array($value['property_access']) ? new Framework\PropertyAccessConfig($value['property_access']) : $value['property_access'];
+            $this->propertyAccess = new \Symfony\Config\Framework\PropertyAccessConfig($value['property_access']);
             unset($value['property_access']);
         }
 
         if (array_key_exists('type_info', $value)) {
             $this->_usedProperties['typeInfo'] = true;
-            $this->typeInfo = \is_array($value['type_info']) ? new Framework\TypeInfoConfig($value['type_info']) : $value['type_info'];
+            $this->typeInfo = new \Symfony\Config\Framework\TypeInfoConfig($value['type_info']);
             unset($value['type_info']);
         }
 
         if (array_key_exists('property_info', $value)) {
             $this->_usedProperties['propertyInfo'] = true;
-            $this->propertyInfo = \is_array($value['property_info']) ? new Framework\PropertyInfoConfig($value['property_info']) : $value['property_info'];
+            $this->propertyInfo = new \Symfony\Config\Framework\PropertyInfoConfig($value['property_info']);
             unset($value['property_info']);
         }
 
         if (array_key_exists('cache', $value)) {
             $this->_usedProperties['cache'] = true;
-            $this->cache = new Framework\CacheConfig($value['cache']);
+            $this->cache = new \Symfony\Config\Framework\CacheConfig($value['cache']);
             unset($value['cache']);
         }
 
         if (array_key_exists('php_errors', $value)) {
             $this->_usedProperties['phpErrors'] = true;
-            $this->phpErrors = new Framework\PhpErrorsConfig($value['php_errors']);
+            $this->phpErrors = new \Symfony\Config\Framework\PhpErrorsConfig($value['php_errors']);
             unset($value['php_errors']);
         }
 
         if (array_key_exists('exceptions', $value)) {
             $this->_usedProperties['exceptions'] = true;
-            $this->exceptions = array_map(fn ($v) => new Framework\ExceptionConfig($v), $value['exceptions']);
+            $this->exceptions = array_map(fn ($v) => new \Symfony\Config\Framework\ExceptionConfig($v), $value['exceptions']);
             unset($value['exceptions']);
         }
 
         if (array_key_exists('web_link', $value)) {
             $this->_usedProperties['webLink'] = true;
-            $this->webLink = \is_array($value['web_link']) ? new Framework\WebLinkConfig($value['web_link']) : $value['web_link'];
+            $this->webLink = new \Symfony\Config\Framework\WebLinkConfig($value['web_link']);
             unset($value['web_link']);
         }
 
         if (array_key_exists('lock', $value)) {
             $this->_usedProperties['lock'] = true;
-            $this->lock = \is_array($value['lock']) ? new Framework\LockConfig($value['lock']) : $value['lock'];
+            $this->lock = \is_array($value['lock']) ? new \Symfony\Config\Framework\LockConfig($value['lock']) : $value['lock'];
             unset($value['lock']);
         }
 
         if (array_key_exists('semaphore', $value)) {
             $this->_usedProperties['semaphore'] = true;
-            $this->semaphore = \is_array($value['semaphore']) ? new Framework\SemaphoreConfig($value['semaphore']) : $value['semaphore'];
+            $this->semaphore = \is_array($value['semaphore']) ? new \Symfony\Config\Framework\SemaphoreConfig($value['semaphore']) : $value['semaphore'];
             unset($value['semaphore']);
         }
 
         if (array_key_exists('messenger', $value)) {
             $this->_usedProperties['messenger'] = true;
-            $this->messenger = \is_array($value['messenger']) ? new Framework\MessengerConfig($value['messenger']) : $value['messenger'];
+            $this->messenger = new \Symfony\Config\Framework\MessengerConfig($value['messenger']);
             unset($value['messenger']);
         }
 
         if (array_key_exists('scheduler', $value)) {
             $this->_usedProperties['scheduler'] = true;
-            $this->scheduler = \is_array($value['scheduler']) ? new Framework\SchedulerConfig($value['scheduler']) : $value['scheduler'];
+            $this->scheduler = \is_array($value['scheduler']) ? new \Symfony\Config\Framework\SchedulerConfig($value['scheduler']) : $value['scheduler'];
             unset($value['scheduler']);
         }
 
@@ -1669,55 +1366,55 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
         if (array_key_exists('http_client', $value)) {
             $this->_usedProperties['httpClient'] = true;
-            $this->httpClient = \is_array($value['http_client']) ? new Framework\HttpClientConfig($value['http_client']) : $value['http_client'];
+            $this->httpClient = \is_array($value['http_client']) ? new \Symfony\Config\Framework\HttpClientConfig($value['http_client']) : $value['http_client'];
             unset($value['http_client']);
         }
 
         if (array_key_exists('mailer', $value)) {
             $this->_usedProperties['mailer'] = true;
-            $this->mailer = \is_array($value['mailer']) ? new Framework\MailerConfig($value['mailer']) : $value['mailer'];
+            $this->mailer = new \Symfony\Config\Framework\MailerConfig($value['mailer']);
             unset($value['mailer']);
         }
 
         if (array_key_exists('secrets', $value)) {
             $this->_usedProperties['secrets'] = true;
-            $this->secrets = new Framework\SecretsConfig($value['secrets']);
+            $this->secrets = new \Symfony\Config\Framework\SecretsConfig($value['secrets']);
             unset($value['secrets']);
         }
 
         if (array_key_exists('notifier', $value)) {
             $this->_usedProperties['notifier'] = true;
-            $this->notifier = \is_array($value['notifier']) ? new Framework\NotifierConfig($value['notifier']) : $value['notifier'];
+            $this->notifier = new \Symfony\Config\Framework\NotifierConfig($value['notifier']);
             unset($value['notifier']);
         }
 
         if (array_key_exists('rate_limiter', $value)) {
             $this->_usedProperties['rateLimiter'] = true;
-            $this->rateLimiter = \is_array($value['rate_limiter']) ? new Framework\RateLimiterConfig($value['rate_limiter']) : $value['rate_limiter'];
+            $this->rateLimiter = \is_array($value['rate_limiter']) ? new \Symfony\Config\Framework\RateLimiterConfig($value['rate_limiter']) : $value['rate_limiter'];
             unset($value['rate_limiter']);
         }
 
         if (array_key_exists('uid', $value)) {
             $this->_usedProperties['uid'] = true;
-            $this->uid = \is_array($value['uid']) ? new Framework\UidConfig($value['uid']) : $value['uid'];
+            $this->uid = \is_array($value['uid']) ? new \Symfony\Config\Framework\UidConfig($value['uid']) : $value['uid'];
             unset($value['uid']);
         }
 
         if (array_key_exists('html_sanitizer', $value)) {
             $this->_usedProperties['htmlSanitizer'] = true;
-            $this->htmlSanitizer = \is_array($value['html_sanitizer']) ? new Framework\HtmlSanitizerConfig($value['html_sanitizer']) : $value['html_sanitizer'];
+            $this->htmlSanitizer = \is_array($value['html_sanitizer']) ? new \Symfony\Config\Framework\HtmlSanitizerConfig($value['html_sanitizer']) : $value['html_sanitizer'];
             unset($value['html_sanitizer']);
         }
 
         if (array_key_exists('webhook', $value)) {
             $this->_usedProperties['webhook'] = true;
-            $this->webhook = \is_array($value['webhook']) ? new Framework\WebhookConfig($value['webhook']) : $value['webhook'];
+            $this->webhook = \is_array($value['webhook']) ? new \Symfony\Config\Framework\WebhookConfig($value['webhook']) : $value['webhook'];
             unset($value['webhook']);
         }
 
         if (array_key_exists('remote-event', $value)) {
             $this->_usedProperties['remoteevent'] = true;
-            $this->remoteevent = \is_array($value['remote-event']) ? new Framework\RemoteeventConfig($value['remote-event']) : $value['remote-event'];
+            $this->remoteevent = \is_array($value['remote-event']) ? new \Symfony\Config\Framework\RemoteeventConfig($value['remote-event']) : $value['remote-event'];
             unset($value['remote-event']);
         }
 
@@ -1775,61 +1472,61 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             $output['csrf_protection'] = $this->csrfProtection->toArray();
         }
         if (isset($this->_usedProperties['form'])) {
-            $output['form'] = $this->form instanceof Framework\FormConfig ? $this->form->toArray() : $this->form;
+            $output['form'] = $this->form->toArray();
         }
         if (isset($this->_usedProperties['httpCache'])) {
-            $output['http_cache'] = $this->httpCache instanceof Framework\HttpCacheConfig ? $this->httpCache->toArray() : $this->httpCache;
+            $output['http_cache'] = $this->httpCache instanceof \Symfony\Config\Framework\HttpCacheConfig ? $this->httpCache->toArray() : $this->httpCache;
         }
         if (isset($this->_usedProperties['esi'])) {
-            $output['esi'] = $this->esi instanceof Framework\EsiConfig ? $this->esi->toArray() : $this->esi;
+            $output['esi'] = $this->esi instanceof \Symfony\Config\Framework\EsiConfig ? $this->esi->toArray() : $this->esi;
         }
         if (isset($this->_usedProperties['ssi'])) {
-            $output['ssi'] = $this->ssi instanceof Framework\SsiConfig ? $this->ssi->toArray() : $this->ssi;
+            $output['ssi'] = $this->ssi instanceof \Symfony\Config\Framework\SsiConfig ? $this->ssi->toArray() : $this->ssi;
         }
         if (isset($this->_usedProperties['fragments'])) {
-            $output['fragments'] = $this->fragments instanceof Framework\FragmentsConfig ? $this->fragments->toArray() : $this->fragments;
+            $output['fragments'] = $this->fragments instanceof \Symfony\Config\Framework\FragmentsConfig ? $this->fragments->toArray() : $this->fragments;
         }
         if (isset($this->_usedProperties['profiler'])) {
-            $output['profiler'] = $this->profiler instanceof Framework\ProfilerConfig ? $this->profiler->toArray() : $this->profiler;
+            $output['profiler'] = $this->profiler instanceof \Symfony\Config\Framework\ProfilerConfig ? $this->profiler->toArray() : $this->profiler;
         }
         if (isset($this->_usedProperties['workflows'])) {
-            $output['workflows'] = $this->workflows instanceof Framework\WorkflowsConfig ? $this->workflows->toArray() : $this->workflows;
+            $output['workflows'] = $this->workflows instanceof \Symfony\Config\Framework\WorkflowsConfig ? $this->workflows->toArray() : $this->workflows;
         }
         if (isset($this->_usedProperties['router'])) {
-            $output['router'] = $this->router instanceof Framework\RouterConfig ? $this->router->toArray() : $this->router;
+            $output['router'] = $this->router instanceof \Symfony\Config\Framework\RouterConfig ? $this->router->toArray() : $this->router;
         }
         if (isset($this->_usedProperties['session'])) {
-            $output['session'] = $this->session instanceof Framework\SessionConfig ? $this->session->toArray() : $this->session;
+            $output['session'] = $this->session instanceof \Symfony\Config\Framework\SessionConfig ? $this->session->toArray() : $this->session;
         }
         if (isset($this->_usedProperties['request'])) {
-            $output['request'] = $this->request instanceof Framework\RequestConfig ? $this->request->toArray() : $this->request;
+            $output['request'] = $this->request instanceof \Symfony\Config\Framework\RequestConfig ? $this->request->toArray() : $this->request;
         }
         if (isset($this->_usedProperties['assets'])) {
-            $output['assets'] = $this->assets instanceof Framework\AssetsConfig ? $this->assets->toArray() : $this->assets;
+            $output['assets'] = $this->assets->toArray();
         }
         if (isset($this->_usedProperties['assetMapper'])) {
-            $output['asset_mapper'] = $this->assetMapper instanceof Framework\AssetMapperConfig ? $this->assetMapper->toArray() : $this->assetMapper;
+            $output['asset_mapper'] = $this->assetMapper->toArray();
         }
         if (isset($this->_usedProperties['translator'])) {
-            $output['translator'] = $this->translator instanceof Framework\TranslatorConfig ? $this->translator->toArray() : $this->translator;
+            $output['translator'] = $this->translator->toArray();
         }
         if (isset($this->_usedProperties['validation'])) {
-            $output['validation'] = $this->validation instanceof Framework\ValidationConfig ? $this->validation->toArray() : $this->validation;
+            $output['validation'] = $this->validation->toArray();
         }
         if (isset($this->_usedProperties['annotations'])) {
-            $output['annotations'] = $this->annotations instanceof Framework\AnnotationsConfig ? $this->annotations->toArray() : $this->annotations;
+            $output['annotations'] = $this->annotations instanceof \Symfony\Config\Framework\AnnotationsConfig ? $this->annotations->toArray() : $this->annotations;
         }
         if (isset($this->_usedProperties['serializer'])) {
-            $output['serializer'] = $this->serializer instanceof Framework\SerializerConfig ? $this->serializer->toArray() : $this->serializer;
+            $output['serializer'] = $this->serializer->toArray();
         }
         if (isset($this->_usedProperties['propertyAccess'])) {
-            $output['property_access'] = $this->propertyAccess instanceof Framework\PropertyAccessConfig ? $this->propertyAccess->toArray() : $this->propertyAccess;
+            $output['property_access'] = $this->propertyAccess->toArray();
         }
         if (isset($this->_usedProperties['typeInfo'])) {
-            $output['type_info'] = $this->typeInfo instanceof Framework\TypeInfoConfig ? $this->typeInfo->toArray() : $this->typeInfo;
+            $output['type_info'] = $this->typeInfo->toArray();
         }
         if (isset($this->_usedProperties['propertyInfo'])) {
-            $output['property_info'] = $this->propertyInfo instanceof Framework\PropertyInfoConfig ? $this->propertyInfo->toArray() : $this->propertyInfo;
+            $output['property_info'] = $this->propertyInfo->toArray();
         }
         if (isset($this->_usedProperties['cache'])) {
             $output['cache'] = $this->cache->toArray();
@@ -1841,51 +1538,52 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             $output['exceptions'] = array_map(fn ($v) => $v->toArray(), $this->exceptions);
         }
         if (isset($this->_usedProperties['webLink'])) {
-            $output['web_link'] = $this->webLink instanceof Framework\WebLinkConfig ? $this->webLink->toArray() : $this->webLink;
+            $output['web_link'] = $this->webLink->toArray();
         }
         if (isset($this->_usedProperties['lock'])) {
-            $output['lock'] = $this->lock instanceof Framework\LockConfig ? $this->lock->toArray() : $this->lock;
+            $output['lock'] = $this->lock instanceof \Symfony\Config\Framework\LockConfig ? $this->lock->toArray() : $this->lock;
         }
         if (isset($this->_usedProperties['semaphore'])) {
-            $output['semaphore'] = $this->semaphore instanceof Framework\SemaphoreConfig ? $this->semaphore->toArray() : $this->semaphore;
+            $output['semaphore'] = $this->semaphore instanceof \Symfony\Config\Framework\SemaphoreConfig ? $this->semaphore->toArray() : $this->semaphore;
         }
         if (isset($this->_usedProperties['messenger'])) {
-            $output['messenger'] = $this->messenger instanceof Framework\MessengerConfig ? $this->messenger->toArray() : $this->messenger;
+            $output['messenger'] = $this->messenger->toArray();
         }
         if (isset($this->_usedProperties['scheduler'])) {
-            $output['scheduler'] = $this->scheduler instanceof Framework\SchedulerConfig ? $this->scheduler->toArray() : $this->scheduler;
+            $output['scheduler'] = $this->scheduler instanceof \Symfony\Config\Framework\SchedulerConfig ? $this->scheduler->toArray() : $this->scheduler;
         }
         if (isset($this->_usedProperties['disallowSearchEngineIndex'])) {
             $output['disallow_search_engine_index'] = $this->disallowSearchEngineIndex;
         }
         if (isset($this->_usedProperties['httpClient'])) {
-            $output['http_client'] = $this->httpClient instanceof Framework\HttpClientConfig ? $this->httpClient->toArray() : $this->httpClient;
+            $output['http_client'] = $this->httpClient instanceof \Symfony\Config\Framework\HttpClientConfig ? $this->httpClient->toArray() : $this->httpClient;
         }
         if (isset($this->_usedProperties['mailer'])) {
-            $output['mailer'] = $this->mailer instanceof Framework\MailerConfig ? $this->mailer->toArray() : $this->mailer;
+            $output['mailer'] = $this->mailer->toArray();
         }
         if (isset($this->_usedProperties['secrets'])) {
             $output['secrets'] = $this->secrets->toArray();
         }
         if (isset($this->_usedProperties['notifier'])) {
-            $output['notifier'] = $this->notifier instanceof Framework\NotifierConfig ? $this->notifier->toArray() : $this->notifier;
+            $output['notifier'] = $this->notifier->toArray();
         }
         if (isset($this->_usedProperties['rateLimiter'])) {
-            $output['rate_limiter'] = $this->rateLimiter instanceof Framework\RateLimiterConfig ? $this->rateLimiter->toArray() : $this->rateLimiter;
+            $output['rate_limiter'] = $this->rateLimiter instanceof \Symfony\Config\Framework\RateLimiterConfig ? $this->rateLimiter->toArray() : $this->rateLimiter;
         }
         if (isset($this->_usedProperties['uid'])) {
-            $output['uid'] = $this->uid instanceof Framework\UidConfig ? $this->uid->toArray() : $this->uid;
+            $output['uid'] = $this->uid instanceof \Symfony\Config\Framework\UidConfig ? $this->uid->toArray() : $this->uid;
         }
         if (isset($this->_usedProperties['htmlSanitizer'])) {
-            $output['html_sanitizer'] = $this->htmlSanitizer instanceof Framework\HtmlSanitizerConfig ? $this->htmlSanitizer->toArray() : $this->htmlSanitizer;
+            $output['html_sanitizer'] = $this->htmlSanitizer instanceof \Symfony\Config\Framework\HtmlSanitizerConfig ? $this->htmlSanitizer->toArray() : $this->htmlSanitizer;
         }
         if (isset($this->_usedProperties['webhook'])) {
-            $output['webhook'] = $this->webhook instanceof Framework\WebhookConfig ? $this->webhook->toArray() : $this->webhook;
+            $output['webhook'] = $this->webhook instanceof \Symfony\Config\Framework\WebhookConfig ? $this->webhook->toArray() : $this->webhook;
         }
         if (isset($this->_usedProperties['remoteevent'])) {
-            $output['remote-event'] = $this->remoteevent instanceof Framework\RemoteeventConfig ? $this->remoteevent->toArray() : $this->remoteevent;
+            $output['remote-event'] = $this->remoteevent instanceof \Symfony\Config\Framework\RemoteeventConfig ? $this->remoteevent->toArray() : $this->remoteevent;
         }
 
         return $output;
     }
+
 }

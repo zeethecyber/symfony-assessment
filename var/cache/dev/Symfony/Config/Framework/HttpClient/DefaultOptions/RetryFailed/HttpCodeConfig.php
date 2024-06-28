@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\HttpClient\DefaultOptions\RetryFailed;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HttpCodeConfig
+class HttpCodeConfig 
 {
     private $code;
     private $methods;
@@ -16,9 +16,7 @@ class HttpCodeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function code($value): static
@@ -73,4 +71,5 @@ class HttpCodeConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HttpCacheConfig
+class HttpCacheConfig 
 {
     private $enabled;
     private $debug;
@@ -26,9 +26,7 @@ class HttpCacheConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -41,9 +39,7 @@ class HttpCacheConfig
 
     /**
      * @default '%kernel.debug%'
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function debug($value): static
@@ -56,9 +52,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|'none'|'short'|'full' $value
-     *
      * @return $this
      */
     public function traceLevel($value): static
@@ -71,9 +65,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function traceHeader($value): static
@@ -86,9 +78,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function defaultTtl($value): static
@@ -127,9 +117,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowReload($value): static
@@ -142,9 +130,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function allowRevalidate($value): static
@@ -157,9 +143,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function staleWhileRevalidate($value): static
@@ -172,9 +156,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function staleIfError($value): static
@@ -187,9 +169,7 @@ class HttpCacheConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function terminateOnCacheHit($value): static
@@ -321,4 +301,5 @@ class HttpCacheConfig
 
         return $output;
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\Form;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class CsrfProtectionConfig
+class CsrfProtectionConfig 
 {
     private $enabled;
     private $fieldName;
@@ -16,9 +16,7 @@ class CsrfProtectionConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function enabled($value): static
@@ -31,9 +29,7 @@ class CsrfProtectionConfig
 
     /**
      * @default '_token'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function fieldName($value): static
@@ -75,4 +71,5 @@ class CsrfProtectionConfig
 
         return $output;
     }
+
 }

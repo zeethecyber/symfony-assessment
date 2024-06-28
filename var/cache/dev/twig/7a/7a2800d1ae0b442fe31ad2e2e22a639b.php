@@ -361,6 +361,6 @@ class __TwigTemplate_31ea303a9841d7d532be9cf6fe86e431 extends Template
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/Users/ahmed/Herd/products_api/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/var/www/html/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }

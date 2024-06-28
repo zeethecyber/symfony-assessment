@@ -2,20 +2,19 @@
 
 namespace Symfony\Config\Framework\Mailer;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class HeaderConfig
+class HeaderConfig 
 {
     private $value;
     private $_usedProperties = [];
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
@@ -50,4 +49,5 @@ class HeaderConfig
 
         return $output;
     }
+
 }

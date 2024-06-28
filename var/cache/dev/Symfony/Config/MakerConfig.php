@@ -2,8 +2,8 @@
 
 namespace Symfony\Config;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
@@ -15,9 +15,7 @@ class MakerConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
 
     /**
      * @default 'App'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function rootNamespace($value): static
@@ -55,4 +53,5 @@ class MakerConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
 
         return $output;
     }
+
 }

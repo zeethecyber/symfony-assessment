@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Security\FirewallConfig;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class SwitchUserConfig
+class SwitchUserConfig 
 {
     private $provider;
     private $parameter;
@@ -18,9 +18,7 @@ class SwitchUserConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function provider($value): static
@@ -33,9 +31,7 @@ class SwitchUserConfig
 
     /**
      * @default '_switch_user'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function parameter($value): static
@@ -48,9 +44,7 @@ class SwitchUserConfig
 
     /**
      * @default 'ROLE_ALLOWED_TO_SWITCH'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function role($value): static
@@ -63,9 +57,7 @@ class SwitchUserConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function targetRoute($value): static
@@ -125,4 +117,5 @@ class SwitchUserConfig
 
         return $output;
     }
+
 }

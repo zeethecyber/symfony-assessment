@@ -4,13 +4,13 @@ namespace Symfony\Config\Security\FirewallConfig;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'RememberMe'.\DIRECTORY_SEPARATOR.'TokenProviderConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class RememberMeConfig
+class RememberMeConfig 
 {
     private $secret;
     private $service;
@@ -32,9 +32,7 @@ class RememberMeConfig
 
     /**
      * @default '%kernel.secret%'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function secret($value): static
@@ -47,9 +45,7 @@ class RememberMeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function service($value): static
@@ -75,9 +71,7 @@ class RememberMeConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function catchExceptions($value): static
@@ -103,14 +97,11 @@ class RememberMeConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return RememberMe\TokenProviderConfig|$this
-     *
+     * @return \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig : static)
      */
-    public function tokenProvider(string|array $value = []): RememberMe\TokenProviderConfig|static
+    public function tokenProvider(string|array $value = []): \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['tokenProvider'] = true;
@@ -119,9 +110,9 @@ class RememberMeConfig
             return $this;
         }
 
-        if (!$this->tokenProvider instanceof RememberMe\TokenProviderConfig) {
+        if (!$this->tokenProvider instanceof \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig) {
             $this->_usedProperties['tokenProvider'] = true;
-            $this->tokenProvider = new RememberMe\TokenProviderConfig($value);
+            $this->tokenProvider = new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig($value);
         } elseif (0 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "tokenProvider()" has already been initialized. You cannot pass values the second time you call tokenProvider().');
         }
@@ -131,11 +122,8 @@ class RememberMeConfig
 
     /**
      * The service ID of a custom rememberme token verifier.
-     *
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function tokenVerifier($value): static
@@ -148,9 +136,7 @@ class RememberMeConfig
 
     /**
      * @default 'REMEMBERME'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function name($value): static
@@ -163,9 +149,7 @@ class RememberMeConfig
 
     /**
      * @default 31536000
-     *
      * @param ParamConfigurator|int $value
-     *
      * @return $this
      */
     public function lifetime($value): static
@@ -178,9 +162,7 @@ class RememberMeConfig
 
     /**
      * @default '/'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function path($value): static
@@ -193,9 +175,7 @@ class RememberMeConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function domain($value): static
@@ -208,9 +188,7 @@ class RememberMeConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|true|false|'auto' $value
-     *
      * @return $this
      */
     public function secure($value): static
@@ -223,9 +201,7 @@ class RememberMeConfig
 
     /**
      * @default true
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function httponly($value): static
@@ -238,9 +214,7 @@ class RememberMeConfig
 
     /**
      * @default null
-     *
-     * @param ParamConfigurator|'lax'|'strict'|'none'|null $value
-     *
+     * @param ParamConfigurator|NULL|'lax'|'strict'|'none' $value
      * @return $this
      */
     public function samesite($value): static
@@ -253,9 +227,7 @@ class RememberMeConfig
 
     /**
      * @default false
-     *
      * @param ParamConfigurator|bool $value
-     *
      * @return $this
      */
     public function alwaysRememberMe($value): static
@@ -268,9 +240,7 @@ class RememberMeConfig
 
     /**
      * @default '_remember_me'
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function rememberMeParameter($value): static
@@ -315,7 +285,7 @@ class RememberMeConfig
 
         if (array_key_exists('token_provider', $value)) {
             $this->_usedProperties['tokenProvider'] = true;
-            $this->tokenProvider = \is_array($value['token_provider']) ? new RememberMe\TokenProviderConfig($value['token_provider']) : $value['token_provider'];
+            $this->tokenProvider = \is_array($value['token_provider']) ? new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig($value['token_provider']) : $value['token_provider'];
             unset($value['token_provider']);
         }
 
@@ -403,7 +373,7 @@ class RememberMeConfig
             $output['signature_properties'] = $this->signatureProperties;
         }
         if (isset($this->_usedProperties['tokenProvider'])) {
-            $output['token_provider'] = $this->tokenProvider instanceof RememberMe\TokenProviderConfig ? $this->tokenProvider->toArray() : $this->tokenProvider;
+            $output['token_provider'] = $this->tokenProvider instanceof \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig ? $this->tokenProvider->toArray() : $this->tokenProvider;
         }
         if (isset($this->_usedProperties['tokenVerifier'])) {
             $output['token_verifier'] = $this->tokenVerifier;
@@ -438,4 +408,5 @@ class RememberMeConfig
 
         return $output;
     }
+
 }

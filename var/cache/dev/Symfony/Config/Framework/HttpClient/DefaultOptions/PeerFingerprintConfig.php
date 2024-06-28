@@ -2,13 +2,13 @@
 
 namespace Symfony\Config\Framework\HttpClient\DefaultOptions;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class PeerFingerprintConfig
+class PeerFingerprintConfig 
 {
     private $sha1;
     private $pinsha256;
@@ -17,7 +17,6 @@ class PeerFingerprintConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
@@ -32,7 +31,6 @@ class PeerFingerprintConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
@@ -47,7 +45,6 @@ class PeerFingerprintConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
      *
      * @return $this
@@ -100,4 +97,5 @@ class PeerFingerprintConfig
 
         return $output;
     }
+
 }

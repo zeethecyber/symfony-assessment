@@ -5,13 +5,13 @@ namespace Symfony\Config\Doctrine;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Dbal'.\DIRECTORY_SEPARATOR.'TypeConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'Dbal'.\DIRECTORY_SEPARATOR.'ConnectionConfig.php';
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Loader\ParamConfigurator;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help in creating a config.
  */
-class DbalConfig
+class DbalConfig 
 {
     private $defaultConnection;
     private $types;
@@ -21,9 +21,7 @@ class DbalConfig
 
     /**
      * @default null
-     *
      * @param ParamConfigurator|mixed $value
-     *
      * @return $this
      */
     public function defaultConnection($value): static
@@ -36,14 +34,11 @@ class DbalConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Dbal\TypeConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\Dbal\TypeConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\Dbal\TypeConfig : static)
      */
-    public function type(string $name, string|array $value = []): Dbal\TypeConfig|static
+    public function type(string $name, string|array $value = []): \Symfony\Config\Doctrine\Dbal\TypeConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['types'] = true;
@@ -52,9 +47,9 @@ class DbalConfig
             return $this;
         }
 
-        if (!isset($this->types[$name]) || !$this->types[$name] instanceof Dbal\TypeConfig) {
+        if (!isset($this->types[$name]) || !$this->types[$name] instanceof \Symfony\Config\Doctrine\Dbal\TypeConfig) {
             $this->_usedProperties['types'] = true;
-            $this->types[$name] = new Dbal\TypeConfig($value);
+            $this->types[$name] = new \Symfony\Config\Doctrine\Dbal\TypeConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "type()" has already been initialized. You cannot pass values the second time you call type().');
         }
@@ -75,14 +70,11 @@ class DbalConfig
 
     /**
      * @template TValue
-     *
      * @param TValue $value
-     *
-     * @return Dbal\ConnectionConfig|$this
-     *
+     * @return \Symfony\Config\Doctrine\Dbal\ConnectionConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Doctrine\Dbal\ConnectionConfig : static)
      */
-    public function connection(string $name, mixed $value = []): Dbal\ConnectionConfig|static
+    public function connection(string $name, mixed $value = []): \Symfony\Config\Doctrine\Dbal\ConnectionConfig|static
     {
         if (!\is_array($value)) {
             $this->_usedProperties['connections'] = true;
@@ -91,9 +83,9 @@ class DbalConfig
             return $this;
         }
 
-        if (!isset($this->connections[$name]) || !$this->connections[$name] instanceof Dbal\ConnectionConfig) {
+        if (!isset($this->connections[$name]) || !$this->connections[$name] instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig) {
             $this->_usedProperties['connections'] = true;
-            $this->connections[$name] = new Dbal\ConnectionConfig($value);
+            $this->connections[$name] = new \Symfony\Config\Doctrine\Dbal\ConnectionConfig($value);
         } elseif (1 < \func_num_args()) {
             throw new InvalidConfigurationException('The node created by "connection()" has already been initialized. You cannot pass values the second time you call connection().');
         }
@@ -111,7 +103,7 @@ class DbalConfig
 
         if (array_key_exists('types', $value)) {
             $this->_usedProperties['types'] = true;
-            $this->types = array_map(fn ($v) => \is_array($v) ? new Dbal\TypeConfig($v) : $v, $value['types']);
+            $this->types = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\TypeConfig($v) : $v, $value['types']);
             unset($value['types']);
         }
 
@@ -123,7 +115,7 @@ class DbalConfig
 
         if (array_key_exists('connections', $value)) {
             $this->_usedProperties['connections'] = true;
-            $this->connections = array_map(fn ($v) => \is_array($v) ? new Dbal\ConnectionConfig($v) : $v, $value['connections']);
+            $this->connections = array_map(fn ($v) => \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\ConnectionConfig($v) : $v, $value['connections']);
             unset($value['connections']);
         }
 
@@ -139,15 +131,16 @@ class DbalConfig
             $output['default_connection'] = $this->defaultConnection;
         }
         if (isset($this->_usedProperties['types'])) {
-            $output['types'] = array_map(fn ($v) => $v instanceof Dbal\TypeConfig ? $v->toArray() : $v, $this->types);
+            $output['types'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Doctrine\Dbal\TypeConfig ? $v->toArray() : $v, $this->types);
         }
         if (isset($this->_usedProperties['driverSchemes'])) {
             $output['driver_schemes'] = $this->driverSchemes;
         }
         if (isset($this->_usedProperties['connections'])) {
-            $output['connections'] = array_map(fn ($v) => $v instanceof Dbal\ConnectionConfig ? $v->toArray() : $v, $this->connections);
+            $output['connections'] = array_map(fn ($v) => $v instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig ? $v->toArray() : $v, $this->connections);
         }
 
         return $output;
     }
+
 }
