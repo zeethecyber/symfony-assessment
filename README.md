@@ -2,11 +2,7 @@
 
 ## Objective
 
-The objective of this challenge is to evaluate proficiency in PHP Symfony development, Docker, and static code analysis within a time limit of 4 hours.
-
-## Repository
-
-- **Code Repository**: [GitHub Repository Link](https://github.com/ahmed-cmyk/symfony_products_api)
+The objective of this challenge is to evaluate proficiency in PHP Symfony development, Docker, and static code analysis.
 
 ## Overview
 
@@ -23,8 +19,8 @@ Make sure you have Docker and Docker Compose installed on your machine.
 1. **Clone the Repository**
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/Zeeshan044/symfony-assessment.git
+cd symfony-assessment
 ```
 
 2. **Build and Run Docker Containers**
